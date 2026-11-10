@@ -9,6 +9,7 @@ TIPO = "stopover"
 SALIDAS_POR_BUSQUEDA = 2
 SEPARACION_MINIMA = 3  # días entre las 2 salidas que se prueban, para no repetir casi la misma fecha
 FECHAS_SIN_CALENDARIO = (10, 20)  # si el calendario no tiene ese mes, se prueban estos días
+CORRIMIENTOS = (0, 1, -1)  # si la aerolínea no vuela ese día, se prueba el siguiente y el anterior
 
 
 def tipo(ciudad: str, cuando: str) -> str:

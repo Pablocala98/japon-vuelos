@@ -357,7 +357,7 @@ def _open_jaw_serpapi(c: Corrida, fuente: SerpApi, fila: dict) -> None:
 # ---------------------------------------------------------------- Stopovers (se piden a mano)
 
 def correr_stopover(c: Corrida, ciudad: str, dias: int, cuando: str, mes: str | None) -> None:
-    """Prueba hasta 2 salidas para el stopover pedido. Cada una gasta 3 consultas de SerpApi."""
+    """Prueba hasta 2 salidas para el stopover pedido: 3 consultas cada una, más 1 por cada día que la aerolínea no vuela."""
     lugar = c.cfg["stopovers"][ciudad]
     fuente = SerpApi(clave("SERPAPI_API_KEY"), c.contador, c.cfg["viaje"]["pasajeros"],
                      c.cfg["equipaje"]["carry_on"], c.cfg["restricciones"]["max_escalas"])
@@ -377,21 +377,33 @@ def correr_stopover(c: Corrida, ciudad: str, dias: int, cuando: str, mes: str | 
     errores_antes = len(c.errores)
     if not elegidas:
         pedido["errores"].append("No hay fechas para ese mes en el calendario de precios.")
+    tipo = stopover.tipo(ciudad, cuando)
     for fila in elegidas:
         japon = AEROPUERTOS[fila["ruta"].split("-")[1]]
-        partes = stopover.tramos(date.fromisoformat(fila["salida"]), dias, cuando, c.cfg["restricciones"]["dias_en_japon"],
-                                 AEROPUERTOS["BUE"], lugar["aeropuerto"], japon)
-        pedido["salidas"].append(fila["salida"])
+        # Si la aerolínea no vuela ese día de la semana, prueba el día siguiente y el anterior (1 consulta cada intento).
+        for corrimiento in stopover.CORRIMIENTOS:
+            salida = date.fromisoformat(fila["salida"]) + timedelta(days=corrimiento)
+            partes = stopover.tramos(salida, dias, cuando, c.cfg["restricciones"]["dias_en_japon"],
+                                     AEROPUERTOS["BUE"], lugar["aeropuerto"], japon)
+            antes = sum(o["tipo"] == tipo for o in c.opciones)
 
-        def consultar(partes=partes) -> None:
-            # Google Flights devuelve vacío si se le pide solo una aerolínea: se filtra acá, tramo por tramo.
-            _recorrer(c, lambda token: fuente.multidestino(partes, token), stopover.tipo(ciudad, cuando), 3, 1,
-                      acepta=lambda tramo: lugar["aerolinea_nombre"] in tramo["aerolineas"])
-            print(f"  stopover {lugar['nombre']} {dias} días a la {cuando}, sale {partes[0][2]}: listo")
-        try:
-            c.tarea(f"stopover {ciudad} {cuando} {dias}d {fila['salida']}", consultar)
-        except CupoDelDia as aviso:
-            pedido["errores"].append(f"Se terminó el cupo: {aviso}")
+            def consultar(partes=partes) -> None:
+                # Google Flights devuelve vacío si se le pide solo una aerolínea: se filtra acá, tramo por tramo.
+                _recorrer(c, lambda token: fuente.multidestino(partes, token), tipo, 3, 1,
+                          acepta=lambda tramo: lugar["aerolinea_nombre"] in tramo["aerolineas"])
+                print(f"  stopover {lugar['nombre']} {dias} días a la {cuando}, sale {partes[0][2]}: listo")
+            try:
+                c.tarea(f"stopover {ciudad} {cuando} {dias}d {salida.isoformat()}", consultar)
+            except CupoDelDia as aviso:
+                pedido["errores"].append(f"Se terminó el cupo: {aviso}")
+                break
+            pedido["salidas"].append(salida.isoformat())
+            if sum(o["tipo"] == tipo for o in c.opciones) > antes:
+                break
+            print(f"  {lugar['aerolinea_nombre']} no tiene vuelo útil saliendo el {salida.isoformat()}")
+        else:
+            continue
+        if pedido["errores"]:
             break
     # Las opciones de este pedido: misma ciudad y sentido, saliendo en alguna de las fechas probadas.
     pedido["opciones"] = sum(1 for o in c.opciones if o["tipo"] == stopover.tipo(ciudad, cuando)

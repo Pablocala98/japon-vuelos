@@ -18,6 +18,7 @@ from .fechas import ahora, hoy
 DOCS = RAIZ / "docs"
 DATOS = RAIZ / "data"
 OPCIONES_EN_PAGINA = 40
+CONSULTAS_TIPICAS_POR_STOPOVER = 6  # 2 fechas x 3 pasos; los reintentos suman 1 cada uno
 NOMBRES_TIPO = {"ida_y_vuelta": "Ida y vuelta", "open_jaw": "Llega a una ciudad y vuelve de otra",
                 "san_pablo": "Desde San Pablo (2 pasajes)"}
 JAPON = {"NRT": "TYO", "HND": "TYO", "KIX": "OSA", "ITM": "OSA"}
@@ -171,7 +172,7 @@ def stopovers(cfg: dict, dia: date) -> dict:
         "pedidos": sorted(pedidos, key=lambda p: p["pedido"], reverse=True)[:10],
         "ciudades": {clave: {"nombre": v["nombre"], "aerolinea": v.get("aerolinea_nombre"), "aeropuerto": v["aeropuerto"]}
                      for clave, v in cfg["stopovers"].items() if isinstance(v, dict)},
-        "cupo": {"quedan_consultas": max(quedan, 0), "busquedas_aprox": max(quedan, 0) // limites["stopover"]["por_busqueda"],
+        "cupo": {"quedan_consultas": max(quedan, 0), "busquedas_aprox": max(quedan, 0) // CONSULTAS_TIPICAS_POR_STOPOVER,
                  "por_busqueda": limites["stopover"]["por_busqueda"]},
         "dias_vigencia": cfg["stopovers"].get("dias_vigencia", 14),
     }

@@ -58,7 +58,7 @@ consultas:
     por_mes: 250
   stopover:                 # sale del mismo cupo de SerpApi, con su propio tope
     por_mes: 60
-    por_busqueda: 6         # cada búsqueda pedida prueba 2 fechas, 3 consultas cada una: ~10 búsquedas por mes
+    por_busqueda: 8         # 2 fechas x 3 consultas, más 2 intentos de 1 consulta si la aerolínea no vuela ese día
 
 analisis:
   dias_vigencia: 3  # una opción encontrada se sigue mostrando 3 días, con la fecha en que se vio

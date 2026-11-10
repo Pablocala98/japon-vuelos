@@ -780,7 +780,7 @@
       h("div", { class: "acciones" },
         A.repositorio ? h("a", { class: "boton lleno chico", href: `https://github.com/${A.repositorio}/actions/workflows/${A.flujo}`, target: "_blank", rel: "noopener", text: "Abrir GitHub ↗" }) : null,
         h("button", { class: "boton chico", type: "button", onclick: () => location.reload(), text: "↻ Recargar" }),
-        h("span", { class: "chica apagado", text: `Te quedan ~${cupo.busquedas_aprox ?? "?"} búsquedas este mes · cada una prueba 2 fechas` })));
+        h("span", { class: "chica apagado", text: `Te quedan ~${cupo.busquedas_aprox ?? "?"} búsquedas este mes` })));
 
     const pedidos = SO.pedidos || [];
     $("#pedidos-so").replaceChildren(...(pedidos.length ? [h("details", { class: "pie" }, h("summary", { class: "chica", text: `🕘 Últimos pedidos (${pedidos.length})` }),
