@@ -307,8 +307,12 @@ def correr_serpapi(c: Corrida) -> None:
         _ida_y_vuelta_serpapi(c, fuente, osaka)
 
 
-def _recorrer(c: Corrida, pedir_paso, tipo: str, pasos: int, ramas: int) -> None:
-    """Sigue los pasos de SerpApi hasta el último, que es el que trae el precio real."""
+def _recorrer(c: Corrida, pedir_paso, tipo: str, pasos: int, ramas: int, acepta=None) -> None:
+    """Sigue los pasos de SerpApi hasta el último, que es el que trae el precio real.
+
+    `acepta(tramo)` deja solo algunos tramos (por ejemplo, los que vuela la aerolínea del stopover).
+    """
+    acepta = acepta or (lambda tramo: True)
     costo = 1 + (ramas if pasos == 2 else pasos - 1)
     if c.contador.disponibles("serpapi") < costo:
         raise CupoDelDia("serpapi: no alcanza para completar el precio real")
@@ -316,10 +320,11 @@ def _recorrer(c: Corrida, pedir_paso, tipo: str, pasos: int, ramas: int) -> None
     def nivel(previos: list[dict], token: str | None, numero: int) -> None:
         opciones = modulo_serpapi.opciones(pedir_paso(token))
         if numero == pasos - 1:
-            c.sumar([modulo_serpapi.armar(tipo, previos + [modulo_serpapi.tramo(o)], o.get("price")) for o in opciones])
+            c.sumar([modulo_serpapi.armar(tipo, previos + [modulo_serpapi.tramo(o)], o.get("price"))
+                     for o in opciones if acepta(modulo_serpapi.tramo(o))])
             return
         candidatas = [o for o in opciones if o.get("departure_token") and o.get("price")
-                      and evaluar.tramo_cumple(modulo_serpapi.tramo(o), c.cfg["restricciones"])]
+                      and evaluar.tramo_cumple(modulo_serpapi.tramo(o), c.cfg["restricciones"]) and acepta(modulo_serpapi.tramo(o))]
         candidatas.sort(key=lambda o: o["price"])
         for opcion in candidatas[:ramas if numero == 0 else 1]:
             nivel(previos + [modulo_serpapi.tramo(opcion)], opcion["departure_token"], numero + 1)
@@ -379,8 +384,9 @@ def correr_stopover(c: Corrida, ciudad: str, dias: int, cuando: str, mes: str | 
         pedido["salidas"].append(fila["salida"])
 
         def consultar(partes=partes) -> None:
-            _recorrer(c, lambda token: fuente.multidestino(partes, token, aerolineas=lugar["aerolineas"]),
-                      stopover.tipo(ciudad, cuando), 3, 1)
+            # Google Flights devuelve vacío si se le pide solo una aerolínea: se filtra acá, tramo por tramo.
+            _recorrer(c, lambda token: fuente.multidestino(partes, token), stopover.tipo(ciudad, cuando), 3, 1,
+                      acepta=lambda tramo: lugar["aerolinea_nombre"] in tramo["aerolineas"])
             print(f"  stopover {lugar['nombre']} {dias} días a la {cuando}, sale {partes[0][2]}: listo")
         try:
             c.tarea(f"stopover {ciudad} {cuando} {dias}d {fila['salida']}", consultar)

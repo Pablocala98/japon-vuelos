@@ -220,19 +220,6 @@
  "san_pablo": [],
  "pedidos": [
   {
-   "ciudad": "estambul",
-   "dias": 3,
-   "cuando": "ida",
-   "mes": "2027-05",
-   "pedido": "2026-11-10T19:22:58-03:00",
-   "salidas": [
-    "2027-05-16",
-    "2027-05-23"
-   ],
-   "opciones": 0,
-   "errores": []
-  },
-  {
    "ciudad": "madrid",
    "dias": 3,
    "cuando": "vuelta",
@@ -247,8 +234,6 @@
   }
  ],
  "consultas_hechas": [
-  "stopover estambul ida 3d 2027-05-16",
-  "stopover estambul ida 3d 2027-05-23",
   "stopover madrid vuelta 3d 2027-05-16",
   "stopover madrid vuelta 3d 2027-05-23"
  ],

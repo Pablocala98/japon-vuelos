@@ -68,13 +68,11 @@ stopovers:
   madrid:
     nombre: Madrid
     aeropuerto: MAD
-    aerolineas: IB          # Iberia
-    aerolinea_nombre: Iberia
+    aerolinea_nombre: Iberia       # cada tramo tiene que tener esta aerolínea
     sitio: https://www.iberia.com/ar/
   estambul:
     nombre: Estambul
     aeropuerto: IST
-    aerolineas: TK          # Turkish Airlines
     aerolinea_nombre: Turkish Airlines
     sitio: https://www.turkishairlines.com/es-ar/
     aviso: "Turkish tiene un programa de stopover con hotel gratis según la tarifa y la duración de la escala: revisá las condiciones al comprar."

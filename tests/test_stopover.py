@@ -66,6 +66,26 @@ class Detalle(unittest.TestCase):
         self.assertFalse(any("volvés desde" in v for v in r["ventajas"]))
 
 
+class FiltroDeAerolinea(unittest.TestCase):
+    def test_sigue_solo_los_tramos_de_la_aerolinea_del_stopover(self):
+        from vuelos import buscar
+
+        def vuelo(aerolinea, desde, hasta, precio, token):
+            return {"price": precio, "departure_token": token, "total_duration": 600, "flights": [
+                {"airline": aerolinea, "departure_airport": {"id": desde, "time": "2027-05-10 10:00"},
+                 "arrival_airport": {"id": hasta, "time": "2027-05-10 20:00"}}]}
+        pasos = {None: {"best_flights": [vuelo("LEVEL", "EZE", "IST", 100, "a"), vuelo("Turkish Airlines", "EZE", "IST", 200, "b")]},
+                 "b": {"best_flights": [vuelo("Turkish Airlines", "IST", "NRT", 300, "c")]},
+                 "c": {"best_flights": [vuelo("Turkish Airlines", "NRT", "EZE", 4000, None), vuelo("LATAM", "NRT", "EZE", 3000, None)]}}
+        pedidos = []
+        corrida = mock.Mock(cfg=CFG)
+        corrida.contador.disponibles.return_value = 10
+        buscar._recorrer(corrida, lambda token: pedidos.append(token) or pasos[token], "stopover_estambul_ida", 3, 1,
+                         acepta=lambda t: "Turkish Airlines" in t["aerolineas"])
+        self.assertEqual(pedidos, [None, "b", "c"])
+        self.assertEqual([o["precio_total"] for o in corrida.sumar.call_args.args[0]], [4000])
+
+
 class Cupo(unittest.TestCase):
     def test_cada_consulta_cuenta_en_serpapi_y_en_stopover(self):
         with tempfile.TemporaryDirectory() as carpeta:
