@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-10",
- "actualizado": "2026-11-10T19:33:08-03:00",
+ "actualizado": "2026-11-10T19:38:56-03:00",
  "opciones": [
   {
    "tipo": "stopover_madrid_vuelta",
@@ -147,6 +147,168 @@
   {
    "tipo": "stopover_madrid_vuelta",
    "fuente": "serpapi",
+   "precio_total": 5257,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T21:40",
+     "llegada": "2027-05-25T18:35",
+     "escalas": 1,
+     "horas": 32.9,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 410,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD"
+     ],
+     "salida": "2027-06-14T08:55",
+     "llegada": "2027-06-14T20:40",
+     "escalas": 1,
+     "horas": 18.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-17T08:30",
+     "llegada": "2027-06-17T16:00",
+     "escalas": 0,
+     "horas": 12.5,
+     "paradas": []
+    }
+   ],
+   "por_persona": 2628,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 5737,
+   "por_persona_con_valijas": 2868,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5257
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 5257,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T21:40",
+     "llegada": "2027-05-25T18:35",
+     "escalas": 1,
+     "horas": 32.9,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 410,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD"
+     ],
+     "salida": "2027-06-14T08:55",
+     "llegada": "2027-06-14T20:40",
+     "escalas": 1,
+     "horas": 18.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-17T12:10",
+     "llegada": "2027-06-17T19:55",
+     "escalas": 0,
+     "horas": 12.8,
+     "paradas": []
+    }
+   ],
+   "por_persona": 2628,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 5737,
+   "por_persona_con_valijas": 2868,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5257
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
    "precio_total": 5632,
    "moneda": "USD",
    "precio_verificado": false,
@@ -214,6 +376,539 @@
    "precios_por_fuente": {
     "serpapi": 5632
    }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 5816,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T21:40",
+     "llegada": "2027-05-25T18:35",
+     "escalas": 1,
+     "horas": 32.9,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 410,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD"
+     ],
+     "salida": "2027-06-14T08:55",
+     "llegada": "2027-06-14T20:40",
+     "escalas": 1,
+     "horas": 18.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-17T23:59",
+     "llegada": "2027-06-18T07:35",
+     "escalas": 0,
+     "horas": 12.6,
+     "paradas": []
+    }
+   ],
+   "por_persona": 2908,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 6296,
+   "por_persona_con_valijas": 3148,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5816
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 6067,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T21:40",
+     "llegada": "2027-05-25T18:35",
+     "escalas": 1,
+     "horas": 32.9,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 410,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD"
+     ],
+     "salida": "2027-06-14T08:55",
+     "llegada": "2027-06-14T20:40",
+     "escalas": 1,
+     "horas": 18.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia",
+      "LATAM"
+     ],
+     "ruta": [
+      "MAD",
+      "GRU",
+      "EZE"
+     ],
+     "salida": "2027-06-17T23:55",
+     "llegada": "2027-06-18T16:00",
+     "escalas": 1,
+     "horas": 21.1,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 425,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3034,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 6547,
+   "por_persona_con_valijas": 3274,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 6067
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 7617,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T21:40",
+     "llegada": "2027-05-25T18:35",
+     "escalas": 1,
+     "horas": 32.9,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 410,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD"
+     ],
+     "salida": "2027-06-14T08:55",
+     "llegada": "2027-06-14T20:40",
+     "escalas": 1,
+     "horas": 18.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia",
+      "LATAM"
+     ],
+     "ruta": [
+      "MAD",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-06-17T23:55",
+     "llegada": "2027-06-18T09:40",
+     "escalas": 1,
+     "horas": 14.8,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 50,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3808,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 8097,
+   "por_persona_con_valijas": 4048,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 7617
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 9097,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "DOH",
+      "KIX"
+     ],
+     "salida": "2027-05-15T21:40",
+     "llegada": "2027-05-17T17:25",
+     "escalas": 2,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 75,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 120,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "KIX",
+      "DOH",
+      "MAD"
+     ],
+     "salida": "2027-06-06T18:55",
+     "llegada": "2027-06-07T08:05",
+     "escalas": 1,
+     "horas": 20.2,
+     "paradas": [
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 80,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-09T08:35",
+     "llegada": "2027-06-09T16:15",
+     "escalas": 0,
+     "horas": 12.7,
+     "paradas": []
+    }
+   ],
+   "por_persona": 4548,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 9577,
+   "por_persona_con_valijas": 4788,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 9097
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 9097,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "DOH",
+      "KIX"
+     ],
+     "salida": "2027-05-15T21:40",
+     "llegada": "2027-05-17T17:25",
+     "escalas": 2,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 75,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 120,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "KIX",
+      "DOH",
+      "MAD"
+     ],
+     "salida": "2027-06-06T18:55",
+     "llegada": "2027-06-07T08:05",
+     "escalas": 1,
+     "horas": 20.2,
+     "paradas": [
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 80,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-09T12:10",
+     "llegada": "2027-06-09T19:55",
+     "escalas": 0,
+     "horas": 12.8,
+     "paradas": []
+    }
+   ],
+   "por_persona": 4548,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 9577,
+   "por_persona_con_valijas": 4788,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 9097
+   }
+  },
+  {
+   "tipo": "stopover_madrid_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 9097,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "DOH",
+      "KIX"
+     ],
+     "salida": "2027-05-15T21:40",
+     "llegada": "2027-05-17T17:25",
+     "escalas": 2,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 75,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 120,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "KIX",
+      "DOH",
+      "MAD"
+     ],
+     "salida": "2027-06-06T18:55",
+     "llegada": "2027-06-07T08:05",
+     "escalas": 1,
+     "horas": 20.2,
+     "paradas": [
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 80,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-09T23:59",
+     "llegada": "2027-06-10T07:35",
+     "escalas": 0,
+     "horas": 12.6,
+     "paradas": []
+    }
+   ],
+   "por_persona": 4548,
+   "valijas_estimadas": 480,
+   "precio_con_valijas": 9577,
+   "por_persona_con_valijas": 4788,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 9097
+   }
   }
  ],
  "descartes": {},
@@ -263,6 +958,21 @@
    "errores": [
     "Se terminó el cupo: serpapi: no alcanza para completar el precio real"
    ]
+  },
+  {
+   "ciudad": "madrid",
+   "dias": 2,
+   "cuando": "vuelta",
+   "mes": "2027-05",
+   "pedido": "2026-11-10T19:37:54-03:00",
+   "salidas": [
+    "2027-05-16",
+    "2027-05-17",
+    "2027-05-15",
+    "2027-05-23"
+   ],
+   "opciones": 11,
+   "errores": []
   }
  ],
  "consultas_hechas": [
@@ -273,7 +983,11 @@
   "stopover estambul ida 3d 2027-05-17",
   "stopover estambul ida 3d 2027-05-15",
   "stopover estambul ida 3d 2027-05-24",
-  "stopover estambul ida 3d 2027-05-19"
+  "stopover estambul ida 3d 2027-05-19",
+  "stopover madrid vuelta 2d 2027-05-16",
+  "stopover madrid vuelta 2d 2027-05-17",
+  "stopover madrid vuelta 2d 2027-05-15",
+  "stopover madrid vuelta 2d 2027-05-23"
  ],
  "errores": [],
  "cupo": {
@@ -283,14 +997,14 @@
    "total": 45
   },
   "serpapi": {
-   "gastadas_hoy": 32,
-   "disponibles_hoy": 203,
-   "total": 47
+   "gastadas_hoy": 40,
+   "disponibles_hoy": 195,
+   "total": 55
   },
   "stopover": {
-   "gastadas_hoy": 25,
+   "gastadas_hoy": 33,
    "disponibles_hoy": 0,
-   "total": 25
+   "total": 33
   }
  }
 }
