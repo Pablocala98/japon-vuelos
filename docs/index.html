@@ -460,7 +460,7 @@
       ? `Hoy ya se buscó (${cupo.ignav?.gastadas_hoy ?? 0}/${A.limites?.ignav ?? "?"} consultas de Ignav). Otra búsqueda hoy solo completa lo que falte.`
       : "Hoy todavía no se buscó: la búsqueda trae fechas nuevas." })];
     if (A.repositorio) {
-      partes.push(h("ol", {}, h("li", { text: "Tocá \"Abrir GitHub\"." }), h("li", { text: "\"Run workflow\" → botón verde \"Run workflow\" (dejá stopover en \"no\")." }), h("li", { text: "Esperá ~5 min y recargá." })),
+      partes.push(h("ol", {}, h("li", { text: "Tocá \"Abrir GitHub\"." }), h("li", { text: "\"Run workflow\" → botón verde \"Run workflow\" (dejá stopover en \"no\")." }), h("li", { text: "Esperá ~5 min y recargá. Si GitHub muestra \"404\", no pasa nada: la búsqueda arrancó igual." })),
         h("div", { class: "acciones" }, h("a", { class: "boton lleno chico", href: `https://github.com/${A.repositorio}/actions/workflows/${A.flujo}`, target: "_blank", rel: "noopener", text: "Abrir GitHub ↗" }), recargar));
     } else {
       partes.push(h("ol", {}, h("li", { text: "Doble clic en \"Actualizar vuelos.command\" (carpeta japon-vuelos)." }), h("li", { text: "Al terminar se abre la página actualizada." })), h("div", { class: "acciones" }, recargar));
@@ -779,7 +779,8 @@
       A.repositorio ? h("ol", { class: "chica", style: "margin:0;padding-left:20px" },
         h("li", {}, "Abrí GitHub y tocá ", h("b", { text: "Run workflow" }), "."),
         h("li", {}, "Elegí estos valores:", h("div", { class: "valores", style: "margin:4px 0" }, valores.map((v) => h("span", { text: v })))),
-        h("li", {}, "Botón verde ", h("b", { text: "Run workflow" }), ". Volvé en ~5 min y recargá.")) :
+        h("li", {}, "Botón verde ", h("b", { text: "Run workflow" }), ". Volvé en ~5 min y recargá."),
+        h("li", { class: "apagado", text: "Si GitHub muestra \"404\" después de tocarlo, no pasa nada: la búsqueda arrancó igual." })) :
         h("p", { class: "chica apagado", text: "Se pide desde GitHub, con la página publicada." }),
       h("div", { class: "acciones" },
         A.repositorio ? h("a", { class: "boton lleno chico", href: `https://github.com/${A.repositorio}/actions/workflows/${A.flujo}`, target: "_blank", rel: "noopener", text: "Abrir GitHub ↗" }) : null,
