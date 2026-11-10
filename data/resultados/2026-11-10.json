@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-10",
- "actualizado": "2026-11-10T19:35:12-03:00",
+ "actualizado": "2026-11-10T19:42:01-03:00",
  "opciones": [
   {
    "tipo": "san_pablo",
@@ -3473,14 +3473,14 @@
    "total": 45
   },
   "serpapi": {
-   "gastadas_hoy": 32,
+   "gastadas_hoy": 40,
    "disponibles_hoy": 0,
-   "total": 47
+   "total": 55
   },
   "stopover": {
-   "gastadas_hoy": 25,
-   "disponibles_hoy": 35,
-   "total": 25
+   "gastadas_hoy": 33,
+   "disponibles_hoy": 27,
+   "total": 33
   }
  }
 }
