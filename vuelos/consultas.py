@@ -26,6 +26,9 @@ class Contador:
     def gastadas_hoy(self, fuente: str) -> int:
         return self._fuente(fuente)["por_dia"].get(self._dia, 0)
 
+    def gastadas_del_mes(self, fuente: str) -> int:
+        return self._fuente(fuente)["por_mes"].get(self._mes, 0)
+
     def disponibles(self, fuente: str) -> int:
         limites = self._limites[fuente]
         datos = self._fuente(fuente)
@@ -67,3 +70,32 @@ class Contador:
             }
             for fuente in self._limites
         }
+
+
+class ContadorConReserva:
+    """Cada consulta de `fuente` cuenta también en el tope de `reserva` (los stopovers usan el cupo de SerpApi)."""
+
+    def __init__(self, contador: Contador, fuente: str, reserva: str):
+        self._contador, self._fuente, self._reserva = contador, fuente, reserva
+
+    def disponibles(self, fuente: str) -> int:
+        propio = self._contador.disponibles(fuente)
+        return min(propio, self._contador.disponibles(self._reserva)) if fuente == self._fuente else propio
+
+    def verificar(self, fuente: str) -> None:
+        if self.disponibles(fuente) <= 0:
+            raise CupoDelDia(f"{fuente}: se llegó al límite de consultas para stopovers")
+
+    def registrar(self, fuente: str, cantidad: int = 1) -> None:
+        self._contador.registrar(fuente, cantidad)
+        if fuente == self._fuente:
+            self._contador.registrar(self._reserva, cantidad)
+
+    def limitar(self, fuente: str, restantes: int) -> None:
+        self._contador.limitar(fuente, restantes)
+
+    def gastadas_hoy(self, fuente: str) -> int:
+        return self._contador.gastadas_hoy(fuente)
+
+    def resumen(self) -> dict:
+        return self._contador.resumen()

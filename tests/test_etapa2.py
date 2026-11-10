@@ -219,30 +219,40 @@ class ContadorDeConsultas(unittest.TestCase):
 
 
 class Planificador(unittest.TestCase):
-    def test_ventanas_de_abril_a_junio(self):
-        self.assertEqual(planificador.ventanas(CFG), [("2027-04-01", "2027-04-30"), ("2027-05-01", "2027-05-31"), ("2027-06-01", "2027-06-30")])
+    def test_ventanas_de_todo_2027(self):
+        ventanas = planificador.ventanas(CFG)
+        self.assertEqual(len(ventanas), 12)
+        self.assertEqual((ventanas[0], ventanas[-1]), (("2027-01-01", "2027-01-31"), ("2027-12-01", "2027-12-31")))
 
-    def test_ciclo_tiene_todas_las_combinaciones_sin_repetir(self):
+    def test_abril_junio_tiene_todas_las_estadias_y_el_resto_solo_la_del_medio(self):
+        preferidos, resto = planificador.calendarios_preferidos(CFG), planificador.calendarios_resto(CFG)
+        self.assertEqual(len(preferidos), 3 * (3 * 3 + 1))  # 3 meses; San Pablo-Osaka solo con 22 días
+        self.assertEqual(len(resto), 9 * 3)                 # 9 meses, sin San Pablo-Osaka
+        self.assertTrue(all("2027-04" <= c["desde"] <= "2027-06-30" for c in preferidos))
+        self.assertEqual({c["estadia"] for c in resto}, {22})
         ciclo = planificador.ciclo_calendarios(CFG)
-        self.assertEqual(len(ciclo), 4 * 3 * 3)
-        self.assertEqual(len({str(c) for c in ciclo}), 36)
+        self.assertEqual(len({str(c) for c in ciclo}), len(ciclo))
 
-    def test_la_rotacion_recorre_todo_el_ciclo(self):
-        ciclo = planificador.ciclo_calendarios(CFG)
+    def test_cada_dia_2_de_abril_junio_y_1_del_resto(self):
+        dia = date(2026, 11, 11)
+        elegidos = planificador.calendarios_del_dia(CFG, dia, 3)
+        self.assertEqual([planificador.es_preferida(CFG, c["desde"]) for c in elegidos], [True, True, False])
+
+    def test_la_rotacion_recorre_todo_en_menos_de_un_mes(self):
         vistos = set()
-        for i in range(len(ciclo)):
+        for i in range(27):
             dia = date.fromordinal(date(2026, 11, 7).toordinal() + i)
-            vistos |= {str(c) for c in planificador.calendarios_del_dia(CFG, dia, 2)}
-        self.assertEqual(len(vistos), len(ciclo))
+            vistos |= {str(c) for c in planificador.calendarios_del_dia(CFG, dia, 3)}
+        self.assertEqual(len(vistos), len(planificador.ciclo_calendarios(CFG)))
 
-    def test_mayo_y_junio_van_primero(self):
-        ciclo = planificador.ciclo_calendarios(CFG)
-        primeros = ciclo[:12]
-        self.assertGreater(sum(c["desde"] >= "2027-05" for c in primeros), sum(c["desde"] < "2027-05" for c in primeros))
+    def test_no_busca_meses_que_ya_pasaron(self):
+        for i in range(30):
+            dia = date.fromordinal(date(2027, 3, 1).toordinal() + i)
+            self.assertTrue(all(c["hasta"] >= "2027-03-08" for c in planificador.calendarios_del_dia(CFG, dia, 3)))
 
     def test_barrido_es_una_estadia_por_ruta_y_mes(self):
         barrido = planificador.barrido_inicial(CFG)
-        self.assertEqual(len(barrido), 12)
+        self.assertEqual(len(barrido), 3 * 4 + 9 * 3)
         self.assertEqual({c["estadia"] for c in barrido}, {22})
 
     def test_memoria_borra_fechas_sin_tarifa_e_ignora_datos_viejos(self):

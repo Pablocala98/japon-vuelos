@@ -9,7 +9,7 @@ import json
 from datetime import date, timedelta
 from pathlib import Path
 
-from . import evaluar
+from . import evaluar, planificador
 from .config import RAIZ, cargar_config
 from .fechas import ahora, hoy
 
@@ -136,7 +136,7 @@ def evolucion(dias: dict[str, dict], cfg: dict) -> list[dict]:
 
 def analisis_fechas(memoria: dict, cfg: dict, dia: date, tramo_corto: float | None) -> dict:
     """Ordena las fechas del calendario. Desde San Pablo suma el tramo corto si ya se conoce su precio."""
-    limite = (dia - timedelta(days=21)).isoformat()
+    limite = (dia - timedelta(days=planificador.ANTIGUEDAD_MAXIMA_DIAS)).isoformat()
     estadias = {str(e) for e in cfg["fechas"]["estadia_dias"]}
     celdas = []
     for ruta, por_estadia in memoria.items():

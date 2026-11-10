@@ -4,7 +4,41 @@ name: Buscar vuelos
 on:
   schedule:
     - cron: "0 11 * * *"   # 11:00 UTC = 8:00 de Buenos Aires (GitHub puede demorarla un rato)
-  workflow_dispatch:        # botón "Run workflow" para buscar a mano
+  workflow_dispatch:        # botón "Run workflow" para buscar a mano (y pedir un stopover)
+    inputs:
+      stopover:
+        description: "Stopover: dejá 'no' para la búsqueda normal"
+        type: choice
+        options: ["no", "madrid", "estambul"]
+        default: "no"
+      dias:
+        description: "Días en la ciudad del stopover"
+        type: choice
+        options: ["1", "2", "3", "4", "5", "6", "7"]
+        default: "3"
+      cuando:
+        description: "¿Stopover a la ida o a la vuelta?"
+        type: choice
+        options: ["ida", "vuelta"]
+        default: "ida"
+      mes:
+        description: "Mes de salida de Buenos Aires"
+        type: choice
+        options:
+          - "cualquiera"
+          - "2027-01"
+          - "2027-02"
+          - "2027-03"
+          - "2027-04"
+          - "2027-05"
+          - "2027-06"
+          - "2027-07"
+          - "2027-08"
+          - "2027-09"
+          - "2027-10"
+          - "2027-11"
+          - "2027-12"
+        default: "cualquiera"
 
 permissions:
   contents: write   # guardar los resultados del día
@@ -41,7 +75,16 @@ jobs:
         env:
           IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
-        run: python -m vuelos.buscar
+          STOPOVER: ${{ inputs.stopover || 'no' }}
+          DIAS: ${{ inputs.dias || '3' }}
+          CUANDO: ${{ inputs.cuando || 'ida' }}
+          MES: ${{ inputs.mes || 'cualquiera' }}
+        run: |
+          if [ "$STOPOVER" = "no" ]; then
+            python -m vuelos.buscar
+          else
+            python -m vuelos.buscar --stopover "$STOPOVER" --dias "$DIAS" --cuando "$CUANDO" --mes "$MES"
+          fi
 
       # Aunque la búsqueda falle a mitad de camino, se guarda el contador para no pasarse del cupo gratis.
       - name: Guardar resultados

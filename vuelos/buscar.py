@@ -13,9 +13,9 @@ import json
 from collections import Counter
 from datetime import date, timedelta
 
-from . import analisis, evaluar, planificador, promociones, publicar
+from . import analisis, evaluar, planificador, promociones, publicar, stopover
 from .config import RAIZ, cargar_config, clave
-from .consultas import Contador, CupoDelDia
+from .consultas import Contador, ContadorConReserva, CupoDelDia
 from .fechas import ahora, hoy
 from .fuentes import ignav as modulo_ignav
 from .fuentes import serpapi as modulo_serpapi
@@ -24,11 +24,9 @@ from .fuentes.ignav import Ignav
 from .fuentes.serpapi import SerpApi
 
 DATOS = RAIZ / "data"
-CALENDARIOS_POR_DIA = 2
+CALENDARIOS_POR_DIA = 3
 MAXIMO_OPCIONES_GUARDADAS = 60
 DOS_IDAS_SI_HAY = 7  # con este cupo de SerpApi se completan 2 idas en vez de 1
-DIA_DEL_STOPOVER = 6  # domingo
-NOCHES_DE_STOPOVER = 2  # llega al día siguiente, duerme una noche y sigue al otro día
 AEROPUERTOS = {"BUE": "EZE,AEP", "TYO": "NRT,HND", "OSA": "KIX,ITM"}
 
 
@@ -45,6 +43,7 @@ class Corrida:
         self.hechas: list[str] = previo.get("consultas_hechas", [])
         self.errores: list[str] = previo.get("errores", [])
         self.san_pablo: list[dict] = previo.get("san_pablo", [])
+        self.pedidos: list[dict] = previo.get("pedidos", [])
 
     def tarea(self, nombre: str, funcion) -> None:
         """Corre una consulta una sola vez por día. Si falla, anota el error y la app sigue."""
@@ -78,6 +77,7 @@ class Corrida:
             "opciones": self.opciones,
             "descartes": dict(self.descartes),
             "san_pablo": self.san_pablo,
+            "pedidos": self.pedidos,
             "consultas_hechas": self.hechas,
             "errores": self.errores,
             "cupo": self.contador.resumen(),
@@ -210,7 +210,10 @@ def correr_exploracion(c: Corrida) -> None:
 
 
 def _exactas_ignav(c: Corrida, fuente: Ignav) -> list[tuple]:
-    """Búsquedas exactas sobre las fechas más baratas. San Pablo va día por medio, o todos los días si parece más barato."""
+    """Hasta 3 búsquedas exactas sobre las fechas más baratas, para que siempre queden consultas para los links de compra.
+
+    San Pablo va día por medio, o todos los días si parece más barato.
+    """
     tokio, osaka = c.mejor_fecha("BUE-TYO"), c.mejor_fecha("BUE-OSA")
     mejor = c.mejor_fecha("BUE-TYO", "BUE-OSA")
     alternativo = c.cfg["viaje"]["origen_alternativo"]
@@ -219,16 +222,16 @@ def _exactas_ignav(c: Corrida, fuente: Ignav) -> list[tuple]:
 
     if mejor and san_pablo and (c.dia.toordinal() % 2 == 0 or san_pablo["precio"] < mejor["precio"]):
         tareas.append(_exacta(c, fuente, mejor))
-        tareas.append(_open_jaw(c, fuente, "TYO", "OSA", mejor))
-        tareas.append(_tarea_san_pablo(c, fuente, san_pablo, mejor, alternativo))
+        tareas.append(_tarea_san_pablo(c, fuente, san_pablo, mejor, alternativo))  # 1 o 2 consultas
         return tareas
     if tokio:
         tareas.append(_exacta(c, fuente, tokio))
     if osaka:
         tareas.append(_exacta(c, fuente, osaka))
     if mejor:
-        tareas.append(_open_jaw(c, fuente, "TYO", "OSA", mejor))
-        tareas.append(_open_jaw(c, fuente, "OSA", "TYO", mejor))
+        # Un día llega a Tokio y vuelve de Osaka; al otro, al revés.
+        llega, vuelve = ("TYO", "OSA") if c.dia.toordinal() % 2 else ("OSA", "TYO")
+        tareas.append(_open_jaw(c, fuente, llega, vuelve, mejor))
     return tareas
 
 
@@ -297,9 +300,6 @@ def correr_serpapi(c: Corrida) -> None:
         print("  SerpApi: todavía no hay fechas en memoria para controlar")
         return
 
-    if c.dia.weekday() == DIA_DEL_STOPOVER:
-        _stopover(c, fuente, mejor, "ida")
-        _stopover(c, fuente, mejor, "vuelta")
     if tokio:
         _ida_y_vuelta_serpapi(c, fuente, tokio)
     _open_jaw_serpapi(c, fuente, mejor)
@@ -349,26 +349,49 @@ def _open_jaw_serpapi(c: Corrida, fuente: SerpApi, fila: dict) -> None:
     c.tarea(f"serpapi open-jaw {fila['salida']} {regreso}", consultar)
 
 
-def _stopover(c: Corrida, fuente: SerpApi, fila: dict, sentido: str) -> None:
-    """Una noche en Madrid. Cada parte con hasta 1 escala, para no pasarse del total."""
-    destino = fila["ruta"].split("-")[1]
-    madrid = c.cfg["viaje"]["stopover"]
-    salida = date.fromisoformat(fila["salida"])
-    regreso = date.fromisoformat(c.regreso(fila))
-    bue, japon = AEROPUERTOS["BUE"], AEROPUERTOS[destino]
-    if sentido == "ida":
-        # La estadía en Japón no se acorta: el regreso se corre lo mismo que la llegada.
-        regreso += timedelta(days=NOCHES_DE_STOPOVER)
-        tramos = [(bue, madrid, salida.isoformat()), (madrid, japon, (salida + timedelta(days=NOCHES_DE_STOPOVER)).isoformat()),
-                  (japon, bue, regreso.isoformat())]
-    else:
-        tramos = [(bue, japon, salida.isoformat()), (japon, madrid, regreso.isoformat()),
-                  (madrid, bue, (regreso + timedelta(days=NOCHES_DE_STOPOVER)).isoformat())]
+# ---------------------------------------------------------------- Stopovers (se piden a mano)
 
-    def consultar() -> None:
-        _recorrer(c, lambda token: fuente.multidestino(tramos, token, max_escalas=1), f"stopover_madrid_{sentido}", 3, 1)
-        print(f"  stopover en Madrid a la {sentido}, {fila['salida']}: listo")
-    c.tarea(f"serpapi stopover {sentido} {fila['salida']}", consultar)
+def correr_stopover(c: Corrida, ciudad: str, dias: int, cuando: str, mes: str | None) -> None:
+    """Prueba hasta 2 salidas para el stopover pedido. Cada una gasta 3 consultas de SerpApi."""
+    lugar = c.cfg["stopovers"][ciudad]
+    fuente = SerpApi(clave("SERPAPI_API_KEY"), c.contador, c.cfg["viaje"]["pasajeros"],
+                     c.cfg["equipaje"]["carry_on"], c.cfg["restricciones"]["max_escalas"])
+    try:
+        restantes = fuente.consultas_restantes()
+    except FuenteError as error:
+        c.errores.append(f"cupo de SerpApi: {error}")
+    else:
+        if restantes is not None:
+            c.contador.limitar("serpapi", restantes)
+    c.contador.limitar("stopover", c.cfg["consultas"]["stopover"]["por_busqueda"])
+
+    filas = [f for ruta in ("BUE-TYO", "BUE-OSA") for f in c.memoria.mejores_fechas(ruta, c.dia)]
+    elegidas = stopover.salidas(filas, mes, lambda s: planificador.es_preferida(c.cfg, s), c.dia)
+    pedido = {"ciudad": ciudad, "dias": dias, "cuando": cuando, "mes": mes, "pedido": ahora(), "salidas": [], "opciones": 0, "errores": []}
+    c.pedidos.append(pedido)
+    errores_antes = len(c.errores)
+    if not elegidas:
+        pedido["errores"].append("No hay fechas para ese mes en el calendario de precios.")
+    for fila in elegidas:
+        japon = AEROPUERTOS[fila["ruta"].split("-")[1]]
+        partes = stopover.tramos(date.fromisoformat(fila["salida"]), dias, cuando, c.cfg["restricciones"]["dias_en_japon"],
+                                 AEROPUERTOS["BUE"], lugar["aeropuerto"], japon)
+        pedido["salidas"].append(fila["salida"])
+
+        def consultar(partes=partes) -> None:
+            _recorrer(c, lambda token: fuente.multidestino(partes, token, aerolineas=lugar["aerolineas"]),
+                      stopover.tipo(ciudad, cuando), 3, 1)
+            print(f"  stopover {lugar['nombre']} {dias} días a la {cuando}, sale {partes[0][2]}: listo")
+        try:
+            c.tarea(f"stopover {ciudad} {cuando} {dias}d {fila['salida']}", consultar)
+        except CupoDelDia as aviso:
+            pedido["errores"].append(f"Se terminó el cupo: {aviso}")
+            break
+    # Las opciones de este pedido: misma ciudad y sentido, saliendo en alguna de las fechas probadas.
+    pedido["opciones"] = sum(1 for o in c.opciones if o["tipo"] == stopover.tipo(ciudad, cuando)
+                             and o["tramos"][0]["salida"][:10] in pedido["salidas"])
+    pedido["errores"] += c.errores[errores_antes:]
+    c.guardar()
 
 
 # ---------------------------------------------------------------- Corrida
@@ -413,12 +436,30 @@ def main() -> None:
     parser.add_argument("--solo-plan", action="store_true", help="muestra el plan sin gastar consultas")
     parser.add_argument("--barrido", action="store_true", help="una sola vez: toda la ventana, por encima del límite diario de Ignav")
     parser.add_argument("--explorar", action="store_true", help="una sola vez: sin límite de escalas ni de horas, hasta 15 consultas de Ignav")
+    parser.add_argument("--stopover", choices=("madrid", "estambul"), help="busca un stopover en esa ciudad (lo pedís desde la página)")
+    parser.add_argument("--dias", type=int, default=3, help="días en la ciudad del stopover")
+    parser.add_argument("--cuando", choices=("ida", "vuelta"), default="ida", help="stopover a la ida o a la vuelta")
+    parser.add_argument("--mes", default=None, help="mes de salida AAAA-MM (si no, los meses preferidos)")
     args = parser.parse_args()
 
     cfg = cargar_config()
     dia = hoy()
     sin_limite = ("ignav",) if args.barrido or args.explorar else ()
     contador = Contador(DATOS / "consultas.json", cfg["consultas"], dia, sin_limite_diario=sin_limite)
+
+    if args.stopover:
+        # El tope diario de SerpApi es para la búsqueda diaria: los stopovers tienen su propio tope por mes.
+        reserva = ContadorConReserva(Contador(DATOS / "consultas.json", cfg["consultas"], dia, sin_limite_diario=("serpapi",)),
+                                     "serpapi", "stopover")
+        mes = args.mes if args.mes and args.mes != "cualquiera" else None
+        corrida = Corrida(cfg, dia, reserva, planificador.Memoria(DATOS / "calendario.json"), carpeta="stopovers")
+        correr_fuente(corrida, f"Stopover en {cfg['stopovers'][args.stopover]['nombre']}",
+                      lambda: correr_stopover(corrida, args.stopover, args.dias, args.cuando, mes))
+        corrida.guardar()
+        mostrar_resumen(corrida)
+        publicar.publicar(cfg, dia)
+        print("\nDashboard actualizado: docs/datos.js")
+        return
 
     if args.explorar:
         if args.solo_plan:

@@ -1,5 +1,5 @@
 """Ventajas y desventajas de cada opción, con reglas fijas, para que el dashboard las muestre al elegirla."""
-from . import aeropuertos, evaluar
+from . import aeropuertos, evaluar, planificador, stopover
 
 LLEGADA_INCOMODA = (22, 6)  # llegar a Japón entre las 22 y las 6
 HORAS_CORTO = 30
@@ -91,7 +91,9 @@ def evaluar_opcion(opcion: dict, mas_barata: float, cfg: dict) -> dict:
     elif max_horas > (restricciones["max_horas_por_tramo"] or float("inf")):
         desventajas.append(f"Viaje largo: un tramo dura {horas(max_horas)} h.")
 
-    if opcion["tipo"] == "san_pablo":
+    if stopover.es_stopover(opcion):
+        ventajas.append("Un solo pasaje con los días de stopover: si un vuelo se atrasa, la aerolínea te reubica.")
+    elif opcion["tipo"] == "san_pablo":
         desventajas.append("Son 2 pasajes separados: si perdés la conexión en San Pablo, nadie está obligado a reubicarte.")
         desventajas.append("Tenés que hacer el cambio de avión en San Pablo, con tus valijas.")
     elif ida["ruta"][-1] != vuelta["ruta"][0]:
@@ -105,10 +107,10 @@ def evaluar_opcion(opcion: dict, mas_barata: float, cfg: dict) -> dict:
             ventajas.append(f"{dias} días en Japón, justo lo que querés.")
         else:
             desventajas.append(f"{dias} días en Japón (querés {restricciones['dias_en_japon']}).")
-    if ida["salida"] >= cfg["fechas"]["salida_preferida_desde"]:
-        ventajas.append("Sale en mayo o junio, como preferís.")
+    if planificador.es_preferida(cfg, ida["salida"]):
+        ventajas.append("Sale entre abril y junio, como preferís.")
     else:
-        desventajas.append("Sale en abril: preferís mayo o junio.")
+        desventajas.append("Sale fuera de abril-junio, tus meses preferidos.")
     mas_ventajas, mas_desventajas = avisos_de_escalas(tramos, cfg["viaje"].get("pasaporte"))
     ventajas += mas_ventajas
     desventajas += mas_desventajas

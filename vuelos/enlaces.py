@@ -24,6 +24,9 @@ def google_flights(opcion: dict, pasajeros: int) -> list[dict]:
             {"texto": "Buscar el pasaje desde San Pablo", "url": _ida_y_vuelta(largo["origen"], largo["destino"], largo["salida"], largo["regreso"], pasajeros)},
             {"texto": "Buscar el tramo Buenos Aires–San Pablo", "url": _ida_y_vuelta(corto["origen"], corto["destino"], corto["salida"], corto["regreso"], pasajeros)},
         ]
+    if len(opcion["tramos"]) > 2:  # stopover: 3 tramos en un solo pasaje
+        partes = " and ".join(f"from {t['ruta'][0]} to {t['ruta'][-1]} on {t['salida'][:10]}" for t in opcion["tramos"])
+        return [{"texto": "Buscar en Google Flights (multidestino)", "url": _url(f"Multi-city flights {partes} for {pasajeros} adults")}]
     if ida["ruta"][-1] != vuelta["ruta"][0]:  # open-jaw: llega a una ciudad y vuelve de otra
         texto = (f"Multi-city flights from {ida['ruta'][0]} to {ida['ruta'][-1]} on {ida['salida'][:10]} "
                  f"and from {vuelta['ruta'][0]} to {vuelta['ruta'][-1]} on {vuelta['salida'][:10]} for {pasajeros} adults")

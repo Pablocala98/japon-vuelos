@@ -99,12 +99,12 @@ class VentajasYDesventajas(unittest.TestCase):
         self.assertIn("Está cerca de tu tope: 👀 casi.", r["ventajas"])
         self.assertIn("Se pasa de tu tope por USD 100.", r["desventajas"])
 
-    def test_dias_salida_en_abril_y_llegada_de_noche(self):
-        o = opcion(5000, salida="2027-04-25")
+    def test_dias_salida_fuera_de_abril_junio_y_llegada_de_noche(self):
+        o = opcion(5000, salida="2027-09-25")
         o["tramos"][0]["llegada"] = "2027-04-27T23:10"
         o["dias_en_japon"] = 21
         r = ventajas.evaluar_opcion(o, 5000, CFG)
-        self.assertIn("Sale en abril: preferís mayo o junio.", r["desventajas"])
+        self.assertIn("Sale fuera de abril-junio, tus meses preferidos.", r["desventajas"])
         self.assertIn("Llegás a Japón a las 23:10.", r["desventajas"])
         self.assertIn("21 días en Japón (querés 20).", r["desventajas"])
 

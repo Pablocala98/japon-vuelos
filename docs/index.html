@@ -3,219 +3,241 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Japón 2027 · Vuelos</title>
+<title>Vuelos a Japón</title>
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-  /* Una columna de lectura; las opciones se abren en el lugar y la comparación aparece aparte. Índigo japonés sobre papel. */
+  /* Tarjetas de vuelo tipo buscador: el precio y los horarios mandan, el resto son íconos. Índigo sobre papel. */
   :root {
-    --bg: #f6f7fa; --panel: #ffffff; --fg: #1b2033; --muted: #5d6478; --line: #dde1ea;
+    --bg: #f4f5f9; --panel: #ffffff; --fg: #1b2033; --muted: #646b80; --line: #e2e5ee; --suave: #eef0f6;
     --accent: #2b3f8f; --accent-soft: #e6eaf6; --ok: #1f7a4d; --ok-soft: #e3f3ea; --warn: #9a5b00; --warn-soft: #fbf0dc;
-    --bad: #b3261e; --heat-0: #e8ecf7; --heat-1: #2b3f8f;
+    --bad: #b3261e; --bad-soft: #fbe5e3; --heat-0: #e8ecf7; --heat-1: #2b3f8f;
     --serie-1: #2b3f8f; --serie-2: #c2492f; --serie-3: #2f8a73;
     --font-display: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans", system-ui, sans-serif;
     --font-body: "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     --font-code: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-    --radius: 10px;
+    --radius: 12px;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0f1220; --panel: #171b2e; --fg: #e7e9f2; --muted: #9aa1b8; --line: #2a3048;
+      --bg: #0f1220; --panel: #171b2e; --fg: #e7e9f2; --muted: #9aa1b8; --line: #2a3048; --suave: #1e2338;
       --accent: #9fb0f5; --accent-soft: #232b4d; --ok: #6fd3a0; --ok-soft: #173326; --warn: #f0b860; --warn-soft: #3a2c12;
-      --bad: #ff8a80; --heat-0: #1d2340; --heat-1: #9fb0f5;
+      --bad: #ff8a80; --bad-soft: #3a1c1a; --heat-0: #1d2340; --heat-1: #9fb0f5;
       --serie-1: #9fb0f5; --serie-2: #f08d72; --serie-3: #6fd3b8; color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0f1220; --panel: #171b2e; --fg: #e7e9f2; --muted: #9aa1b8; --line: #2a3048;
+    --bg: #0f1220; --panel: #171b2e; --fg: #e7e9f2; --muted: #9aa1b8; --line: #2a3048; --suave: #1e2338;
     --accent: #9fb0f5; --accent-soft: #232b4d; --ok: #6fd3a0; --ok-soft: #173326; --warn: #f0b860; --warn-soft: #3a2c12;
-    --bad: #ff8a80; --heat-0: #1d2340; --heat-1: #9fb0f5;
+    --bad: #ff8a80; --bad-soft: #3a1c1a; --heat-0: #1d2340; --heat-1: #9fb0f5;
     --serie-1: #9fb0f5; --serie-2: #f08d72; --serie-3: #6fd3b8; color-scheme: dark;
   }
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
   html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 var(--font-body);
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 var(--font-body);
     padding: env(safe-area-inset-top, 0px) 0 calc(env(safe-area-inset-bottom, 0px) + 80px); }
-  .envoltura { max-width: 980px; margin: 0 auto; padding-block: 28px 40px;
+  .envoltura { max-width: 940px; margin: 0 auto; padding-block: 20px 40px;
     padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-    display: flex; flex-direction: column; gap: 36px; }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: .01em; }
-  h1 { font-size: 1.9rem; }
-  h2 { font-size: 1.3rem; }
-  h3 { font-size: 1rem; }
+    display: flex; flex-direction: column; gap: 16px; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; }
+  h3 { font-size: .95rem; }
   p { margin: 0; }
   a { color: var(--accent); }
-  button, select { font: inherit; color: inherit; }
+  button, select, input { font: inherit; color: inherit; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .num { font-variant-numeric: tabular-nums; }
-  .codigo { font-family: var(--font-code); font-weight: 500; letter-spacing: .03em; }
+  .codigo { font-family: var(--font-code); font-weight: 500; letter-spacing: .02em; }
   .apagado { color: var(--muted); }
-  .chica { font-size: .85rem; }
-  .seccion { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-  .seccion > header { display: flex; flex-direction: column; gap: 4px; }
-  .nota { color: var(--muted); font-size: .88rem; max-width: 68ch; }
+  .chica { font-size: .84rem; }
   .tarjeta { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .vacio { padding: 20px; color: var(--muted); text-align: center; }
+  .pila { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 
-  .cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 8px 20px; }
-  .cabecera .marca { display: flex; flex-direction: column; gap: 4px; }
-  .refresco { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-  .panel-actualizar { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
-  .panel-actualizar ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
-  .novedad { border-radius: var(--radius); padding: 12px 16px; font-weight: 600; }
-  .novedad.buena { background: var(--ok-soft); color: var(--ok); }
-  .novedad.mala { background: var(--warn-soft); color: var(--warn); }
-  .novedad.igual { background: var(--accent-soft); color: var(--accent); }
-  .viejo { background: var(--warn-soft); color: var(--warn); border-radius: var(--radius); padding: 10px 14px; font-size: .9rem; }
-
-  .hoy { padding: 22px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 22px; }
-  .hoy .precio { font-family: var(--font-display); font-size: clamp(2.4rem, 7vw, 3.4rem); line-height: 1; font-variant-numeric: tabular-nums; }
-  .hoy .precio small { font-size: .9rem; color: var(--muted); font-family: var(--font-body); margin-right: 6px; }
-  .hoy .bloque { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-  .cambio { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
-  .cambio.mejoro { color: var(--ok); } .cambio.empeoro { color: var(--bad); } .cambio.igual { color: var(--muted); }
-  .umbral { background: var(--ok-soft); color: var(--ok); padding: 8px 12px; border-radius: 8px; font-weight: 600; }
-  .aviso { color: var(--muted); font-size: .85rem; }
-  .boton { border: 1px solid var(--accent); background: transparent; color: var(--accent); border-radius: 999px; padding: 7px 14px; cursor: pointer; font-weight: 500; }
+  /* Cabecera */
+  .cabecera { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .cabecera .marca { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .boton { border: 1px solid var(--accent); background: transparent; color: var(--accent); border-radius: 999px; padding: 7px 14px; cursor: pointer; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .boton.lleno { background: var(--accent); color: var(--panel); }
-  .metas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .meta { border-left: 2px solid var(--line); padding-left: 10px; }
-  .meta b { display: block; font-variant-numeric: tabular-nums; }
+  .boton.chico { padding: 4px 11px; font-size: .84rem; }
+  .panel { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .panel ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+  .aviso-banda { border-radius: var(--radius); padding: 10px 14px; font-weight: 600; }
+  .aviso-banda.buena { background: var(--ok-soft); color: var(--ok); }
+  .aviso-banda.mala { background: var(--warn-soft); color: var(--warn); }
+  .aviso-banda.igual { background: var(--accent-soft); color: var(--accent); }
 
-  .chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: .8rem; font-weight: 600; white-space: nowrap; }
-  .chip.ideal, .chip.comprar { background: var(--ok-soft); color: var(--ok); }
-  .chip.casi { background: var(--warn-soft); color: var(--warn); }
-  .chip.caro { background: var(--accent-soft); color: var(--muted); }
-  .chip.nueva { background: var(--accent-soft); color: var(--accent); }
-  .chip.bajo { background: var(--ok-soft); color: var(--ok); }
-  .chip.subio { background: var(--warn-soft); color: var(--bad); }
+  /* Resumen: 3 números */
+  .resumen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .cifra { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .cifra span { font-size: .78rem; color: var(--muted); }
+  .cifra b { font-family: var(--font-display); font-size: 1.45rem; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .cifra small { font-size: .8rem; font-weight: 600; }
+  .sube { color: var(--bad); } .baja { color: var(--ok); }
 
-  .grafico { position: relative; padding: 14px 14px 6px; }
-  .grafico svg { display: block; width: 100%; height: auto; }
-  .grafico text { fill: var(--muted); font-size: 11px; font-family: var(--font-body); }
-  .leyenda { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .82rem; color: var(--muted); padding: 0 14px 12px; }
-  .leyenda i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+  /* Pestañas */
+  .pestanas { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; position: sticky; top: 0; z-index: 4;
+    background: var(--bg); padding: 6px 0; margin: 0 -2px; }
+  .pestanas::-webkit-scrollbar { display: none; }
+  .pestana { border: 0; background: transparent; padding: 8px 14px; border-radius: 999px; cursor: pointer; font-weight: 600; color: var(--muted); white-space: nowrap; }
+  .pestana[aria-selected="true"] { background: var(--accent); color: var(--panel); }
 
-  .controles { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .filtro { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: .88rem; }
-  .filtro[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-  .controles select { border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 6px 10px; font-size: .88rem; }
-  .controles .derecha { margin-left: auto; }
+  /* Filtros */
+  .filtros { display: flex; flex-direction: column; gap: 8px; }
+  .fila-filtros { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .grupo { display: inline-flex; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+  .op { border: 0; background: transparent; border-radius: 999px; padding: 5px 11px; cursor: pointer; font-size: .86rem; white-space: nowrap; }
+  .op[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .selector { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 6px 12px; font-size: .86rem; }
+  .conteo { margin-left: auto; font-size: .84rem; color: var(--muted); }
+  .leyenda-iconos { font-size: .78rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 12px; }
 
-  .lista { display: flex; flex-direction: column; gap: 10px; }
-  .opcion { overflow: hidden; }
-  .opcion.abierta { border-color: var(--accent); }
-  .opcion .fila { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px 16px; cursor: pointer; }
-  .opcion .fila:hover { background: color-mix(in srgb, var(--accent-soft) 45%, transparent); }
-  .opcion .comparar { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; }
-  .opcion .comparar input { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
-  .opcion .centro { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-  .opcion .titulo { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-weight: 600; }
-  .ruta { font-family: var(--font-code); font-weight: 500; font-size: .86rem; letter-spacing: .03em; overflow-wrap: anywhere; }
-  .ruta .flecha { color: var(--muted); padding: 0 2px; }
-  .opcion .datos { display: flex; flex-wrap: wrap; gap: 2px 12px; color: var(--muted); font-size: .84rem; }
-  .opcion .derecha { text-align: right; }
-  .opcion .derecha .total { font-family: var(--font-display); font-size: 1.35rem; font-variant-numeric: tabular-nums; }
-  .detalle { border-top: 1px solid var(--line); padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px 24px; }
+  /* Tarjeta de vuelo */
+  .vuelos { display: flex; flex-direction: column; gap: 10px; }
+  .vuelo { display: grid; grid-template-columns: minmax(0, 1fr) 190px; overflow: hidden; }
+  .vuelo.abierta { border-color: var(--accent); }
+  .vuelo .cuerpo { padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .vuelo .lado-precio { border-left: 1px dashed var(--line); padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 6px; text-align: right; }
+  .vuelo .arriba { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-size: .86rem; }
+  .vuelo .arriba b { font-weight: 600; }
+  .precio-grande { font-family: var(--font-display); font-size: 1.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .precio-grande small { font-size: .78rem; color: var(--muted); font-family: var(--font-body); margin-right: 3px; }
+  .desglose { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .vuelo .pie { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .82rem; }
+  .icono { display: inline-flex; align-items: center; gap: 4px; background: var(--suave); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+  .icono.ok { background: var(--ok-soft); color: var(--ok); }
+  .icono.ojo { background: var(--warn-soft); color: var(--warn); }
+  .icono.mal { background: var(--bad-soft); color: var(--bad); }
+  .cat { font-size: .8rem; font-weight: 600; white-space: nowrap; }
+  .cat.ideal, .cat.comprar { color: var(--ok); } .cat.casi { color: var(--warn); } .cat.caro { color: var(--muted); }
+  .comparar { display: inline-flex; align-items: center; gap: 5px; font-size: .8rem; color: var(--muted); cursor: pointer; }
+  .comparar input { accent-color: var(--accent); width: 15px; height: 15px; }
+
+  /* Un tramo: hora y aeropuerto a cada lado, línea con escalas en el medio */
+  .tramo { display: grid; grid-template-columns: 62px 64px minmax(0, 1fr) 64px 108px; gap: 0 10px; align-items: center; }
+  .tramo .etiqueta { font-size: .72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; line-height: 1.2; }
+  .tramo .etiqueta span { display: block; text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .tramo .punta { display: flex; flex-direction: column; line-height: 1.15; }
+  .tramo .punta b { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+  .tramo .punta sup { color: var(--warn); font-weight: 600; font-size: .7rem; margin-left: 1px; }
+  .tramo .punta span { font-family: var(--font-code); font-size: .8rem; color: var(--muted); }
+  .tramo .punta.der { text-align: right; }
+  .tramo .medio { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .tramo .linea { position: relative; height: 10px; display: flex; align-items: center; justify-content: space-evenly; }
+  .tramo .linea::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; background: var(--line); border-radius: 2px; }
+  .tramo .linea i { position: relative; width: 9px; height: 9px; border-radius: 50%; background: var(--panel); border: 2px solid var(--muted); }
+  .tramo .linea.directo::after { content: "directo"; position: relative; font-size: .7rem; color: var(--ok); background: var(--panel); padding: 0 6px; }
+  .tramo .escalas { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px 6px; font-size: .76rem; }
+  .tramo .escalas span { white-space: nowrap; color: var(--muted); }
+  .tramo .escalas b { font-family: var(--font-code); font-weight: 500; color: var(--fg); }
+  .tramo .duracion { text-align: right; font-size: .78rem; line-height: 1.3; color: var(--muted); display: flex; flex-direction: column; align-items: flex-end; }
+  .tramo .duracion b { white-space: nowrap; }
+  .tramo .duracion b { color: var(--fg); font-size: .92rem; font-variant-numeric: tabular-nums; }
+
+  .detalle { grid-column: 1 / -1; border-top: 1px solid var(--line); padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px 24px; background: color-mix(in srgb, var(--suave) 50%, var(--panel)); }
   .detalle .ancho { grid-column: 1 / -1; }
-  .pros, .contras { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-  .pros li, .contras li { padding-left: 24px; position: relative; font-size: .92rem; }
-  .pros li::before, .contras li::before { position: absolute; left: 0; top: 0; width: 18px; text-align: center; font-weight: 700; }
+  .lista-simple { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; font-size: .88rem; }
+  .lista-simple li { padding-left: 22px; position: relative; }
+  .lista-simple li::before { position: absolute; left: 0; width: 16px; text-align: center; font-weight: 700; }
   .pros li::before { content: "✓"; color: var(--ok); }
   .contras li::before { content: "!"; color: var(--warn); }
-  .tramos { display: flex; flex-direction: column; gap: 10px; }
-  .tramo { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 2px 12px; font-size: .9rem; }
-  .tramo .etiqueta { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; padding-top: 2px; }
-  .paradas { list-style: none; margin: 6px 0 0; padding: 0 0 0 12px; border-left: 2px dotted var(--line); display: flex; flex-direction: column; gap: 6px; }
-  .paradas li { font-size: .86rem; }
-  .paradas .lugar { font-weight: 600; }
-  .paradas .aeropuerto { color: var(--muted); }
-  .paradas .marcas { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
-  .escalas-linea { color: var(--muted); font-size: .84rem; }
-  .escalas-linea b { color: var(--fg); font-weight: 500; }
+  .escalas-det li::before { content: "•"; color: var(--muted); }
   .links { display: flex; flex-direction: column; gap: 6px; }
-  .link { display: flex; justify-content: space-between; gap: 10px; align-items: center; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; text-decoration: none; color: var(--fg); }
+  .link { display: flex; justify-content: space-between; gap: 10px; align-items: center; border: 1px solid var(--line); background: var(--panel); border-radius: 10px; padding: 8px 12px; text-decoration: none; color: var(--fg); }
   .link:hover { border-color: var(--accent); }
   .link .que { display: flex; flex-direction: column; min-width: 0; }
-  .link .que span { color: var(--muted); font-size: .8rem; }
+  .link .que span { color: var(--muted); font-size: .78rem; }
   .link .ir { color: var(--accent); font-weight: 600; white-space: nowrap; }
-  .vacio { padding: 18px; color: var(--muted); }
 
-  .comparacion { overflow-x: auto; }
-  .comparacion table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: .88rem; }
-  .comparacion th, .comparacion td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-  .comparacion thead th { font-family: var(--font-display); font-size: 1rem; }
-  .comparacion tbody th { color: var(--muted); font-weight: 500; white-space: nowrap; width: 9rem; }
-  .comparacion td.mejor { background: var(--ok-soft); }
-  .comparacion td ul { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 4px; }
-  .bandeja { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--panel); border-top: 1px solid var(--line);
-    padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
-    display: flex; gap: 12px; align-items: center; justify-content: center; box-shadow: 0 -6px 18px rgb(0 0 0 / .08); }
+  /* Stopovers */
+  .form-so { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+  .form-so .campo { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+  .form-so .campo > span { width: 70px; font-size: .82rem; color: var(--muted); }
+  .contador-dias { display: inline-flex; align-items: center; gap: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
+  .contador-dias button { width: 30px; height: 30px; border: 0; border-radius: 50%; background: var(--suave); cursor: pointer; font-weight: 700; }
+  .contador-dias b { min-width: 64px; text-align: center; font-variant-numeric: tabular-nums; }
+  .linea-viaje { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .linea-viaje li { border-top: 3px solid var(--line); padding-top: 6px; display: flex; flex-direction: column; min-width: 0; font-size: .82rem; }
+  .linea-viaje li.escala { border-top-color: var(--warn); }
+  .linea-viaje li.japon { border-top-color: var(--accent); }
+  .linea-viaje b { font-size: .95rem; }
+  .linea-viaje small { color: var(--muted); }
+  .pedir { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-style: dashed; }
+  .valores { display: flex; flex-wrap: wrap; gap: 6px; }
+  .valores span { font-family: var(--font-code); font-size: .8rem; background: var(--suave); border-radius: 6px; padding: 2px 8px; }
 
-  .rutas { display: flex; flex-wrap: wrap; gap: 8px; }
-  .meses { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; padding: 16px; }
-  .mes h3 { font-size: .95rem; margin-bottom: 8px; }
+  /* Fechas */
+  .rutas { display: flex; flex-wrap: wrap; gap: 6px; }
+  .meses { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; padding: 14px; }
+  .mes h3 { font-size: .88rem; margin-bottom: 6px; }
   .semana { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
-  .semana .dn { font-size: .7rem; color: var(--muted); text-align: center; }
-  .dia { aspect-ratio: 1; max-width: 100%; border-radius: 5px; border: 0; padding: 0; font-size: .66rem; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.05; cursor: pointer; background: transparent; color: var(--fg); }
-  .dia.sin { color: var(--muted); opacity: .45; cursor: default; }
+  .semana .dn { font-size: .66rem; color: var(--muted); text-align: center; }
+  .dia { aspect-ratio: 1; border-radius: 5px; border: 0; padding: 0; font-size: .62rem; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.05; cursor: pointer; background: transparent; color: var(--fg); }
+  .dia.sin { color: var(--muted); opacity: .4; cursor: default; }
   .dia.tope { box-shadow: inset 0 0 0 2px var(--ok); }
   .dia.elegido { outline: 2px solid var(--fg); outline-offset: 1px; }
-  .dia b { font-size: .72rem; }
-  .escala { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--muted); padding: 0 16px 14px; flex-wrap: wrap; }
-  .escala .barra { width: 120px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--heat-1), var(--heat-0)); }
-  .info-dia { padding: 0 16px 16px; font-size: .92rem; min-height: 1.5em; }
+  .dia b { font-size: .7rem; }
+  .escala-calor { display: flex; align-items: center; gap: 8px; font-size: .78rem; color: var(--muted); padding: 0 14px 12px; flex-wrap: wrap; }
+  .escala-calor .barra { width: 110px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, var(--heat-1), var(--heat-0)); }
+  .info-dia { padding: 0 14px 14px; font-size: .9rem; display: flex; flex-direction: column; gap: 8px; }
   .tabla { overflow-x: auto; }
-  .tabla table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+  .tabla table { border-collapse: collapse; width: 100%; font-size: .86rem; }
   .tabla th, .tabla td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
   .tabla th { color: var(--muted); font-weight: 500; }
   .tabla td.n { text-align: right; font-variant-numeric: tabular-nums; }
-
   .acciones { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .accion { border: 1px solid var(--accent); background: transparent; color: var(--accent); border-radius: 999px; padding: 4px 11px; font-size: .82rem; cursor: pointer; text-decoration: none; white-space: nowrap; font-weight: 500; }
-  .accion.principal { background: var(--accent); color: var(--panel); }
-  .tabla td.acciones-celda { white-space: normal; min-width: 15rem; }
-  .info-dia { display: flex; flex-direction: column; gap: 8px; }
-
-  .buscador { padding: 18px; display: flex; flex-direction: column; gap: 18px; }
-  .campos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-  .campos label { display: flex; flex-direction: column; gap: 4px; font-size: .82rem; color: var(--muted); min-width: 0; }
-  .campos select, .campos input { font: inherit; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; width: 100%; }
-  .linea-tiempo { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-  .linea-tiempo li { border-top: 3px solid var(--line); padding-top: 8px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  .linea-tiempo li.japon { border-top-color: var(--accent); }
-  .linea-tiempo .que { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
-  .linea-tiempo .cuando { font-family: var(--font-display); font-size: 1.15rem; }
-  .cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .cifra { background: var(--bg); border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
-  .cifra b { font-family: var(--font-display); font-size: 1.5rem; font-variant-numeric: tabular-nums; }
-  .cifra span { font-size: .82rem; color: var(--muted); }
+  .buscador { padding: 14px 16px; display: flex; flex-direction: column; gap: 14px; }
+  .campos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .campos label { display: flex; flex-direction: column; gap: 4px; font-size: .8rem; color: var(--muted); min-width: 0; }
+  .campos select, .campos input { color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; min-width: 0; width: 100%; }
+  .cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .problema { color: var(--bad); font-weight: 500; }
 
-  .promo { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; text-decoration: none; color: var(--fg); }
-  .promo:hover { border-color: var(--accent); }
-  .estado { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-  .estado .tarjeta { padding: 14px 16px; }
-  .error { color: var(--bad); }
-  details.pie { font-size: .9rem; }
-  details.pie summary { cursor: pointer; font-weight: 600; }
-  details.pie ul { color: var(--muted); padding-left: 18px; display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+  /* Precio */
+  .grafico { padding: 12px 12px 4px; }
+  .grafico svg { display: block; width: 100%; height: auto; }
+  .grafico text { fill: var(--muted); font-size: 11px; font-family: var(--font-body); }
+  .leyenda { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .8rem; color: var(--muted); padding: 0 14px 12px; }
+  .leyenda i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
 
-  @media (max-width: 680px) {
-    .campos, .linea-tiempo { grid-template-columns: 1fr 1fr; }
-    .cifras { grid-template-columns: 1fr; }
-    .hoy { grid-template-columns: 1fr; padding: 18px; }
+  /* Comparar */
+  .comparacion { overflow-x: auto; }
+  .comparacion table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: .86rem; }
+  .comparacion th, .comparacion td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .comparacion tbody th { color: var(--muted); font-weight: 500; white-space: nowrap; }
+  .comparacion td.mejor { background: var(--ok-soft); }
+  .bandeja { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--panel); border-top: 1px solid var(--line);
+    padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    display: flex; gap: 10px; align-items: center; justify-content: center; box-shadow: 0 -6px 18px rgb(0 0 0 / .08); }
+
+  .promo { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; text-decoration: none; color: var(--fg); }
+  .estado { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; }
+  .estado .tarjeta { padding: 12px 14px; }
+  .error { color: var(--bad); }
+  details.pie summary { cursor: pointer; font-weight: 600; }
+  details.pie ul { color: var(--muted); padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: .88rem; }
+
+  @media (max-width: 720px) {
+    .vuelo { grid-template-columns: 1fr; }
+    .vuelo .lado-precio { border-left: 0; border-top: 1px dashed var(--line); flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; text-align: left; }
+    .tramo { grid-template-columns: 52px minmax(0, 1fr) 52px; row-gap: 4px; }
+    .tramo .etiqueta { grid-column: 1 / -1; display: flex; gap: 6px; align-items: baseline; }
+    .tramo .etiqueta span { display: inline; }
+    .tramo .duracion { grid-column: 1 / -1; text-align: left; flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 10px; }
     .detalle { grid-template-columns: 1fr; }
-    .opcion .fila { grid-template-columns: auto minmax(0, 1fr); }
-    .opcion .derecha { grid-column: 2; text-align: left; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-    .metas { grid-template-columns: 1fr 1fr; }
-    .controles .derecha { margin-left: 0; }
-    .refresco { align-items: flex-start; }
+    .resumen { gap: 6px; }
+    .cifra { padding: 8px 10px; }
+    .cifra b { font-size: 1.15rem; }
+    .campos { grid-template-columns: 1fr 1fr; }
+    .cifras, .linea-viaje { grid-template-columns: 1fr 1fr; }
+    .conteo { margin-left: 0; width: 100%; }
   }
   @media (prefers-reduced-motion: no-preference) {
-    .opcion, .link, .filtro { transition: border-color .15s ease, background-color .15s ease; }
+    .vuelo, .link, .op, .pestana { transition: border-color .15s ease, background-color .15s ease; }
   }
 </style>
 </head>
@@ -223,138 +245,130 @@
 <div class="envoltura">
   <header class="cabecera">
     <div class="marca">
-      <h1>Japón 2027</h1>
-      <p class="apagado" id="subtitulo">Vuelos para 2 desde Buenos Aires</p>
+      <h1>✈️ Japón 2027</h1>
+      <span class="apagado chica num" id="actualizado"></span>
     </div>
-    <div class="refresco">
-      <p class="apagado chica num" id="actualizado"></p>
-      <button class="boton lleno" type="button" id="boton-actualizar" aria-expanded="false" aria-controls="panel-actualizar">🔄 Buscar vuelos nuevos</button>
-    </div>
+    <button class="boton lleno" type="button" id="boton-actualizar" aria-expanded="false" aria-controls="panel-actualizar">🔄 Buscar vuelos nuevos</button>
   </header>
-  <div class="tarjeta panel-actualizar" id="panel-actualizar" hidden></div>
-  <p class="novedad" id="novedad" role="status" hidden></p>
-  <p class="viejo" id="viejo" hidden></p>
+  <div class="tarjeta panel" id="panel-actualizar" hidden></div>
+  <p class="aviso-banda" id="novedad" role="status" hidden></p>
+  <p class="aviso-banda mala" id="viejo" hidden></p>
 
-  <section class="seccion" id="hoy" aria-labelledby="t-hoy">
-    <h2 id="t-hoy" class="apagado chica" style="font-family: var(--font-body); font-weight: 500;">La mejor opción disponible</h2>
-    <div class="tarjeta hoy" id="hoy-tarjeta"><p class="vacio">Cargando…</p></div>
-  </section>
+  <div class="resumen" id="resumen"></div>
 
-  <section class="seccion" id="evolucion" aria-labelledby="t-evolucion">
-    <header>
-      <h2 id="t-evolucion">Cómo se movió el precio</h2>
-      <p class="nota">El mejor total para los 2 de cada día, con valijas estimadas. Cada día se buscan fechas distintas, así que un salto puede deberse a eso.</p>
-    </header>
-    <div class="tarjeta">
-      <div class="grafico" id="grafico-evolucion"></div>
-      <div class="leyenda">
-        <span><i style="background: var(--serie-1)"></i>Mejor de todas</span>
-        <span><i style="background: var(--serie-2)"></i>Desde Buenos Aires</span>
-        <span><i style="background: var(--serie-3)"></i>Desde San Pablo</span>
-        <span><i style="background: var(--ok)"></i>Tu tope</span>
+  <nav class="pestanas" role="tablist" aria-label="Secciones">
+    <button class="pestana" role="tab" id="tab-vuelos" aria-controls="vuelos" data-tab="vuelos">✈️ Vuelos</button>
+    <button class="pestana" role="tab" id="tab-stopovers" aria-controls="stopovers" data-tab="stopovers">🏨 Stopovers</button>
+    <button class="pestana" role="tab" id="tab-fechas" aria-controls="fechas" data-tab="fechas">📅 Fechas</button>
+    <button class="pestana" role="tab" id="tab-precio" aria-controls="precio" data-tab="precio">📈 Precio</button>
+    <button class="pestana" role="tab" id="tab-mas" aria-controls="mas" data-tab="mas">🏷️ Promos y más</button>
+  </nav>
+
+  <!-- ✈️ Vuelos -->
+  <section class="pila" id="vuelos" role="tabpanel" aria-labelledby="tab-vuelos">
+    <div class="filtros" role="group" aria-label="Filtros">
+      <div class="fila-filtros">
+        <div class="grupo" role="group" aria-label="Desde">
+          <button class="op" type="button" data-f="origen" data-v="BUE">🇦🇷 Buenos Aires</button>
+          <button class="op" type="button" data-f="origen" data-v="GRU">🇧🇷 San Pablo</button>
+        </div>
+        <div class="grupo" role="group" aria-label="Hacia">
+          <button class="op" type="button" data-f="destino" data-v="TYO">🗼 Tokio</button>
+          <button class="op" type="button" data-f="destino" data-v="OSA">🏯 Osaka</button>
+        </div>
+        <div class="grupo" role="group" aria-label="Escalas por tramo">
+          <button class="op" type="button" data-f="escalas" data-v="todas">🔁 Todas</button>
+          <button class="op" type="button" data-f="escalas" data-v="1">≤ 1</button>
+          <button class="op" type="button" data-f="escalas" data-v="2">≤ 2</button>
+        </div>
+        <div class="grupo" role="group" aria-label="Valija">
+          <button class="op" type="button" data-f="valija" data-v="si">🧳 Valija incluida</button>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="seccion" id="opciones" aria-labelledby="t-opciones">
-    <header>
-      <h2 id="t-opciones">Todas las opciones disponibles</h2>
-      <p class="nota">Las encontradas en los últimos 3 días, cada una con la fecha en que se vio. Tocá una opción para ver sus ventajas, desventajas y dónde comprarla. Marcá el casillero de hasta 3 para compararlas.</p>
-    </header>
-    <div class="controles" role="group" aria-label="Filtrar opciones">
-      <button class="filtro" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
-      <button class="filtro" type="button" data-filtro="bue" aria-pressed="false">Desde Buenos Aires</button>
-      <button class="filtro" type="button" data-filtro="sp" aria-pressed="false">Desde San Pablo</button>
-      <button class="filtro" type="button" data-filtro="links" aria-pressed="false">Con link de compra</button>
-      <label class="derecha chica apagado">Ordenar por
-        <select id="orden">
-          <option value="precio">Precio</option>
-          <option value="horas">Horas de viaje</option>
-          <option value="escalas">Escalas</option>
-          <option value="salida">Fecha de salida</option>
+      <div class="fila-filtros">
+        <select class="selector" id="f-mes" aria-label="Mes de salida"></select>
+        <select class="selector" id="f-orden" aria-label="Ordenar">
+          <option value="precio">💲 Más barato</option>
+          <option value="escalas">🔁 Menos escalas</option>
+          <option value="horas">⏱️ Más corto</option>
+          <option value="salida">📅 Fecha de salida</option>
         </select>
-      </label>
+        <span class="conteo" id="conteo"></span>
+      </div>
+      <p class="leyenda-iconos"><span>🎒 equipaje de mano</span><span>🧳 valija despachada</span><span>🗾 días en Japón</span><span>🌙 escala de noche</span><span>⚠️ ojo</span><span class="num">+1 llega al día siguiente</span></p>
     </div>
-    <div class="lista" id="lista"></div>
+    <div class="vuelos" id="lista"></div>
+    <section class="pila" id="comparar" hidden>
+      <h2>Comparación</h2>
+      <div class="tarjeta comparacion" id="tabla-comparar"></div>
+    </section>
   </section>
 
-  <section class="seccion" id="comparar" aria-labelledby="t-comparar" hidden>
-    <header>
-      <h2 id="t-comparar">Comparación</h2>
-      <p class="nota">En verde, la mejor de cada fila.</p>
-    </header>
-    <div class="tarjeta comparacion" id="tabla-comparar"></div>
+  <!-- 🏨 Stopovers -->
+  <section class="pila" id="stopovers" role="tabpanel" aria-labelledby="tab-stopovers" hidden>
+    <div class="tarjeta form-so" id="form-so"></div>
+    <div class="vuelos" id="lista-so"></div>
+    <div class="tarjeta pedir" id="pedir-so"></div>
+    <div id="pedidos-so"></div>
   </section>
 
-  <section class="seccion" id="fechas" aria-labelledby="t-fechas">
-    <header>
-      <h2 id="t-fechas">Qué fechas convienen</h2>
-      <p class="nota" id="nota-fechas">Precio más bajo para los 2 según el día de salida. Son precios del calendario: sin confirmar y sin valijas.</p>
-    </header>
-    <div class="rutas" id="rutas" role="group" aria-label="Elegir ruta"></div>
+  <!-- 📅 Fechas -->
+  <section class="pila" id="fechas" role="tabpanel" aria-labelledby="tab-fechas" hidden>
+    <div class="rutas" id="rutas" role="group" aria-label="Ruta"></div>
     <div class="tarjeta">
       <div class="meses" id="meses"></div>
-      <div class="escala"><span>Más barato</span><span class="barra"></span><span>Más caro</span><span>· Con borde verde: dentro de tu tope</span></div>
-      <p class="info-dia" id="info-dia" aria-live="polite"></p>
+      <div class="escala-calor"><span>Más barato</span><span class="barra"></span><span>Más caro</span><span>· borde verde: dentro de tu tope · precios del calendario, para 2, sin valijas</span></div>
+      <div class="info-dia" id="info-dia" aria-live="polite"></div>
     </div>
-    <h3>Las fechas más baratas</h3>
-    <p class="nota">"Ver opción" abre el vuelo concreto, con sus ventajas y dónde comprarlo, cuando la app ya lo encontró. Si no, buscalo en Google Flights con esas fechas, o probalo en el buscador de abajo.</p>
+    <h2>🏆 Fechas más baratas</h2>
     <div class="tarjeta tabla" id="ranking-fechas"></div>
-  </section>
-
-  <section class="seccion" id="buscador" aria-labelledby="t-buscador">
-    <header>
-      <h2 id="t-buscador">Armá tu viaje</h2>
-      <p class="nota" id="nota-buscador">Elegí las fechas como en un buscador de vuelos. Las llegadas son estimadas con lo que tardan los vuelos reales que encontró la app.</p>
-    </header>
+    <h2 id="buscador">🧭 Armá tu viaje</h2>
     <div class="tarjeta buscador">
       <div class="campos">
         <label for="b-origen">Desde
-          <select id="b-origen">
-            <option value="BUE">Buenos Aires</option>
-            <option value="GRU">Vía San Pablo</option>
-          </select>
+          <select id="b-origen"><option value="BUE">🇦🇷 Buenos Aires</option><option value="GRU">🇧🇷 Vía San Pablo</option></select>
         </label>
         <label for="b-destino">Hacia
-          <select id="b-destino">
-            <option value="TYO">Tokio</option>
-            <option value="OSA">Osaka</option>
-          </select>
+          <select id="b-destino"><option value="TYO">🗼 Tokio</option><option value="OSA">🏯 Osaka</option></select>
         </label>
-        <label for="b-salida">Salida de Buenos Aires
-          <input type="date" id="b-salida">
-        </label>
-        <label for="b-vuelta">Vuelta desde Japón
-          <input type="date" id="b-vuelta">
-        </label>
+        <label for="b-salida">🛫 Salida<input type="date" id="b-salida"></label>
+        <label for="b-vuelta">🛬 Vuelta desde Japón<input type="date" id="b-vuelta"></label>
       </div>
       <div id="b-resultado" aria-live="polite"></div>
     </div>
   </section>
 
-  <section class="seccion" id="promos" aria-labelledby="t-promos">
-    <header>
-      <h2 id="t-promos">Promociones</h2>
-      <p class="nota" id="nota-promos">Publicadas en las últimas 48 horas que sirven para este viaje.</p>
-    </header>
-    <div class="lista" id="lista-promos"></div>
+  <!-- 📈 Precio -->
+  <section class="pila" id="precio" role="tabpanel" aria-labelledby="tab-precio" hidden>
+    <div class="tarjeta">
+      <div class="grafico" id="grafico-evolucion"></div>
+      <div class="leyenda">
+        <span><i style="background: var(--serie-1)"></i>Mejor de todas</span>
+        <span><i style="background: var(--serie-2)"></i>🇦🇷 Buenos Aires</span>
+        <span><i style="background: var(--serie-3)"></i>🇧🇷 San Pablo</span>
+        <span><i style="background: var(--ok)"></i>Tu tope</span>
+      </div>
+    </div>
+    <div id="comparacion-dia"></div>
   </section>
 
-  <section class="seccion" id="estado" aria-labelledby="t-estado">
-    <h2 id="t-estado">Estado de la app</h2>
+  <!-- 🏷️ Promos y más -->
+  <section class="pila" id="mas" role="tabpanel" aria-labelledby="tab-mas" hidden>
+    <h2>🏷️ Promociones</h2>
+    <div class="pila" id="lista-promos"></div>
+    <h2>⚙️ Estado de la app</h2>
     <div class="estado" id="estado-tarjetas"></div>
+    <details class="pie">
+      <summary>Cómo se calculan los precios</summary>
+      <ul id="explicacion"></ul>
+    </details>
   </section>
-
-  <details class="pie" id="como-funciona">
-    <summary>Cómo se calculan estos precios</summary>
-    <ul id="explicacion"></ul>
-  </details>
 </div>
 
 <div class="bandeja" id="bandeja" hidden>
   <span id="bandeja-texto" class="chica"></span>
-  <button class="boton lleno" type="button" id="ver-comparacion">Ver comparación</button>
-  <button class="boton" type="button" id="limpiar-comparacion">Limpiar</button>
+  <button class="boton lleno chico" type="button" id="ver-comparacion">Ver comparación</button>
+  <button class="boton chico" type="button" id="limpiar-comparacion">Limpiar</button>
 </div>
 
 <script src="datos.js"></script>
@@ -370,8 +384,14 @@
   const DIAS = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
   const fecha = (t) => (t ? `${+t.slice(8, 10)} ${MESES[+t.slice(5, 7) - 1]}` : "—");
   const diaSemana = (t) => DIAS[new Date(Date.UTC(+t.slice(0, 4), +t.slice(5, 7) - 1, +t.slice(8, 10))).getUTCDay()];
+  const largo = (t) => `${diaSemana(t)} ${fecha(t)}`;
   const hora = (t) => (t ? t.slice(11, 16) : "");
+  const duracion = (horas) => { if (horas == null) return "—"; const m = Math.round(horas * 60); return `${Math.floor(m / 60)} h${m % 60 ? ` ${String(m % 60).padStart(2, "0")}` : ""}`; };
+  const minutosATexto = (m) => (m == null ? "" : duracion(m / 60));
+  const bandera = (cc) => (cc && cc.length === 2 ? String.fromCodePoint(...[...cc.toUpperCase()].map((c) => 127397 + c.charCodeAt(0))) : "📍");
   const claseCategoria = (c) => (c || "").includes("ideal") ? "ideal" : (c || "").includes("comprar") ? "comprar" : (c || "").includes("casi") ? "casi" : "caro";
+  const TRANSITO = { US: "Visa EE.UU.", CA: "eTA Canadá" };
+  const CIUDAD = { TYO: "Tokio", OSA: "Osaka" };
 
   function h(tag, attrs, ...hijos) {
     const el = document.createElement(tag);
@@ -385,47 +405,49 @@
     for (const hijo of hijos.flat()) if (hijo != null && hijo !== false) el.append(hijo.nodeType ? hijo : String(hijo));
     return el;
   }
-  const lugar = (p) => (p.pais ? `${p.ciudad}, ${p.pais}` : p.ciudad);
-  const textoEscalas = (t) => (t.paradas.length ? t.paradas.map(lugar).join(" · ") : "Directo");
-  function listaParadas(t) {
-    if (!t.paradas.length) return h("p", { class: "chica apagado", text: "Vuelo directo, sin escalas." });
-    return h("ul", { class: "paradas" }, t.paradas.map((p) => h("li", {},
-      h("div", {}, h("span", { class: "lugar", text: `Escala en ${lugar(p)}` }), p.duracion ? ` · ${p.duracion}` : ""),
-      h("div", { class: "aeropuerto" }, `Aeropuerto ${p.aeropuerto} (`, h("span", { class: "codigo", text: p.codigo }), ")",
-        p.sale_de ? [" → salís de ", `${p.sale_de.aeropuerto} (`, h("span", { class: "codigo", text: p.sale_de.codigo }), ")"] : null),
-      (p.noche || p.sale_de || p.cambio_pasaje) ? h("div", { class: "marcas" },
-        p.noche ? h("span", { class: "chip casi", text: "Cruza la noche" }) : null,
-        p.sale_de ? h("span", { class: "chip subio", text: "Cambiás de aeropuerto" }) : null,
-        p.cambio_pasaje ? h("span", { class: "chip casi", text: "Cambiás de pasaje: retirás y volvés a despachar las valijas" }) : null) : null)));
-  }
-  const ruta = (codigos) => h("span", { class: "ruta" }, codigos.flatMap((c, i) => (i ? [h("span", { class: "flecha", text: "→" }), c] : [c])));
   const guardado = (clave, defecto) => { try { return JSON.parse(localStorage.getItem(clave)) ?? defecto; } catch { return defecto; } };
   const guardar = (clave, valor) => { try { localStorage.setItem(clave, JSON.stringify(valor)); } catch { /* sin almacenamiento: no pasa nada */ } };
+  const suave = () => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
 
-  if (!D) {
-    $("#hoy-tarjeta").replaceChildren(h("p", { class: "vacio", text: "No se encontraron los datos (docs/datos.js). Corré la búsqueda para generarlos." }));
-    return;
-  }
-  const opciones = D.opciones || [];
-  const porId = new Map(opciones.map((o) => [o.id, o]));
+  if (!D) { $("#lista").replaceChildren(h("p", { class: "tarjeta vacio", text: "No se encontraron los datos (docs/datos.js)." })); return; }
   const P = D.preferencias;
+  const opciones = D.opciones || [];
+  const SO = D.stopovers || { opciones: [], pedidos: [], ciudades: {}, cupo: {} };
+  const porId = new Map([...opciones, ...SO.opciones].map((o) => [o.id, o]));
+  const origenDe = (o) => (o.desde_san_pablo ? "GRU" : "BUE");
+  const maxHoras = (o) => Math.max(...o.tramos.map((t) => t.horas || 0));
+  const maxEscalas = (o) => Math.max(...o.tramos.map((t) => t.escalas));
+  const hayRepetidas = opciones.some((o) => !o.nueva);
+
   const estado = {
+    tab: guardado("vj-tab", "vuelos"),
     abierta: null,
-    filtro: guardado("vj-filtro", "todas"),
-    orden: guardado("vj-orden", "precio"),
+    f: Object.assign({ origen: ["BUE", "GRU"], destino: ["TYO", "OSA"], escalas: "todas", valija: false, mes: "todos", orden: "precio" }, guardado("vj-filtros2", {})),
     comparar: guardado("vj-comparar", []).filter((id) => porId.has(id)),
+    so: Object.assign({ ciudad: Object.keys(SO.ciudades)[0] || "madrid", dias: 3, cuando: "ida", mes: "cualquiera" }, guardado("vj-stopover", {})),
     ruta: null, dia: null,
   };
 
-  // ---------------------------------------------------------------- cabecera
+  // ---------------------------------------------------------------- cabecera y resumen
   const generado = new Date(D.generado);
-  $("#actualizado").textContent = `Actualizado el ${generado.toLocaleString("es-AR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" })}`;
-  $("#subtitulo").textContent = `Vuelos para ${P.pasajeros} · ${P.dias_en_japon} días en Japón · tope ${usd(P.precios.comprar)} los ${P.pasajeros}`;
+  $("#actualizado").textContent = `🕒 ${generado.toLocaleString("es-AR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}`;
   const horasDesde = (Date.now() - generado.getTime()) / 36e5;
-  if (horasDesde > 36) {
-    const viejo = $("#viejo");
-    viejo.textContent = `Estos datos tienen ${Math.round(horasDesde / 24)} días. Puede que la búsqueda automática no haya corrido: revisá "Estado de la app" más abajo.`;
-    viejo.hidden = false;
+  if (horasDesde > 36) { $("#viejo").textContent = `⚠️ Datos de hace ${Math.round(horasDesde / 24)} días: puede que la búsqueda automática no haya corrido.`; $("#viejo").hidden = false; }
+
+  function dibujarResumen() {
+    const mejor = [...opciones].sort((a, b) => a.precio_con_valijas - b.precio_con_valijas)[0];
+    const comp = D.resumen?.comparacion || {};
+    const cambio = comp.estado === "mejoró" ? h("small", { class: "baja", text: `▼ ${numero.format(Math.abs(comp.diferencia))} vs ayer` })
+      : comp.estado === "empeoró" ? h("small", { class: "sube", text: `▲ ${numero.format(Math.abs(comp.diferencia))} vs ayer` })
+      : comp.estado === "igual" ? h("small", { class: "apagado", text: "= igual que ayer" }) : null;
+    const falta = mejor ? mejor.precio_con_valijas - P.precios.comprar : null;
+    $("#resumen").replaceChildren(
+      h("button", { class: "cifra", type: "button", style: "text-align:left;cursor:pointer", onclick: () => mejor && abrir(mejor.id, true), "aria-label": "Ver la opción más barata" },
+        h("span", { text: "💲 Lo más barato (para 2)" }), h("b", { text: mejor ? usd(mejor.precio_con_valijas) : "—" }), cambio),
+      h("div", { class: "cifra" }, h("span", { text: "🎯 Tu tope" }), h("b", { text: usd(P.precios.comprar) }), h("small", { class: "apagado", text: `ideal ${usd(P.precios.ideal)}` })),
+      h("div", { class: "cifra" }, h("span", { text: falta > 0 ? "📉 Falta bajar" : "✅ Dentro del tope" }),
+        h("b", { class: falta > 0 ? "sube" : "baja", text: falta == null ? "—" : usd(Math.abs(falta)) }),
+        h("small", { class: "apagado", text: `${P.dias_en_japon} días en Japón` })));
   }
 
   // ---------------------------------------------------------------- buscar vuelos nuevos
@@ -433,93 +455,336 @@
     const A = D.actualizar || {};
     const cupo = D.estado?.cupo || {};
     const hoyIso = new Date().toLocaleDateString("en-CA", { timeZone: "America/Argentina/Buenos_Aires" });
-    const recargar = h("button", { class: "accion", type: "button", onclick: () => location.reload(), text: "Recargar la página" });
+    const recargar = h("button", { class: "boton chico", type: "button", onclick: () => location.reload(), text: "↻ Recargar la página" });
     const partes = [h("p", { class: "chica apagado", text: D.fecha_datos === hoyIso
-      ? `Hoy ya se buscaron vuelos (${cupo.ignav?.gastadas_hoy ?? 0} de ${A.limites?.ignav ?? "?"} consultas de Ignav). Otra búsqueda hoy solo completa lo que falte: las fechas nuevas se buscan cada día.`
-      : "Todavía no se buscaron vuelos hoy: una búsqueda ahora usa el cupo del día y trae fechas nuevas." })];
+      ? `Hoy ya se buscó (${cupo.ignav?.gastadas_hoy ?? 0}/${A.limites?.ignav ?? "?"} consultas de Ignav). Otra búsqueda hoy solo completa lo que falte.`
+      : "Hoy todavía no se buscó: la búsqueda trae fechas nuevas." })];
     if (A.repositorio) {
-      partes.push(
-        h("ol", {}, h("li", { text: "Tocá \"Buscar ahora en GitHub\": se abre GitHub con tu cuenta." }),
-          h("li", { text: "Tocá \"Run workflow\" y después el botón verde \"Run workflow\"." }),
-          h("li", { text: "Esperá unos 5 minutos y tocá \"Recargar la página\"." })),
-        h("div", { class: "acciones" },
-          h("a", { class: "accion principal", href: `https://github.com/${A.repositorio}/actions/workflows/${A.flujo}`, target: "_blank", rel: "noopener", text: "Buscar ahora en GitHub ↗" }),
-          recargar));
+      partes.push(h("ol", {}, h("li", { text: "Tocá \"Abrir GitHub\"." }), h("li", { text: "\"Run workflow\" → botón verde \"Run workflow\" (dejá stopover en \"no\")." }), h("li", { text: "Esperá ~5 min y recargá." })),
+        h("div", { class: "acciones" }, h("a", { class: "boton lleno chico", href: `https://github.com/${A.repositorio}/actions/workflows/${A.flujo}`, target: "_blank", rel: "noopener", text: "Abrir GitHub ↗" }), recargar));
     } else {
-      partes.push(
-        h("ol", {}, h("li", { text: "Abrí la carpeta del proyecto: Documentos › japon-vuelos." }),
-          h("li", { text: "Hacé doble clic en \"Actualizar vuelos.command\". Se abre una ventana que busca vuelos durante unos minutos." }),
-          h("li", { text: "Al terminar, se abre esta página actualizada. Si ya estaba abierta, tocá \"Recargar la página\"." })),
-        h("div", { class: "acciones" }, recargar),
-        h("p", { class: "chica apagado", text: "Cuando la página esté publicada en internet, este botón va a buscar directo desde GitHub, también desde el celular." }));
+      partes.push(h("ol", {}, h("li", { text: "Doble clic en \"Actualizar vuelos.command\" (carpeta japon-vuelos)." }), h("li", { text: "Al terminar se abre la página actualizada." })), h("div", { class: "acciones" }, recargar));
     }
-    $("#panel-actualizar").replaceChildren(h("h2", { text: "Buscar vuelos nuevos" }), ...partes);
+    $("#panel-actualizar").replaceChildren(h("h2", { text: "🔄 Buscar vuelos nuevos" }), ...partes);
   }
+  $("#boton-actualizar").addEventListener("click", (e) => { const p = $("#panel-actualizar"); p.hidden = !p.hidden; e.currentTarget.setAttribute("aria-expanded", String(!p.hidden)); });
 
   function revisarNovedades() {
-    // Compara con la mejor opción que viste la última vez que abriste la página.
-    const mejor = opciones[0];
+    const mejor = [...opciones].sort((a, b) => a.precio_con_valijas - b.precio_con_valijas)[0];
     if (!mejor) return;
     const anterior = guardado("vj-ultima-visita", null);
-    if (!anterior || anterior.generado === D.generado) {
-      if (!anterior) guardar("vj-ultima-visita", { precio: mejor.precio_con_valijas, generado: D.generado });
-      return;
-    }
     guardar("vj-ultima-visita", { precio: mejor.precio_con_valijas, generado: D.generado });
+    if (!anterior || anterior.generado === D.generado) return;
+    const dif = mejor.precio_con_valijas - anterior.precio;
     const caja = $("#novedad");
-    const diferencia = mejor.precio_con_valijas - anterior.precio;
-    if (diferencia < 0) {
-      caja.className = "novedad buena";
-      caja.textContent = `🎉 Desde tu última visita apareció una opción más barata: ${usd(mejor.precio_con_valijas)} con valijas (antes ${usd(anterior.precio)}).`;
-    } else if (diferencia > 0) {
-      caja.className = "novedad mala";
-      caja.textContent = `La mejor opción subió desde tu última visita: ${usd(mejor.precio_con_valijas)} con valijas (antes ${usd(anterior.precio)}).`;
-    } else {
-      caja.className = "novedad igual";
-      caja.textContent = `Sin cambios en la mejor opción desde tu última visita: ${usd(mejor.precio_con_valijas)} con valijas.`;
-    }
+    caja.className = `aviso-banda ${dif < 0 ? "buena" : dif > 0 ? "mala" : "igual"}`;
+    caja.textContent = dif < 0 ? `🎉 Desde tu última visita bajó a ${usd(mejor.precio_con_valijas)} (antes ${usd(anterior.precio)}).`
+      : dif > 0 ? `Desde tu última visita subió a ${usd(mejor.precio_con_valijas)} (antes ${usd(anterior.precio)}).`
+      : `Sin cambios desde tu última visita: ${usd(mejor.precio_con_valijas)}.`;
     caja.hidden = false;
   }
 
-  $("#boton-actualizar").addEventListener("click", (e) => {
-    const panel = $("#panel-actualizar");
-    panel.hidden = !panel.hidden;
-    e.currentTarget.setAttribute("aria-expanded", String(!panel.hidden));
-  });
+  // ---------------------------------------------------------------- pestañas
+  function mostrarTab(tab, guardarla = true) {
+    if (!document.getElementById(tab)) tab = "vuelos";
+    estado.tab = tab;
+    if (guardarla) guardar("vj-tab", tab);
+    document.querySelectorAll(".pestana").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === tab)));
+    document.querySelectorAll("[role=tabpanel]").forEach((p) => { p.hidden = p.id !== tab; });
+    if (tab === "precio") dibujarEvolucion();
+  }
+  document.querySelectorAll(".pestana").forEach((b) => b.addEventListener("click", () => mostrarTab(b.dataset.tab)));
 
-  // ---------------------------------------------------------------- hoy
-  function dibujarHoy() {
-    const caja = $("#hoy-tarjeta");
-    const mejor = opciones[0];
-    if (!mejor) { caja.replaceChildren(h("p", { class: "vacio", text: "Hoy no hay opciones que cumplan tus preferencias." })); return; }
-    const comp = D.resumen?.comparacion || {};
-    const flechas = { "mejoró": ["▼", "mejoro", "Mejoró"], "empeoró": ["▲", "empeoro", "Empeoró"], "igual": ["=", "igual", "Igual que"] };
-    const [simbolo, clase, palabra] = flechas[comp.estado] || [];
-    const cambio = comp.estado && comp.estado !== "sin_datos"
-      ? h("p", { class: `cambio ${clase}` }, `${simbolo} ${palabra}${comp.estado === "igual" ? "" : ` ${usd(Math.abs(comp.diferencia))}`} ${comp.estado === "igual" ? "el" : "respecto del"} ${fecha(D.resumen.comparado_con)}`)
-      : h("p", { class: "cambio igual", text: "Todavía no hay un día anterior para comparar." });
-    caja.replaceChildren(
-      h("div", { class: "bloque" },
-        h("div", { class: "acciones" }, ...insignias(mejor)),
-        h("p", { class: "precio" }, h("small", { text: "USD" }), numero.format(mejor.precio_con_valijas)),
-        h("p", { class: "apagado" }, `${usd(mejor.por_persona_con_valijas)} por persona, con valijas estimadas · pasaje ${usd(mejor.precio_total)}`),
-        cambio,
-        comp.cruzo_umbral ? h("p", { class: "umbral", text: `🎉 ${comp.cruzo_umbral}` }) : null,
-        comp.aviso ? h("p", { class: "aviso", text: comp.aviso }) : null,
-      ),
-      h("div", { class: "bloque" },
-        h("p", { class: "titulo" }, h("b", { text: mejor.tipo }), " · ", mejor.aerolineas.join(", ")),
-        ...mejor.tramos.map((t, i) => h("p", {}, h("span", { class: "apagado chica", text: i === 0 ? "Ida " : "Vuelta " }), ruta(t.ruta), h("br"),
-          h("span", { class: "chica apagado", text: `${diaSemana(t.salida)} ${fecha(t.salida)} ${hora(t.salida)} · ${decimal.format(t.horas)} h · ${t.escalas} ${t.escalas === 1 ? "escala" : "escalas"}` }), h("br"),
-          h("span", { class: "escalas-linea", text: `Escalas: ${textoEscalas(t)}` }))),
-        h("div", { class: "metas" },
-          h("div", { class: "meta" }, h("span", { class: "apagado chica", text: "Días en Japón" }), h("b", { text: mejor.dias_en_japon ?? "—" })),
-          h("div", { class: "meta" }, h("span", { class: "apagado chica", text: "Ideal" }), h("b", { text: usd(P.precios.ideal) })),
-          h("div", { class: "meta" }, h("span", { class: "apagado chica", text: "Tu tope" }), h("b", { text: usd(P.precios.comprar) })),
-        ),
-        h("div", {}, h("button", { class: "boton lleno", type: "button", onclick: () => abrir(mejor.id, true), text: "Ver ventajas y dónde comprar" })),
-      ),
-    );
+  // ---------------------------------------------------------------- piezas de una tarjeta
+  function tramoVisual(t, etiqueta) {
+    const paradas = t.paradas || [];
+    return h("div", { class: "tramo" },
+      h("div", { class: "etiqueta" }, etiqueta, h("span", { text: largo(t.salida) })),
+      h("div", { class: "punta" }, h("b", { text: hora(t.salida) }), h("span", { text: t.ruta[0] })),
+      h("div", { class: "medio" },
+        h("div", { class: `linea${paradas.length ? "" : " directo"}` }, paradas.map(() => h("i"))),
+        paradas.length ? h("div", { class: "escalas" }, paradas.map((p) => h("span", {
+          title: `${p.ciudad}${p.pais ? ", " + p.pais : ""} · ${p.aeropuerto}${p.duracion ? " · " + p.duracion : ""}${p.cambio_pasaje ? " · cambiás de pasaje y volvés a despachar las valijas" : ""}${p.sale_de ? ` · salís de otro aeropuerto (${p.sale_de.codigo})` : ""}`,
+        }, `${bandera(p.pais_codigo)} `, h("b", { text: p.codigo }), p.minutos != null ? ` ${minutosATexto(p.minutos)}` : "",
+          p.noche ? " 🌙" : "", p.sale_de || p.cambio_pasaje ? " ⚠️" : ""))) : null),
+      h("div", { class: "punta der" }, h("b", {}, hora(t.llegada), t.dias_mas ? h("sup", { text: `+${t.dias_mas}` }) : null), h("span", { text: t.ruta.at(-1) })),
+      h("div", { class: "duracion" }, h("b", { text: `⏱️ ${duracion(t.horas)}` }),
+        h("span", { text: t.escalas ? `🔁 ${t.escalas}${t.horas_escalas != null ? ` · ${duracion(t.horas_escalas)} esp.` : ""}` : "sin escalas" })));
+  }
+
+  function iconos(o) {
+    const lista = [];
+    if (o.dias_en_japon != null) lista.push(h("span", { class: `icono${Math.abs(o.dias_en_japon - P.dias_en_japon) > (P.tolerancia_dias ?? 1) ? " ojo" : ""}`, title: "Días en Japón", text: `🗾 ${o.dias_en_japon} días` }));
+    lista.push(h("span", { class: "icono", title: "Equipaje de mano incluido en el precio buscado", text: "🎒 ✓" }));
+    if (o.equipaje === "incluida") lista.push(h("span", { class: "icono ok", title: "Valija despachada incluida", text: "🧳 incluida" }));
+    else if (o.equipaje === "estimada") lista.push(h("span", { class: "icono", title: "La fuente estimó el costo de la valija y está sumado", text: "🧳 ~incluida" }));
+    else lista.push(h("span", { class: "icono ojo", title: `Sin confirmar: sumamos ${usd(o.valijas_estimadas)} estimados`, text: "🧳 ?" }));
+    if (o.desde_san_pablo) lista.push(h("span", { class: "icono ojo", title: "Son 2 pasajes separados: cambiás de avión en San Pablo con tus valijas", text: "⚠️ 2 pasajes" }));
+    const visas = [...new Set(o.tramos.flatMap((t) => (t.paradas || []).map((p) => TRANSITO[p.pais_codigo]).filter(Boolean)))];
+    visas.forEach((v) => lista.push(h("span", { class: "icono mal", title: "Con pasaporte argentino necesitás este permiso aunque no salgas del aeropuerto", text: `🛂 ${v}` })));
+    if (o.precio_confirmado) lista.push(h("span", { class: "icono ok", title: "Precio confirmado al pedir los links de compra", text: `✓ ${fecha(o.precio_confirmado.fecha)}` }));
+    else if (o.visto && o.visto !== D.fecha_datos) lista.push(h("span", { class: "icono", title: "Visto ese día: el precio puede haber cambiado", text: `👁️ ${fecha(o.visto)}` }));
+    if (o.cambio_vs_anterior < 0) lista.push(h("span", { class: "icono ok", text: `▼ ${numero.format(-o.cambio_vs_anterior)}` }));
+    if (o.cambio_vs_anterior > 0) lista.push(h("span", { class: "icono mal", text: `▲ ${numero.format(o.cambio_vs_anterior)}` }));
+    if (o.nueva && hayRepetidas && !o.stopover) lista.push(h("span", { class: "icono ok", text: "🆕" }));
+    return lista;
+  }
+
+  function linkPrincipal(o) {
+    if (o.desde_san_pablo) return null;  // son 2 pasajes: se compran desde el detalle
+    const exacto = o.links_compra.find((l) => l.exacto) || o.links_compra[0];
+    if (exacto) return { url: exacto.url, texto: `Comprar en ${exacto.proveedor}` };
+    if (o.links_google[0]) return { url: o.links_google[0].url, texto: "Buscar en Google Flights" };
+    return null;
+  }
+
+  function ladoPrecio(o) {
+    const principal = linkPrincipal(o);
+    const marcada = estado.comparar.includes(o.id);
+    const lleno = !marcada && estado.comparar.length >= 3;
+    return h("div", { class: "lado-precio" },
+      h("div", {},
+        h("div", { class: `cat ${claseCategoria(o.categoria)}`, text: o.categoria }),
+        h("div", { class: "precio-grande" }, h("small", { text: "USD" }), numero.format(o.precio_con_valijas)),
+        h("div", { class: "desglose", text: o.valijas_estimadas ? `✈️ ${numero.format(o.precio_total)} + 🧳 ~${numero.format(o.valijas_estimadas)}` : "valijas incluidas" }),
+        h("div", { class: "desglose", text: `${usd(o.por_persona_con_valijas)} c/u` })),
+      principal ? h("a", { class: "boton lleno chico", href: principal.url, target: "_blank", rel: "noopener", title: principal.texto, text: "Comprar ↗" })
+        : h("button", { class: "boton lleno chico", type: "button", onclick: () => abrir(o.id), text: "Comprar (2 pasajes)" }),
+      h("div", { class: "acciones", style: "justify-content:flex-end" },
+        o.stopover ? null : h("label", { class: "comparar", title: lleno ? "Ya elegiste 3" : "Comparar" },
+          h("input", { type: "checkbox", checked: marcada, disabled: lleno, onchange: () => alternarComparar(o.id) }), "comparar"),
+        h("button", { class: "boton chico", type: "button", "aria-expanded": String(estado.abierta === o.id), onclick: () => abrir(o.id), text: estado.abierta === o.id ? "Cerrar" : "Detalle" })));
+  }
+
+  function linksDeCompra(o) {
+    const items = o.links_compra.map((l) => h("a", { class: "link", href: l.url, target: "_blank", rel: "noopener" },
+      h("span", { class: "que" }, h("b", { text: l.proveedor }), h("span", { text: [l.pasaje, l.exacto ? "vuelo exacto" : "búsqueda", l.aerolinea ? "aerolínea" : "agencia"].filter(Boolean).join(" · ") })),
+      h("span", { class: "ir", text: `${l.precio ? usd(l.precio) + " · " : ""}Ir ↗` })));
+    for (const l of o.links_google) items.push(h("a", { class: "link", href: l.url, target: "_blank", rel: "noopener" },
+      h("span", { class: "que" }, h("b", { text: l.texto }), h("span", { text: "Abre la búsqueda: elegí el vuelo ahí" })), h("span", { class: "ir", text: "Abrir ↗" })));
+    if (o.stopover?.sitio) items.push(h("a", { class: "link", href: o.stopover.sitio, target: "_blank", rel: "noopener" },
+      h("span", { class: "que" }, h("b", { text: `Sitio de ${o.stopover.aerolinea}` }), h("span", { text: "Buscá como multidestino con estas 3 fechas" })), h("span", { class: "ir", text: "Abrir ↗" })));
+    return items;
+  }
+
+  function detalle(o) {
+    const escalas = o.tramos.flatMap((t, i) => (t.paradas || []).map((p) => h("li", {},
+      `${bandera(p.pais_codigo)} `, h("b", { text: `${p.ciudad}${p.pais ? ", " + p.pais : ""}` }), ` · ${p.aeropuerto} (${p.codigo})`,
+      p.duracion ? ` · ${p.duracion}` : "", p.noche ? " · 🌙 de noche" : "",
+      p.sale_de ? ` · ⚠️ salís de ${p.sale_de.aeropuerto} (${p.sale_de.codigo})` : "", p.cambio_pasaje ? " · ⚠️ retirás y volvés a despachar las valijas" : "",
+      h("span", { class: "apagado", text: ` (${o.tramos.length === 2 ? (i === 0 ? "ida" : "vuelta") : `tramo ${i + 1}`})` }))));
+    return h("div", { class: "detalle", id: `detalle-${o.id}` },
+      h("div", { class: "pila" },
+        h("h3", { text: "✓ A favor" }), o.ventajas.length ? h("ul", { class: "lista-simple pros" }, o.ventajas.map((v) => h("li", { text: v }))) : h("p", { class: "apagado chica", text: "—" }),
+        h("h3", { text: "! En contra" }), o.desventajas.length ? h("ul", { class: "lista-simple contras" }, o.desventajas.map((v) => h("li", { text: v }))) : h("p", { class: "apagado chica", text: "—" })),
+      h("div", { class: "pila" },
+        h("h3", { text: "📍 Escalas" }), escalas.length ? h("ul", { class: "lista-simple escalas-det" }, escalas) : h("p", { class: "chica", text: "Vuelos directos." }),
+        h("h3", { text: "✈️ Aerolíneas" }), h("p", { class: "chica", text: o.aerolineas.join(", ") }),
+        h("h3", { text: "💲 Precio para los 2" }),
+        h("p", { class: "chica" }, `Pasaje ${usd(o.precio_total)}${o.valijas_estimadas ? ` + valijas estimadas ${usd(o.valijas_estimadas)}` : ""} = `, h("b", { text: usd(o.precio_con_valijas) })),
+        o.desglose ? h("p", { class: "chica apagado", text: `Desde San Pablo ${usd(o.desglose.desde_san_pablo)} + Buenos Aires–San Pablo ${usd(o.desglose.buenos_aires_san_pablo)}` }) : null,
+        h("p", { class: "chica apagado", text: o.precio_confirmado ? `Confirmado el ${fecha(o.precio_confirmado.fecha)}.` : `Visto el ${fecha(o.visto || D.fecha_datos)}: confirmá antes de pagar.` })),
+      h("div", { class: "ancho links" }, h("h3", { text: "🛒 Dónde comprarlo" }),
+        o.stopover?.aviso ? h("p", { class: "chica", style: "color:var(--warn)", text: `ℹ️ ${o.stopover.aviso}` }) : null,
+        ...linksDeCompra(o),
+        h("p", { class: "chica apagado", text: "En el sitio revisá el precio final, las valijas y los horarios antes de pagar." })));
+  }
+
+  function tarjetaVuelo(o) {
+    const abierta = estado.abierta === o.id;
+    const ida = o.tramos[0], vuelta = o.tramos.at(-1);
+    const origen = o.desde_san_pablo ? "🇧🇷 vía San Pablo" : "🇦🇷 Buenos Aires";
+    return h("article", { class: `tarjeta vuelo${abierta ? " abierta" : ""}`, id: `opcion-${o.id}` },
+      h("div", { class: "cuerpo" },
+        h("div", { class: "arriba" }, h("b", { text: `${origen} → ${o.destino === "OSA" ? "🏯 Osaka" : "🗼 Tokio"}` }),
+          ida.ruta.at(-1) !== vuelta.ruta[0] ? h("span", { class: "apagado", text: `· vuelve desde ${vuelta.ruta[0]}` }) : null,
+          h("span", { class: "apagado", text: `· ${o.aerolineas.slice(0, 3).join(", ")}${o.aerolineas.length > 3 ? ` +${o.aerolineas.length - 3}` : ""}` })),
+        tramoVisual(ida, "Ida"),
+        tramoVisual(vuelta, "Vuelta"),
+        h("div", { class: "pie" }, iconos(o))),
+      ladoPrecio(o),
+      abierta ? detalle(o) : null);
+  }
+
+  // ---------------------------------------------------------------- lista de vuelos
+  const ORDENES = {
+    precio: (a, b) => a.precio_con_valijas - b.precio_con_valijas,
+    escalas: (a, b) => maxEscalas(a) - maxEscalas(b) || a.tramos.reduce((s, t) => s + t.escalas, 0) - b.tramos.reduce((s, t) => s + t.escalas, 0) || a.precio_con_valijas - b.precio_con_valijas,
+    horas: (a, b) => a.tramos.reduce((s, t) => s + (t.horas || 0), 0) - b.tramos.reduce((s, t) => s + (t.horas || 0), 0),
+    salida: (a, b) => a.sale.localeCompare(b.sale),
+  };
+  const pasaFiltros = (o, f = estado.f) =>
+    f.origen.includes(origenDe(o)) && f.destino.includes(o.destino)
+    && (f.escalas === "todas" || maxEscalas(o) <= +f.escalas)
+    && (!f.valija || o.equipaje !== "sin_confirmar")
+    && (f.mes === "todos" || o.sale.startsWith(f.mes));
+
+  function dibujarFiltros() {
+    document.querySelectorAll("#vuelos .op").forEach((b) => {
+      const { f, v } = b.dataset;
+      const activo = Array.isArray(estado.f[f]) ? estado.f[f].includes(v) : f === "valija" ? estado.f.valija : estado.f[f] === v;
+      b.setAttribute("aria-pressed", String(activo));
+    });
+    const meses = [...new Set(opciones.map((o) => o.sale.slice(0, 7)))].sort();
+    $("#f-mes").replaceChildren(h("option", { value: "todos", text: "📅 Todos los meses" }),
+      ...meses.map((m) => h("option", { value: m, text: `${MESES_LARGOS[+m.slice(5, 7) - 1]} ${m.slice(0, 4)}` })));
+    if (estado.f.mes !== "todos" && !meses.includes(estado.f.mes)) estado.f.mes = "todos";
+    $("#f-mes").value = estado.f.mes;
+    $("#f-orden").value = estado.f.orden;
+  }
+
+  function dibujarLista() {
+    dibujarFiltros();
+    const visibles = opciones.filter((o) => pasaFiltros(o)).sort(ORDENES[estado.f.orden] || ORDENES.precio);
+    $("#conteo").textContent = `${visibles.length} de ${opciones.length} vuelos`;
+    $("#lista").replaceChildren(...(visibles.length ? visibles.map(tarjetaVuelo)
+      : [h("p", { class: "tarjeta vacio", text: "Ningún vuelo cumple estos filtros. Probá sacando alguno." })]));
+  }
+
+  document.querySelectorAll("#vuelos .op").forEach((b) => b.addEventListener("click", () => {
+    const { f, v } = b.dataset;
+    if (Array.isArray(estado.f[f])) {
+      const lista = estado.f[f].includes(v) ? estado.f[f].filter((x) => x !== v) : [...estado.f[f], v];
+      estado.f[f] = lista.length ? lista : [v];  // siempre queda al menos una opción marcada
+    } else if (f === "valija") estado.f.valija = !estado.f.valija;
+    else estado.f[f] = v;
+    guardar("vj-filtros2", estado.f);
+    dibujarLista();
+  }));
+  $("#f-mes").addEventListener("change", (e) => { estado.f.mes = e.target.value; guardar("vj-filtros2", estado.f); dibujarLista(); });
+  $("#f-orden").addEventListener("change", (e) => { estado.f.orden = e.target.value; guardar("vj-filtros2", estado.f); dibujarLista(); });
+
+  function abrir(id, desplazar) {
+    const o = porId.get(id);
+    if (!o) return;
+    estado.abierta = estado.abierta === id && !desplazar ? null : id;
+    if (o.stopover) { if (estado.tab !== "stopovers") mostrarTab("stopovers"); dibujarStopovers(); }
+    else {
+      if (estado.tab !== "vuelos") mostrarTab("vuelos");
+      if (desplazar && !pasaFiltros(o)) { estado.f = { ...estado.f, origen: ["BUE", "GRU"], destino: ["TYO", "OSA"], escalas: "todas", valija: false, mes: "todos" }; }
+      dibujarLista();
+    }
+    if (desplazar) document.getElementById(`opcion-${id}`)?.scrollIntoView({ behavior: suave(), block: "start" });
+  }
+
+  // ---------------------------------------------------------------- comparar
+  function alternarComparar(id) {
+    estado.comparar = estado.comparar.includes(id) ? estado.comparar.filter((x) => x !== id) : [...estado.comparar, id].slice(0, 3);
+    guardar("vj-comparar", estado.comparar);
+    dibujarLista();
+    dibujarComparacion();
+  }
+  function dibujarComparacion() {
+    const elegidas = estado.comparar.map((id) => porId.get(id)).filter(Boolean);
+    $("#bandeja").hidden = elegidas.length === 0;
+    $("#bandeja-texto").textContent = elegidas.length === 1 ? "1 elegida: marcá otra" : `${elegidas.length} elegidas`;
+    $("#ver-comparacion").disabled = elegidas.length < 2;
+    $("#comparar").hidden = elegidas.length < 2;
+    if (elegidas.length < 2) return;
+    const escalasDe = (t) => (t.paradas.length ? t.paradas.map((p) => `${bandera(p.pais_codigo)} ${p.codigo}${p.minutos != null ? " " + minutosATexto(p.minutos) : ""}`).join(" · ") : "directo");
+    const filas = [
+      ["💲 Total para 2", (o) => usd(o.precio_con_valijas), (o) => o.precio_con_valijas],
+      ["Por persona", (o) => usd(o.por_persona_con_valijas), (o) => o.por_persona_con_valijas],
+      ["Desde", (o) => (o.desde_san_pablo ? "🇧🇷 San Pablo (2 pasajes)" : "🇦🇷 Buenos Aires")],
+      ["📅 Fechas", (o) => `${largo(o.sale)} → ${largo(o.vuelve)}`],
+      ["🗾 Días en Japón", (o) => String(o.dias_en_japon ?? "—"), (o) => Math.abs((o.dias_en_japon ?? 99) - P.dias_en_japon)],
+      ["⏱️ Ida", (o) => duracion(o.tramos[0].horas), (o) => o.tramos[0].horas],
+      ["⏱️ Vuelta", (o) => duracion(o.tramos.at(-1).horas), (o) => o.tramos.at(-1).horas],
+      ["🔁 Escalas ida", (o) => escalasDe(o.tramos[0]), (o) => o.tramos[0].escalas],
+      ["🔁 Escalas vuelta", (o) => escalasDe(o.tramos.at(-1)), (o) => o.tramos.at(-1).escalas],
+      ["🧳 Valija", (o) => ({ incluida: "incluida", estimada: "~incluida", sin_confirmar: "sin confirmar" })[o.equipaje] || o.equipaje],
+      ["✈️ Aerolíneas", (o) => o.aerolineas.join(", ")],
+    ];
+    $("#tabla-comparar").replaceChildren(h("table", {},
+      h("thead", {}, h("tr", {}, h("th"), ...elegidas.map((o, i) => h("th", {}, `${i + 1}. `, h("button", { class: "boton chico", type: "button", onclick: () => abrir(o.id, true), text: "ver" }))))),
+      h("tbody", {}, filas.map(([nombre, mostrar, valor]) => {
+        const mejor = valor ? Math.min(...elegidas.map(valor)) : null;
+        return h("tr", {}, h("th", { scope: "row", text: nombre }), ...elegidas.map((o) => h("td", { class: valor && valor(o) === mejor ? "mejor" : null, text: mostrar(o) })));
+      }))));
+  }
+  $("#ver-comparacion").addEventListener("click", () => { mostrarTab("vuelos"); $("#comparar").scrollIntoView({ behavior: suave() }); });
+  $("#limpiar-comparacion").addEventListener("click", () => { estado.comparar = []; guardar("vj-comparar", []); dibujarLista(); dibujarComparacion(); });
+
+  // ---------------------------------------------------------------- stopovers
+  const mesesDelAnio = () => { const anio = (D.ventana?.desde || "2027").slice(0, 4); return Array.from({ length: 12 }, (_, i) => `${anio}-${String(i + 1).padStart(2, "0")}`); };
+
+  function dibujarFormStopover() {
+    const s = estado.so;
+    const cambiar = (cambios) => { Object.assign(estado.so, cambios); guardar("vj-stopover", estado.so); dibujarStopovers(); };
+    const opcion = (activo, texto, onclick) => h("button", { class: "op", type: "button", "aria-pressed": String(activo), onclick, text: texto });
+    const BANDERAS = { madrid: "🇪🇸", estambul: "🇹🇷" };
+    $("#form-so").replaceChildren(
+      h("h2", { text: "🏨 Stopover: quedarte unos días en el camino" }),
+      h("div", { class: "campo" }, h("span", { text: "Dónde" }), h("div", { class: "grupo" },
+        Object.entries(SO.ciudades).map(([clave, c]) => opcion(s.ciudad === clave, `${BANDERAS[clave] || "📍"} ${c.nombre} · ${c.aerolinea}`, () => cambiar({ ciudad: clave }))))),
+      h("div", { class: "campo" }, h("span", { text: "Cuántos días" }), h("div", { class: "contador-dias" },
+        h("button", { type: "button", "aria-label": "Un día menos", onclick: () => cambiar({ dias: Math.max(1, s.dias - 1) }), text: "−" }),
+        h("b", { text: `${s.dias} ${s.dias === 1 ? "día" : "días"}` }),
+        h("button", { type: "button", "aria-label": "Un día más", onclick: () => cambiar({ dias: Math.min(7, s.dias + 1) }), text: "+" }))),
+      h("div", { class: "campo" }, h("span", { text: "Cuándo" }), h("div", { class: "grupo" },
+        opcion(s.cuando === "ida", "🛫 A la ida", () => cambiar({ cuando: "ida" })), opcion(s.cuando === "vuelta", "🛬 A la vuelta", () => cambiar({ cuando: "vuelta" })))),
+      h("div", { class: "campo" }, h("span", { text: "Saliendo en" }),
+        h("select", { class: "selector", "aria-label": "Mes de salida", onchange: (e) => cambiar({ mes: e.target.value }) },
+          h("option", { value: "cualquiera", text: "Abril a junio (tus preferidos)", selected: s.mes === "cualquiera" }),
+          mesesDelAnio().map((m) => h("option", { value: m, selected: s.mes === m, text: `${MESES_LARGOS[+m.slice(5, 7) - 1]} ${m.slice(0, 4)}` })))));
+  }
+
+  function lineaViaje(so) {
+    const BANDERA = { madrid: "🇪🇸", estambul: "🇹🇷" }[so.ciudad] || "📍";
+    const escala = h("li", { class: "escala" }, h("small", { text: `${BANDERA} ${so.nombre}` }), h("b", { text: `${so.dias_en_escala} ${so.dias_en_escala === 1 ? "día" : "días"}` }), h("small", { text: `${fecha(so.llega_escala)} → ${fecha(so.sale_escala)}` }));
+    const japon = h("li", { class: "japon" }, h("small", { text: "🗾 Japón" }), h("b", { text: `${so.dias_en_japon} días` }), h("small", { text: `${fecha(so.llega_japon)} → ${fecha(so.sale_japon)}` }));
+    return h("ol", { class: "linea-viaje" },
+      h("li", {}, h("small", { text: "🛫 Salís" }), h("b", { text: largo(so.sale_buenos_aires) }), h("small", { text: "Buenos Aires" })),
+      so.cuando === "ida" ? [escala, japon] : [japon, escala],
+      h("li", {}, h("small", { text: "🏠 Llegás" }), h("b", { text: largo(so.llega_buenos_aires) }), h("small", { text: `${so.dias_de_viaje} días de viaje` })));
+  }
+
+  function tarjetaStopover(o, exacta) {
+    const so = o.stopover;
+    const abierta = estado.abierta === o.id;
+    const nombres = so.cuando === "ida" ? ["Ida", `A ${CIUDAD[o.destino] || "Japón"}`, "Vuelta"] : ["Ida", `A ${so.nombre}`, "Vuelta"];
+    return h("article", { class: `tarjeta vuelo${abierta ? " abierta" : ""}`, id: `opcion-${o.id}` },
+      h("div", { class: "cuerpo" },
+        h("div", { class: "arriba" }, h("b", { text: `${so.nombre} ${so.dias_en_escala} ${so.dias_en_escala === 1 ? "día" : "días"} a la ${so.cuando}` }),
+          h("span", { class: "apagado", text: `· ${o.aerolineas.join(", ")}` }),
+          exacta ? null : h("span", { class: "icono ojo", text: `pediste ${estado.so.dias} días` })),
+        lineaViaje(so),
+        ...o.tramos.map((t, i) => tramoVisual(t, nombres[i])),
+        h("div", { class: "pie" }, iconos(o))),
+      ladoPrecio(o),
+      abierta ? detalle(o) : null);
+  }
+
+  function dibujarStopovers() {
+    dibujarFormStopover();
+    const s = estado.so;
+    const ciudad = SO.ciudades[s.ciudad] || {};
+    const delPedido = SO.opciones.filter((o) => o.stopover.ciudad === s.ciudad && o.stopover.cuando === s.cuando
+      && (s.mes === "cualquiera" || o.stopover.sale_buenos_aires.startsWith(s.mes)));
+    delPedido.sort((a, b) => Math.abs(a.stopover.dias_en_escala - s.dias) - Math.abs(b.stopover.dias_en_escala - s.dias) || a.precio_con_valijas - b.precio_con_valijas);
+    const exactas = delPedido.filter((o) => o.stopover.dias_en_escala === s.dias);
+    $("#lista-so").replaceChildren(...(delPedido.length ? delPedido.map((o) => tarjetaStopover(o, o.stopover.dias_en_escala === s.dias))
+      : [h("p", { class: "tarjeta vacio", text: `Todavía no hay resultados para ${ciudad.nombre || ""} a la ${s.cuando}${s.mes !== "cualquiera" ? " en ese mes" : ""}. Pedí la búsqueda abajo 👇` })]));
+
+    // Pedir la búsqueda en GitHub, con los valores exactos a elegir.
+    const A = D.actualizar || {};
+    const cupo = SO.cupo || {};
+    const valores = [`stopover: ${s.ciudad}`, `dias: ${s.dias}`, `cuando: ${s.cuando}`, `mes: ${s.mes}`];
+    $("#pedir-so").replaceChildren(
+      h("h3", { text: exactas.length ? "🔎 ¿Querés buscar de nuevo o en otras fechas?" : "🔎 Pedir esta búsqueda (tarda ~5 min)" }),
+      A.repositorio ? h("ol", { class: "chica", style: "margin:0;padding-left:20px" },
+        h("li", {}, "Abrí GitHub y tocá ", h("b", { text: "Run workflow" }), "."),
+        h("li", {}, "Elegí estos valores:", h("div", { class: "valores", style: "margin:4px 0" }, valores.map((v) => h("span", { text: v })))),
+        h("li", {}, "Botón verde ", h("b", { text: "Run workflow" }), ". Volvé en ~5 min y recargá.")) :
+        h("p", { class: "chica apagado", text: "Se pide desde GitHub, con la página publicada." }),
+      h("div", { class: "acciones" },
+        A.repositorio ? h("a", { class: "boton lleno chico", href: `https://github.com/${A.repositorio}/actions/workflows/${A.flujo}`, target: "_blank", rel: "noopener", text: "Abrir GitHub ↗" }) : null,
+        h("button", { class: "boton chico", type: "button", onclick: () => location.reload(), text: "↻ Recargar" }),
+        h("span", { class: "chica apagado", text: `Te quedan ~${cupo.busquedas_aprox ?? "?"} búsquedas este mes · cada una prueba 2 fechas` })));
+
+    const pedidos = SO.pedidos || [];
+    $("#pedidos-so").replaceChildren(...(pedidos.length ? [h("details", { class: "pie" }, h("summary", { class: "chica", text: `🕘 Últimos pedidos (${pedidos.length})` }),
+      h("ul", {}, pedidos.map((p) => h("li", { text: `${fecha(p.pedido)} · ${SO.ciudades[p.ciudad]?.nombre || p.ciudad} ${p.dias} días a la ${p.cuando}${p.mes ? ` · ${MESES_LARGOS[+p.mes.slice(5, 7) - 1]}` : ""} → ${p.opciones} ${p.opciones === 1 ? "opción" : "opciones"}${p.errores?.length ? ` · ⚠️ ${p.errores.join("; ")}` : ""}` }))))] : []));
   }
 
   // ---------------------------------------------------------------- evolución
@@ -527,7 +792,7 @@
     const caja = $("#grafico-evolucion");
     const filas = D.evolucion || [];
     if (!filas.length) { caja.replaceChildren(h("p", { class: "vacio", text: "Todavía no hay historial." })); return; }
-    const ancho = Math.max(caja.clientWidth - 28, 280), alto = 220;
+    const ancho = Math.max(caja.clientWidth - 24, 280), alto = 220;
     const series = [["total", "var(--serie-1)"], ["buenos_aires", "var(--serie-2)"], ["san_pablo", "var(--serie-3)"]];
     const valores = filas.flatMap((f) => series.map(([k]) => f[k])).filter((v) => v != null).concat([P.precios.comprar]);
     const min = Math.floor(Math.min(...valores) / 500) * 500, max = Math.ceil(Math.max(...valores) / 500) * 500;
@@ -535,21 +800,17 @@
     const svg = document.createElementNS(NS, "svg");
     svg.setAttribute("viewBox", `0 0 ${ancho} ${alto}`);
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", `Mejor precio de cada día, del ${fecha(filas[0].fecha)} al ${fecha(filas.at(-1).fecha)}, con la línea de tu tope de ${usd(P.precios.comprar)}.`);
+    svg.setAttribute("aria-label", `Mejor precio de cada día, del ${fecha(filas[0].fecha)} al ${fecha(filas.at(-1).fecha)}.`);
     const el = (tag, attrs, texto) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); if (texto != null) e.textContent = texto; svg.append(e); return e; };
     const ticks = []; for (let v = min; v <= max; v += max - min > 3000 ? 1000 : 500) ticks.push(v);
-    // El margen izquierdo se mide con la etiqueta más ancha ya dibujada.
     const medidas = ticks.map((v) => el("text", { x: 0, y: -10 }, numero.format(v)));
     caja.replaceChildren(svg);
     const izq = Math.max(...medidas.map((m) => m.getComputedTextLength() || 34)) + 10;
     medidas.forEach((m) => m.remove());
     const der = 12, arriba = 10, abajo = 26;
-    const x = (i) => filas.length === 1 ? (izq + ancho - der) / 2 : izq + (i * (ancho - izq - der)) / (filas.length - 1);
+    const x = (i) => (filas.length === 1 ? (izq + ancho - der) / 2 : izq + (i * (ancho - izq - der)) / (filas.length - 1));
     const y = (v) => arriba + ((max - v) * (alto - arriba - abajo)) / (max - min || 1);
-    ticks.forEach((v) => {
-      el("line", { x1: izq, x2: ancho - der, y1: y(v), y2: y(v), stroke: "var(--line)", "stroke-width": 1 });
-      el("text", { x: izq - 8, y: y(v) + 4, "text-anchor": "end" }, numero.format(v));
-    });
+    ticks.forEach((v) => { el("line", { x1: izq, x2: ancho - der, y1: y(v), y2: y(v), stroke: "var(--line)", "stroke-width": 1 }); el("text", { x: izq - 8, y: y(v) + 4, "text-anchor": "end" }, numero.format(v)); });
     el("line", { x1: izq, x2: ancho - der, y1: y(P.precios.comprar), y2: y(P.precios.comprar), stroke: "var(--ok)", "stroke-width": 1.5, "stroke-dasharray": "5 4" });
     const cada = Math.ceil(filas.length / Math.max(1, Math.floor((ancho - izq) / 70)));
     filas.forEach((f, i) => {
@@ -564,182 +825,66 @@
     });
     const ultima = filas.at(-1);
     if (ultima.total != null) el("text", { x: Math.min(x(filas.length - 1), ancho - der), y: y(ultima.total) - 9, "text-anchor": "end", style: "fill: var(--fg); font-weight: 600" }, usd(ultima.total));
-  }
 
-  // ---------------------------------------------------------------- opciones
-  const FILTROS = {
-    todas: () => true,
-    bue: (o) => !o.desde_san_pablo,
-    sp: (o) => o.desde_san_pablo,
-    links: (o) => o.links_compra.length > 0,
-  };
-  const ORDENES = {
-    precio: (a, b) => a.precio_con_valijas - b.precio_con_valijas,
-    horas: (a, b) => maxHoras(a) - maxHoras(b),
-    escalas: (a, b) => maxEscalas(a) - maxEscalas(b) || a.precio_con_valijas - b.precio_con_valijas,
-    salida: (a, b) => a.sale.localeCompare(b.sale),
-  };
-  // "Nueva" solo sirve si algunas opciones ya estaban el día anterior.
-  const hayRepetidas = opciones.some((o) => !o.nueva);
-  const maxHoras = (o) => Math.max(...o.tramos.map((t) => t.horas || 0));
-  const maxEscalas = (o) => Math.max(...o.tramos.map((t) => t.escalas));
-
-  function insignias(o) {
-    const lista = [h("span", { class: `chip ${claseCategoria(o.categoria)}`, text: o.categoria })];
-    if (o.precio_confirmado) lista.push(h("span", { class: "chip bajo", text: `Precio confirmado el ${fecha(o.precio_confirmado.fecha)}` }));
-    else if (o.visto && o.visto !== D.fecha_datos) lista.push(h("span", { class: "chip caro", text: `Vista el ${fecha(o.visto)}: puede haber cambiado` }));
-    if (o.nueva && hayRepetidas) lista.push(h("span", { class: "chip nueva", text: "Nueva" }));
-    if (o.cambio_vs_anterior < 0) lista.push(h("span", { class: "chip bajo", text: `Bajó ${usd(-o.cambio_vs_anterior)}` }));
-    if (o.cambio_vs_anterior > 0) lista.push(h("span", { class: "chip subio", text: `Subió ${usd(o.cambio_vs_anterior)}` }));
-    return lista;
-  }
-
-  function linksDeCompra(o) {
-    const items = [];
-    for (const l of o.links_compra) {
-      const que = [l.pasaje, l.exacto ? "Vuelo exacto" : "Búsqueda", l.aerolinea ? "aerolínea" : "agencia", l.alcance].filter(Boolean).join(" · ");
-      items.push(h("a", { class: "link", href: l.url, target: "_blank", rel: "noopener" },
-        h("span", { class: "que" }, h("b", { text: l.proveedor }), h("span", { text: que })),
-        h("span", { class: "ir", text: `${l.precio ? usd(l.precio) + " · " : ""}Ir a comprar ↗` })));
-    }
-    for (const l of o.links_google) {
-      items.push(h("a", { class: "link", href: l.url, target: "_blank", rel: "noopener" },
-        h("span", { class: "que" }, h("b", { text: l.texto }), h("span", { text: "Abre la búsqueda: elegí el vuelo ahí" })),
-        h("span", { class: "ir", text: "Abrir ↗" })));
-    }
-    return items;
-  }
-
-  function detalle(o) {
-    const fuentes = Object.entries(o.precios_por_fuente || {}).map(([f, p]) => `${f === "ignav" ? "Ignav" : "Google Flights"}: ${usd(p)}`).join(" · ");
-    return h("div", { class: "detalle", id: `detalle-${o.id}` },
-      h("div", { class: "tramos" },
-        h("h3", { text: "Los vuelos" }),
-        ...o.tramos.map((t, i) => h("div", { class: "tramo" },
-          h("span", { class: "etiqueta", text: i === 0 ? "Ida" : i === o.tramos.length - 1 ? "Vuelta" : `Tramo ${i + 1}` }),
-          h("div", {}, ruta(t.ruta), h("div", { class: "chica apagado", text: `Sale ${diaSemana(t.salida)} ${fecha(t.salida)} ${hora(t.salida)} · llega ${fecha(t.llegada)} ${hora(t.llegada)}` }),
-            h("div", { class: "chica apagado", text: `${decimal.format(t.horas)} h · ${t.escalas} ${t.escalas === 1 ? "escala" : "escalas"} · ${t.aerolineas.join(", ")}` }),
-            listaParadas(t)))),
-        o.desglose ? h("p", { class: "chica" }, `Desde San Pablo ${usd(o.desglose.desde_san_pablo)} + tramo Buenos Aires–San Pablo ${usd(o.desglose.buenos_aires_san_pablo)}`) : null,
-        h("p", { class: "chica apagado" }, `Pasaje ${usd(o.precio_total)}${o.valijas_estimadas ? ` + valijas estimadas ${usd(o.valijas_estimadas)}` : ""} = ${usd(o.precio_con_valijas)} para los ${P.pasajeros}`),
-        fuentes ? h("p", { class: "chica apagado", text: `Precio por fuente: ${fuentes}` }) : null,
-        h("p", { class: "chica apagado", text: o.precio_confirmado
-          ? `Precio confirmado por la fuente el ${fecha(o.precio_confirmado.fecha)}, al pedir los links de compra.`
-          : `Visto en la búsqueda del ${fecha(o.visto || D.fecha_datos)}.` }),
-      ),
-      h("div", { class: "tramos" },
-        h("h3", { text: "Ventajas" }),
-        o.ventajas.length ? h("ul", { class: "pros" }, o.ventajas.map((v) => h("li", { text: v }))) : h("p", { class: "apagado chica", text: "Ninguna en especial." }),
-        h("h3", { text: "Desventajas" }),
-        o.desventajas.length ? h("ul", { class: "contras" }, o.desventajas.map((v) => h("li", { text: v }))) : h("p", { class: "apagado chica", text: "Ninguna." }),
-      ),
-      h("div", { class: "ancho links" },
-        h("h3", { text: "Dónde comprarlo" }),
-        !o.links_compra.length ? h("p", { class: "chica apagado", text: "Esta opción no tiene link directo de compra: la app los pide solo para la mejor del día y las que llegan a 👀 casi o mejor. Usá la búsqueda de Google Flights." }) : null,
-        ...linksDeCompra(o),
-        h("p", { class: "chica apagado", text: "Antes de pagar, confirmá en el sitio el precio final, las valijas y los horarios." }),
-      ),
-    );
-  }
-
-  function tarjetaOpcion(o) {
-    const abierta = estado.abierta === o.id;
-    const marcada = estado.comparar.includes(o.id);
-    const lleno = !marcada && estado.comparar.length >= 3;
-    const ida = o.tramos[0], vuelta = o.tramos.at(-1);
-    return h("article", { class: `tarjeta opcion${abierta ? " abierta" : ""}`, id: `opcion-${o.id}` },
-      h("div", { class: "fila", role: "button", tabindex: 0, "aria-expanded": String(abierta), "aria-controls": `detalle-${o.id}`,
-        onclick: (e) => { if (!e.target.closest(".comparar")) abrir(o.id); },
-        onkeydown: (e) => { if ((e.key === "Enter" || e.key === " ") && !e.target.closest(".comparar")) { e.preventDefault(); abrir(o.id); } } },
-        h("label", { class: "comparar", title: lleno ? "Ya elegiste 3 para comparar" : "Comparar" },
-          h("input", { type: "checkbox", "aria-label": `Comparar la opción de ${usd(o.precio_con_valijas)}`, checked: marcada, disabled: lleno, onchange: () => alternarComparar(o.id) })),
-        h("div", { class: "centro" },
-          h("div", { class: "titulo" }, h("span", { text: o.aerolineas.join(", ") }), ...insignias(o)),
-          h("div", {}, ruta(ida.ruta), " ", h("span", { class: "apagado", text: "/" }), " ", ruta(vuelta.ruta)),
-          h("div", { class: "escalas-linea" }, "Escalas: ", h("b", { text: "ida" }), ` ${textoEscalas(ida)} · `, h("b", { text: "vuelta" }), ` ${textoEscalas(vuelta)}`),
-          h("div", { class: "datos" },
-            h("span", { text: `${fecha(o.sale)} → ${fecha(o.vuelve)}` }),
-            h("span", { text: `${o.dias_en_japon ?? "—"} días en Japón` }),
-            h("span", { text: `${decimal.format(maxHoras(o))} h máx.` }),
-            h("span", { text: `${maxEscalas(o)} ${maxEscalas(o) === 1 ? "escala" : "escalas"} máx.` }),
-            h("span", { text: o.tipo }),
-          )),
-        h("div", { class: "derecha" },
-          h("div", { class: "total", text: usd(o.precio_con_valijas) }),
-          h("div", { class: "chica apagado", text: `${usd(o.por_persona_con_valijas)} c/u` }))),
-      abierta ? detalle(o) : null);
-  }
-
-  function dibujarLista() {
-    document.querySelectorAll(".filtro").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.filtro === estado.filtro)));
-    $("#orden").value = estado.orden;
-    const visibles = opciones.filter(FILTROS[estado.filtro] || FILTROS.todas).sort(ORDENES[estado.orden] || ORDENES.precio);
-    $("#lista").replaceChildren(...(visibles.length ? visibles.map(tarjetaOpcion) : [h("p", { class: "tarjeta vacio", text: "Ninguna opción cumple este filtro hoy." })]));
-  }
-
-  function abrir(id, desplazar) {
-    estado.abierta = estado.abierta === id && !desplazar ? null : id;
-    if (desplazar && !FILTROS[estado.filtro](porId.get(id))) estado.filtro = "todas";
-    dibujarLista();
-    if (desplazar) document.getElementById(`opcion-${id}`)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-  }
-
-  // ---------------------------------------------------------------- comparar
-  function alternarComparar(id) {
-    estado.comparar = estado.comparar.includes(id) ? estado.comparar.filter((x) => x !== id) : [...estado.comparar, id].slice(0, 3);
-    guardar("vj-comparar", estado.comparar);
-    dibujarLista();
-    dibujarComparacion();
-  }
-
-  function dibujarComparacion() {
-    const elegidas = estado.comparar.map((id) => porId.get(id)).filter(Boolean);
-    $("#bandeja").hidden = elegidas.length === 0;
-    $("#bandeja-texto").textContent = elegidas.length === 1 ? "1 opción elegida: marcá otra para comparar" : `${elegidas.length} opciones elegidas`;
-    $("#ver-comparacion").disabled = elegidas.length < 2;
-    const seccion = $("#comparar");
-    seccion.hidden = elegidas.length < 2;
-    if (elegidas.length < 2) return;
-    const filas = [
-      ["Total con valijas", (o) => usd(o.precio_con_valijas), (o) => o.precio_con_valijas],
-      ["Por persona", (o) => usd(o.por_persona_con_valijas), (o) => o.por_persona_con_valijas],
-      ["Pasaje sin valijas", (o) => usd(o.precio_total), (o) => o.precio_total],
-      ["Tipo", (o) => o.tipo],
-      ["Aerolíneas", (o) => o.aerolineas.join(", ")],
-      ["Ida", (o) => `${o.tramos[0].ruta.join(" → ")} · ${fecha(o.tramos[0].salida)} · ${decimal.format(o.tramos[0].horas)} h`],
-      ["Vuelta", (o) => `${o.tramos.at(-1).ruta.join(" → ")} · ${fecha(o.tramos.at(-1).salida)} · ${decimal.format(o.tramos.at(-1).horas)} h`],
-      ["Escalas de ida", (o) => h("ul", {}, o.tramos[0].paradas.length ? o.tramos[0].paradas.map((p) => h("li", { text: `${lugar(p)} (${p.codigo})${p.duracion ? ` · ${p.duracion}` : ""}` })) : h("li", { text: "Directo" }))],
-      ["Escalas de vuelta", (o) => h("ul", {}, o.tramos.at(-1).paradas.length ? o.tramos.at(-1).paradas.map((p) => h("li", { text: `${lugar(p)} (${p.codigo})${p.duracion ? ` · ${p.duracion}` : ""}` })) : h("li", { text: "Directo" }))],
-      ["Tramo más largo", (o) => `${decimal.format(maxHoras(o))} h`, maxHoras],
-      ["Escalas (máx.)", (o) => String(maxEscalas(o)), maxEscalas],
-      ["Días en Japón", (o) => String(o.dias_en_japon ?? "—"), (o) => Math.abs((o.dias_en_japon ?? 99) - P.dias_en_japon)],
-      ["Valija", (o) => ({ incluida: "Incluida", estimada: "Costo estimado incluido", sin_confirmar: "Sin confirmar" })[o.equipaje] || o.equipaje],
-      ["Ventajas", (o) => h("ul", {}, o.ventajas.map((v) => h("li", { text: v })))],
-      ["Desventajas", (o) => h("ul", {}, o.desventajas.map((v) => h("li", { text: v })))],
-    ];
-    const tabla = h("table", {},
-      h("thead", {}, h("tr", {}, h("th", { scope: "col" }, h("span", { class: "apagado chica", text: "Opción" })),
-        ...elegidas.map((o, i) => h("th", { scope: "col" }, `${i + 1}. ${o.aerolineas.slice(0, 2).join(", ")}`, h("br"),
-          h("button", { class: "boton chica", type: "button", style: "margin-top:6px", onclick: () => abrir(o.id, true), text: "Ver detalle" }))))),
-      h("tbody", {}, filas.map(([nombre, mostrar, valor]) => {
-        const mejor = valor ? Math.min(...elegidas.map(valor)) : null;
-        return h("tr", {}, h("th", { scope: "row", text: nombre }),
-          ...elegidas.map((o) => h("td", { class: valor && valor(o) === mejor ? "mejor" : null }, mostrar(o))));
-      })));
-    $("#tabla-comparar").replaceChildren(tabla);
+    const comp = D.resumen?.comparacion;
+    const mismos = comp?.mismos_vuelos;
+    $("#comparacion-dia").replaceChildren(...(comp && D.resumen.comparado_con ? [h("div", { class: "tarjeta panel" },
+      h("h3", { text: `Hoy vs ${fecha(D.resumen.comparado_con)}` }),
+      mismos?.comparados ? h("p", { class: "chica", text: `Mismos vuelos: ${mismos.comparados} comparados · ▼ ${mismos.bajaron} bajaron · ▲ ${mismos.subieron} subieron · = ${mismos.iguales} iguales` }) : null,
+      comp.cruzo_umbral ? h("p", { class: "chica", style: "color:var(--ok);font-weight:600", text: `🎉 ${comp.cruzo_umbral}` }) : null,
+      comp.aviso ? h("p", { class: "chica apagado", text: comp.aviso }) : null)] : []));
   }
 
   // ---------------------------------------------------------------- fechas
+  const JAPON = { TYO: ["NRT", "HND"], OSA: ["KIX", "ITM"] };
+  const PARA_GOOGLE = { BUE: "Buenos Aires", GRU: "Sao Paulo", TYO: "Tokyo", OSA: "Osaka" };
+  const aUTC = (iso) => Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10));
+  const isoMas = (iso, dias) => new Date(aUTC(iso) + dias * 864e5).toISOString().slice(0, 10);
+  const diasEntre = (a, b) => Math.round((aUTC(b) - aUTC(a)) / 864e5);
+  const googleUrl = (de, a, salida, regreso) => "https://www.google.com/travel/flights?" +
+    new URLSearchParams({ q: `Flights from ${de} to ${a} on ${salida} through ${regreso} for ${P.pasajeros} adults`, hl: "es-419", curr: "USD" });
+
+  function linksGoogle(origen, destino, salida, regreso) {
+    if (origen === "GRU") {
+      const vueltaABue = isoMas(regreso, D.duraciones?.gru?.vuelta_dias ?? 1);
+      return [{ texto: "Google: desde San Pablo", url: googleUrl("Sao Paulo", PARA_GOOGLE[destino], salida, regreso) },
+        { texto: "Google: Bs As–San Pablo", url: googleUrl("Buenos Aires", "Sao Paulo", salida, vueltaABue) }];
+    }
+    return [{ texto: "Google Flights", url: googleUrl("Buenos Aires", PARA_GOOGLE[destino], salida, regreso) }];
+  }
+  function opcionesPara(origen, destino, salida, regreso, margen = 0) {
+    return opciones.filter((o) => {
+      if (o.destino !== destino || o.desde_san_pablo !== (origen === "GRU")) return false;
+      const corrimiento = diasEntre(salida, o.sale.slice(0, 10));
+      const saleBien = Math.abs(corrimiento) <= margen || (origen === "GRU" && corrimiento === -1);
+      return saleBien && Math.abs(diasEntre(regreso, o.vuelve.slice(0, 10))) <= margen;
+    });
+  }
+  function acciones(origen, destino, salida, regreso, { conBuscador = true, compacto = false } = {}) {
+    const exacta = opcionesPara(origen, destino, salida, regreso)[0];
+    const o = exacta || opcionesPara(origen, destino, salida, regreso, 2)[0];
+    const lista = [];
+    if (o) lista.push(h("button", { class: "boton lleno chico", type: "button", onclick: () => abrir(o.id, true),
+      title: exacta ? "Vuelo encontrado para estas fechas" : `Vuelo parecido: ${fecha(o.sale)} → ${fecha(o.vuelve)}`,
+      text: compacto ? `✈️ ${usd(o.precio_con_valijas)}${exacta ? "" : " ≈"}` : `✈️ Ver vuelo${exacta ? "" : ` (${fecha(o.sale)}→${fecha(o.vuelve)})`} · ${usd(o.precio_con_valijas)}` }));
+    if (compacto) {
+      const g = linksGoogle(origen, destino, salida, regreso)[0];
+      lista.push(h("a", { class: "boton chico", href: g.url, target: "_blank", rel: "noopener", title: g.texto, text: "Google ↗" }));
+      return h("div", { class: "acciones", style: "flex-wrap:nowrap" }, lista);
+    }
+    if (conBuscador) lista.push(h("button", { class: "boton chico", type: "button", onclick: () => usarEnBuscador(origen, destino, salida, regreso), text: "🧭 Armá tu viaje" }));
+    for (const l of linksGoogle(origen, destino, salida, regreso)) lista.push(h("a", { class: "boton chico", href: l.url, target: "_blank", rel: "noopener", text: `${l.texto} ↗` }));
+    return h("div", { class: "acciones" }, lista);
+  }
+
   function dibujarFechas() {
     const F = D.fechas;
     if (!F || !F.celdas.length) { $("#meses").replaceChildren(h("p", { class: "vacio", text: "Todavía no hay calendario de precios." })); return; }
-    const nombres = new Map(F.celdas.map((c) => [c.ruta, c.nombre_ruta]));
-    if (!estado.ruta || !nombres.has(estado.ruta)) estado.ruta = F.ranking[0]?.ruta || [...nombres.keys()][0];
-    $("#rutas").replaceChildren(...[...nombres].map(([clave, nombre]) =>
-      h("button", { class: "filtro", type: "button", "aria-pressed": String(clave === estado.ruta), onclick: () => { estado.ruta = clave; estado.dia = null; dibujarFechas(); }, text: nombre })));
-    if (F.tramo_corto_usado) $("#nota-fechas").textContent = `Precio más bajo para los 2 según el día de salida. Son precios del calendario: sin confirmar y sin valijas. Desde San Pablo ya suma ${usd(F.tramo_corto_usado)} del tramo a Buenos Aires.`;
-
-    // Para cada día de salida, la estadía más barata de esa ruta.
+    const NOMBRE = { "BUE-TYO": "🇦🇷 → 🗼 Tokio", "BUE-OSA": "🇦🇷 → 🏯 Osaka", "GRU-TYO": "🇧🇷 → 🗼 Tokio", "GRU-OSA": "🇧🇷 → 🏯 Osaka" };
+    const rutas = [...new Set(F.celdas.map((c) => c.ruta))];
+    if (!estado.ruta || !rutas.includes(estado.ruta)) estado.ruta = F.ranking[0]?.ruta || rutas[0];
+    $("#rutas").replaceChildren(h("div", { class: "grupo" }, rutas.map((r) =>
+      h("button", { class: "op", type: "button", "aria-pressed": String(r === estado.ruta), onclick: () => { estado.ruta = r; estado.dia = null; dibujarFechas(); }, text: NOMBRE[r] || r }))));
     const porDia = new Map();
     for (const c of F.celdas.filter((c) => c.ruta === estado.ruta)) {
       const precio = c.precio_comparable ?? c.precio;
@@ -752,18 +897,16 @@
       const [anio, m] = mes.split("-").map(Number);
       const primero = new Date(Date.UTC(anio, m - 1, 1)).getUTCDay();
       const dias = new Date(Date.UTC(anio, m, 0)).getUTCDate();
-      const celdas = [...DIAS.map((d) => h("span", { class: "dn", text: d.slice(0, 2) }))];
+      const celdas = DIAS.map((d) => h("span", { class: "dn", text: d.slice(0, 2) }));
       for (let i = 0; i < primero; i++) celdas.push(h("span"));
       for (let d = 1; d <= dias; d++) {
         const clave = `${mes}-${String(d).padStart(2, "0")}`;
         const c = porDia.get(clave);
         if (!c) { celdas.push(h("span", { class: "dia sin", text: d })); continue; }
         const t = max === min ? 0 : (c.valor - min) / (max - min);
-        const fondo = `color-mix(in srgb, var(--heat-1) ${Math.round(85 - t * 75)}%, var(--heat-0))`;
-        const oscuro = t < 0.45;
         celdas.push(h("button", {
           class: `dia${c.valor <= P.precios.comprar ? " tope" : ""}${estado.dia === clave ? " elegido" : ""}`, type: "button",
-          style: `background:${fondo};color:${oscuro ? "var(--panel)" : "var(--fg)"}`,
+          style: `background:color-mix(in srgb, var(--heat-1) ${Math.round(85 - t * 75)}%, var(--heat-0));color:${t < 0.45 ? "var(--panel)" : "var(--fg)"}`,
           "aria-label": `Salida ${d} de ${MESES_LARGOS[m - 1].toLowerCase()}: ${usd(c.valor)}`,
           onclick: () => { estado.dia = clave; dibujarFechas(); },
         }, h("b", { text: d }), h("span", { text: `${decimal.format(c.valor / 1000)}k` })));
@@ -771,88 +914,31 @@
       return h("div", { class: "mes" }, h("h3", { text: `${MESES_LARGOS[m - 1]} ${anio}` }), h("div", { class: "semana" }, celdas));
     }));
     const elegido = porDia.get(estado.dia);
-    const [origenRuta, destinoRuta] = estado.ruta.split("-");
+    const [o, d] = estado.ruta.split("-");
     $("#info-dia").replaceChildren(...(elegido
-      ? [h("span", { text: `Salida ${diaSemana(elegido.salida)} ${fecha(elegido.salida)}, regreso ${fecha(elegido.regreso)} (unos ${elegido.dias_en_japon_aprox} días en Japón): ${usd(elegido.valor)} para los ${P.pasajeros}${elegido.incluye_tramo_corto ? ", con el tramo a Buenos Aires" : ""}. Visto el ${fecha(elegido.visto)}.` }),
-         acciones(origenRuta, destinoRuta, elegido.salida, elegido.regreso)]
-      : [h("span", { text: "Tocá un día para ver el detalle y cómo comprarlo." })]));
+      ? [h("p", {}, h("b", { text: `🛫 ${largo(elegido.salida)} → 🛬 ${largo(elegido.regreso)}` }), ` · 🗾 ~${elegido.dias_en_japon_aprox} días · `, h("b", { text: usd(elegido.valor) }),
+          h("span", { class: "apagado chica", text: ` · visto ${fecha(elegido.visto)}` })), acciones(o, d, elegido.salida, elegido.regreso)]
+      : [h("p", { class: "apagado chica", text: "👆 Tocá un día para ver el vuelo y cómo comprarlo." })]));
 
     $("#ranking-fechas").replaceChildren(h("table", {},
-      h("thead", {}, h("tr", {}, ["Ruta", "Salida", "Regreso", "Días en Japón", "Para los 2, sin valijas", ""].map((t) => h("th", { scope: "col", text: t })))),
+      h("thead", {}, h("tr", {}, ["Ruta", "🛫 Salida", "🛬 Vuelta", "🗾 días", "💲 Para 2", "Ver"].map((t) => h("th", { scope: "col", text: t })))),
       h("tbody", {}, F.ranking.map((c) => {
-        const [o, d] = c.ruta.split("-");
-        return h("tr", {},
-          h("td", { text: c.nombre_ruta }), h("td", { text: `${diaSemana(c.salida)} ${fecha(c.salida)}` }), h("td", { text: fecha(c.regreso) }),
+        const [ro, rd] = c.ruta.split("-");
+        return h("tr", {}, h("td", { text: NOMBRE[c.ruta] || c.ruta }), h("td", { text: largo(c.salida) }), h("td", { text: fecha(c.regreso) }),
           h("td", { class: "n", text: `~${c.dias_en_japon_aprox}` }), h("td", { class: "n", text: usd(c.precio_comparable) }),
-          h("td", { class: "acciones-celda" }, acciones(o, d, c.salida, c.regreso)));
+          h("td", {}, acciones(ro, rd, c.salida, c.regreso, { compacto: true })));
       }))));
   }
 
-  // ---------------------------------------------------------------- ir a comprar una fecha del calendario
-  const JAPON = { TYO: ["NRT", "HND"], OSA: ["KIX", "ITM"] };
-  const PARA_GOOGLE = { BUE: "Buenos Aires", GRU: "Sao Paulo", TYO: "Tokyo", OSA: "Osaka" };
-  const NOMBRE_CIUDAD = { BUE: "Buenos Aires", GRU: "San Pablo", TYO: "Tokio", OSA: "Osaka" };
-  const aUTC = (iso) => Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10));
-  const isoMas = (iso, dias) => new Date(aUTC(iso) + dias * 864e5).toISOString().slice(0, 10);
-  const diasEntre = (a, b) => Math.round((aUTC(b) - aUTC(a)) / 864e5);
-  const googleUrl = (de, a, salida, regreso) => "https://www.google.com/travel/flights?" +
-    new URLSearchParams({ q: `Flights from ${de} to ${a} on ${salida} through ${regreso} for ${P.pasajeros} adults`, hl: "es-419", curr: "USD" });
-
-  function linksGoogle(origen, destino, salida, regreso) {
-    if (origen === "GRU") {
-      const vueltaABue = isoMas(regreso, D.duraciones?.gru?.vuelta_dias ?? 1);
-      return [
-        { texto: "Google Flights: desde San Pablo", url: googleUrl("Sao Paulo", PARA_GOOGLE[destino], salida, regreso) },
-        { texto: "Google Flights: Buenos Aires–San Pablo", url: googleUrl("Buenos Aires", "Sao Paulo", salida, vueltaABue) },
-      ];
-    }
-    return [{ texto: "Buscar en Google Flights", url: googleUrl("Buenos Aires", PARA_GOOGLE[destino], salida, regreso) }];
-  }
-
-  function opcionesPara(origen, destino, salida, regreso, margen = 0) {
-    // Desde San Pablo, el tramo corto puede salir de Buenos Aires el día anterior.
-    return opciones.filter((o) => {
-      if (!JAPON[destino].includes(o.tramos[0].ruta.at(-1)) || o.desde_san_pablo !== (origen === "GRU")) return false;
-      const corrimiento = diasEntre(salida, o.sale.slice(0, 10));
-      const saleBien = Math.abs(corrimiento) <= margen || (origen === "GRU" && corrimiento === -1);
-      return saleBien && Math.abs(diasEntre(regreso, o.vuelve.slice(0, 10))) <= margen;
-    });
-  }
-
-  function botonOpcion(origen, destino, salida, regreso) {
-    // Primero las fechas exactas; si no hay, la opción más parecida (hasta 2 días de diferencia).
-    const exacta = opcionesPara(origen, destino, salida, regreso)[0];
-    const parecida = exacta ? null : opcionesPara(origen, destino, salida, regreso, 2)[0];
-    const o = exacta || parecida;
-    if (!o) return null;
-    const precios = o.valijas_estimadas
-      ? `${usd(o.precio_total)} sin valijas · ${usd(o.precio_con_valijas)} con valijas estimadas`
-      : `${usd(o.precio_total)} con valijas`;
-    const texto = exacta ? `Ver opción: ${precios}` : `Ver opción parecida (${fecha(o.sale)} → ${fecha(o.vuelve)}): ${precios}`;
-    return h("button", { class: "accion principal", type: "button", onclick: () => abrir(o.id, true), text: texto });
-  }
-
-  function acciones(origen, destino, salida, regreso, { conBuscador = true } = {}) {
-    const lista = [botonOpcion(origen, destino, salida, regreso)].filter(Boolean);
-    if (conBuscador) lista.push(h("button", { class: "accion", type: "button", onclick: () => usarEnBuscador(origen, destino, salida, regreso), text: "Probar en el buscador" }));
-    for (const l of linksGoogle(origen, destino, salida, regreso)) lista.push(h("a", { class: "accion", href: l.url, target: "_blank", rel: "noopener", text: `${l.texto} ↗` }));
-    return h("div", { class: "acciones" }, lista);
-  }
-
-  // ---------------------------------------------------------------- buscador
+  // ---------------------------------------------------------------- armá tu viaje
   const buscador = { origen: "BUE", destino: "TYO", salida: null, vuelta: null };
   const mejorFecha = D.fechas?.ranking?.[0];
-  if (mejorFecha) {
-    const [o, d] = mejorFecha.ruta.split("-");
-    Object.assign(buscador, { origen: o, destino: d, salida: mejorFecha.salida, vuelta: mejorFecha.regreso });
-  }
-
+  if (mejorFecha) { const [o, d] = mejorFecha.ruta.split("-"); Object.assign(buscador, { origen: o, destino: d, salida: mejorFecha.salida, vuelta: mejorFecha.regreso }); }
   function usarEnBuscador(origen, destino, salida, vuelta) {
     Object.assign(buscador, { origen, destino, salida, vuelta });
     dibujarBuscador();
-    $("#buscador").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    $("#buscador").scrollIntoView({ behavior: suave(), block: "start" });
   }
-
   function dibujarBuscador() {
     const campos = { origen: $("#b-origen"), destino: $("#b-destino"), salida: $("#b-salida"), vuelta: $("#b-vuelta") };
     for (const [k, campo] of Object.entries(campos)) campo.value = buscador[k] || "";
@@ -860,124 +946,81 @@
     if (buscador.salida) campos.vuelta.min = isoMas(buscador.salida, 1);
     const caja = $("#b-resultado");
     const { origen, destino, salida, vuelta } = buscador;
-    if (!salida || !vuelta) { caja.replaceChildren(h("p", { class: "apagado", text: "Elegí la fecha de salida y la de vuelta." })); return; }
+    if (!salida || !vuelta) { caja.replaceChildren(h("p", { class: "apagado chica", text: "Elegí salida y vuelta." })); return; }
     if (vuelta <= salida) { caja.replaceChildren(h("p", { class: "problema", text: "La vuelta tiene que ser después de la salida." })); return; }
     const dur = D.duraciones?.[origen === "GRU" ? "gru" : "bue"];
-    if (!dur) { caja.replaceChildren(h("p", { class: "apagado", text: "Todavía no hay vuelos encontrados desde ese origen para estimar las llegadas." })); return; }
-
-    const llegaJapon = isoMas(salida, dur.ida_dias);
-    const llegaCasa = isoMas(vuelta, dur.vuelta_dias);
-    const enJapon = diasEntre(llegaJapon, vuelta);
-    const total = diasEntre(salida, llegaCasa);
-    const largo = (iso) => `${diaSemana(iso)} ${fecha(iso)}`;
-    const dudoso = (rango) => rango[0] !== rango[1];
-    const objetivo = P.dias_en_japon, tolerancia = P.tolerancia_dias ?? 1;
-    const fuera = Math.abs(enJapon - objetivo) > tolerancia;
-
-    const fila = [
-      h("li", {}, h("span", { class: "que", text: `Salís de ${origen === "GRU" ? "Buenos Aires, vía San Pablo" : "Buenos Aires"}` }), h("span", { class: "cuando", text: largo(salida) })),
-      h("li", { class: "japon" }, h("span", { class: "que", text: `Llegás a ${NOMBRE_CIUDAD[destino]}` }), h("span", { class: "cuando", text: largo(llegaJapon) }),
-        h("span", { class: "chica apagado", text: dudoso(dur.ida_dias_rango) ? "aprox.: según el vuelo, puede variar 1 día" : `aprox. ${dur.ida_dias} días después` })),
-      h("li", { class: "japon" }, h("span", { class: "que", text: "Salís de Japón" }), h("span", { class: "cuando", text: largo(vuelta) })),
-      h("li", {}, h("span", { class: "que", text: "Llegás a Buenos Aires" }), h("span", { class: "cuando", text: largo(llegaCasa) }),
-        h("span", { class: "chica apagado", text: dudoso(dur.vuelta_dias_rango) ? "aprox.: según el vuelo, puede ser el mismo día o el siguiente" : "aprox." })),
-    ];
-    const cifras = h("div", { class: "cifras" },
-      h("div", { class: "cifra" }, h("span", { text: "Días en Japón" }), h("b", { text: enJapon }),
-        h("span", { class: fuera ? "problema" : "", text: fuera ? `Querés ${objetivo}: ${enJapon > objetivo ? "sobran" : "faltan"} ${Math.abs(enJapon - objetivo)}` : "Dentro de lo que querés" })),
-      h("div", { class: "cifra" }, h("span", { text: "Días de vuelo" }), h("b", { text: dur.ida_dias + dur.vuelta_dias }),
-        h("span", { text: `${dur.ida_dias} de ida (~${decimal.format(dur.ida_horas)} h) y ${dur.vuelta_dias} de vuelta (~${decimal.format(dur.vuelta_horas)} h)` })),
-      h("div", { class: "cifra" }, h("span", { text: "Viaje completo" }), h("b", { text: total }),
-        h("span", { text: `del ${largo(salida)} al ${largo(llegaCasa)}` })));
-
-    // Precio: el calendario tiene precio solo para algunas duraciones de estadía.
-    const ruta = `${origen}-${destino}`;
-    const estadia = diasEntre(salida, vuelta);
+    if (!dur) { caja.replaceChildren(h("p", { class: "apagado chica", text: "Todavía no hay vuelos desde ese origen para estimar llegadas." })); return; }
+    const llegaJapon = isoMas(salida, dur.ida_dias), llegaCasa = isoMas(vuelta, dur.vuelta_dias);
+    const enJapon = diasEntre(llegaJapon, vuelta), total = diasEntre(salida, llegaCasa);
+    const fuera = Math.abs(enJapon - P.dias_en_japon) > (P.tolerancia_dias ?? 1);
+    const ruta = `${origen}-${destino}`, estadia = diasEntre(salida, vuelta);
     const celdas = (D.fechas?.celdas || []).filter((c) => c.ruta === ruta);
     const exacta = celdas.find((c) => c.salida === salida && c.estadia === estadia);
     const precioDe = (c) => c.precio_comparable ?? c.precio;
-    const partesPrecio = [];
-    if (exacta) {
-      partesPrecio.push(h("p", {}, h("b", { text: `${usd(precioDe(exacta))} para los ${P.pasajeros}` }),
-        h("span", { class: "apagado", text: ` según el calendario del ${fecha(exacta.visto)}: sin confirmar y sin valijas${exacta.incluye_tramo_corto ? ", con el tramo a Buenos Aires" : ""}.` })));
-    } else {
-      const estadias = [...new Set(celdas.map((c) => c.estadia))].sort((a, b) => a - b);
-      partesPrecio.push(h("p", { class: "apagado", text: `No tengo precio para exactamente estas fechas. El calendario tiene precios para estadías de ${estadias.join(", ")} días entre la salida y la vuelta.` }));
-      const cercanas = celdas
-        .filter((c) => Math.abs(diasEntre(salida, c.salida)) <= 4 && Math.abs(diasEntre(isoMas(c.salida, dur.ida_dias), c.regreso) - objetivo) <= tolerancia)
-        .sort((a, b) => precioDe(a) - precioDe(b)).slice(0, 3);
-      if (cercanas.length) {
-        partesPrecio.push(h("p", { class: "chica apagado", text: "Fechas parecidas con precio:" }), h("div", { class: "acciones" }, cercanas.map((c) =>
-          h("button", { class: "accion", type: "button", onclick: () => usarEnBuscador(origen, destino, c.salida, c.regreso),
-            text: `${largo(c.salida)} → ${largo(c.regreso)} · ${usd(precioDe(c))}` }))));
-      }
-    }
-    caja.replaceChildren(
-      h("div", { class: "tramos" }, h("ol", { class: "linea-tiempo" }, fila), cifras,
-        h("div", { class: "tramos" }, h("h3", { text: "Precio" }), ...partesPrecio),
-        h("div", { class: "tramos" }, h("h3", { text: "Cómo comprarlo" }), acciones(origen, destino, salida, vuelta, { conBuscador: false }),
-          h("p", { class: "chica apagado", text: `Las llegadas son estimadas con ${dur.opciones} vuelos reales encontrados desde ${origen === "GRU" ? "San Pablo" : "Buenos Aires"}, contando las 12 h de diferencia horaria con Japón.` }))));
+    const cercanas = exacta ? [] : celdas.filter((c) => Math.abs(diasEntre(salida, c.salida)) <= 4 && Math.abs(diasEntre(isoMas(c.salida, dur.ida_dias), c.regreso) - P.dias_en_japon) <= (P.tolerancia_dias ?? 1))
+      .sort((a, b) => precioDe(a) - precioDe(b)).slice(0, 3);
+    caja.replaceChildren(h("div", { class: "pila" },
+      h("ol", { class: "linea-viaje" },
+        h("li", {}, h("small", { text: "🛫 Salís" }), h("b", { text: largo(salida) })),
+        h("li", { class: "japon" }, h("small", { text: `🗾 Llegás a ${CIUDAD[destino]}` }), h("b", { text: largo(llegaJapon) }), h("small", { text: "aprox." })),
+        h("li", { class: "japon" }, h("small", { text: "🛫 Salís de Japón" }), h("b", { text: largo(vuelta) })),
+        h("li", {}, h("small", { text: "🏠 Llegás" }), h("b", { text: largo(llegaCasa) }), h("small", { text: "aprox." }))),
+      h("div", { class: "cifras" },
+        h("div", { class: "cifra" }, h("span", { text: "🗾 En Japón" }), h("b", { class: fuera ? "sube" : "", text: `${enJapon} días` }), h("small", { class: "apagado", text: fuera ? `querés ${P.dias_en_japon}` : "✓" })),
+        h("div", { class: "cifra" }, h("span", { text: "✈️ Volando" }), h("b", { text: `${dur.ida_dias + dur.vuelta_dias} días` }), h("small", { class: "apagado", text: `~${duracion(dur.ida_horas)} + ${duracion(dur.vuelta_horas)}` })),
+        h("div", { class: "cifra" }, h("span", { text: "🧳 Viaje total" }), h("b", { text: `${total} días` }))),
+      exacta ? h("p", {}, "💲 ", h("b", { text: usd(precioDe(exacta)) }), h("span", { class: "apagado chica", text: ` para ${P.pasajeros}, calendario del ${fecha(exacta.visto)}, sin valijas` }))
+        : h("p", { class: "apagado chica", text: cercanas.length ? "Sin precio para estas fechas exactas. Parecidas:" : "Sin precio para estas fechas en el calendario." }),
+      cercanas.length ? h("div", { class: "acciones" }, cercanas.map((c) => h("button", { class: "boton chico", type: "button", onclick: () => usarEnBuscador(origen, destino, c.salida, c.regreso), text: `${fecha(c.salida)} → ${fecha(c.regreso)} · ${usd(precioDe(c))}` }))) : null,
+      acciones(origen, destino, salida, vuelta, { conBuscador: false })));
   }
-
   for (const id of ["#b-origen", "#b-destino", "#b-salida", "#b-vuelta"]) {
-    $(id).addEventListener("change", () => {
-      Object.assign(buscador, { origen: $("#b-origen").value, destino: $("#b-destino").value, salida: $("#b-salida").value || null, vuelta: $("#b-vuelta").value || null });
-      dibujarBuscador();
-    });
+    $(id).addEventListener("change", () => { Object.assign(buscador, { origen: $("#b-origen").value, destino: $("#b-destino").value, salida: $("#b-salida").value || null, vuelta: $("#b-vuelta").value || null }); dibujarBuscador(); });
   }
 
   // ---------------------------------------------------------------- promos y estado
-  function dibujarPromos() {
+  function dibujarMas() {
     const R = D.promociones;
     const lista = $("#lista-promos");
-    if (!R) { lista.replaceChildren(h("p", { class: "tarjeta vacio", text: "Hoy no se revisaron las promociones." })); return; }
-    $("#nota-promos").textContent = `Publicadas en las últimas ${R.horas} horas que sirven para este viaje. Se revisaron ${R.leidas} publicaciones de promociones-aereas.com.ar.`;
-    if (!R.promociones.length) { lista.replaceChildren(h("p", { class: "tarjeta vacio", text: "Ninguna promoción nueva para Japón, Asia o tus tarjetas Galicia." })); return; }
-    lista.replaceChildren(...R.promociones.map((p) => h("a", { class: "tarjeta promo", href: p.link, target: "_blank", rel: "noopener" },
-      h("b", { text: p.titulo }),
-      h("span", { class: "chica apagado", text: `${p.publicada ? fecha(p.publicada) + " " + hora(p.publicada) + " · " : ""}${p.motivos.join(" · ")}` }),
+    if (!R) lista.replaceChildren(h("p", { class: "tarjeta vacio", text: "Hoy no se revisaron las promociones." }));
+    else if (!R.promociones.length) lista.replaceChildren(h("p", { class: "tarjeta vacio", text: `Nada nuevo para Japón, Asia o Galicia en las últimas ${R.horas} h.` }));
+    else lista.replaceChildren(...R.promociones.map((p) => h("a", { class: "tarjeta promo", href: p.link, target: "_blank", rel: "noopener" },
+      h("b", { text: p.titulo }), h("span", { class: "chica apagado", text: `${p.publicada ? fecha(p.publicada) + " · " : ""}${p.motivos.join(" · ")}` }),
       p.aviso ? h("span", { class: "chica", style: "color: var(--warn)", text: `⚠️ ${p.aviso}` }) : null)));
-  }
-
-  function dibujarEstado() {
-    const E = D.estado || {};
-    const cupo = E.cupo || {};
-    const tarjetas = Object.entries({ ignav: "Ignav", serpapi: "SerpApi (Google Flights)" }).map(([k, nombre]) => {
+    const E = D.estado || {}, cupo = E.cupo || {};
+    const tarjetas = Object.entries({ ignav: "Ignav", serpapi: "Google Flights" }).map(([k, nombre]) => {
       const c = cupo[k];
-      return h("div", { class: "tarjeta" }, h("b", { text: nombre }),
-        h("p", { class: "chica apagado num", text: c ? `${c.gastadas_hoy} consultas el ${fecha(D.fecha_datos)} · ${numero.format(c.total)} en total` : "Sin datos de consultas." }));
+      return h("div", { class: "tarjeta" }, h("b", { text: nombre }), h("p", { class: "chica apagado num", text: c ? `${c.gastadas_hoy} hoy · ${numero.format(c.total)} en total` : "—" }));
     });
+    tarjetas.push(h("div", { class: "tarjeta" }, h("b", { text: "🏨 Stopovers" }), h("p", { class: "chica apagado", text: `~${SO.cupo?.busquedas_aprox ?? "?"} búsquedas disponibles este mes` })));
     const errores = E.errores || [];
-    tarjetas.push(h("div", { class: "tarjeta" }, h("b", { text: errores.length ? "Errores en la última búsqueda" : "Sin errores" }),
+    tarjetas.push(h("div", { class: "tarjeta" }, h("b", { text: errores.length ? "⚠️ Errores" : "✓ Sin errores" }),
       errores.length ? h("ul", { class: "chica error" }, errores.map((e) => h("li", { text: e }))) : h("p", { class: "chica apagado", text: "Todas las fuentes respondieron." })));
     $("#estado-tarjetas").replaceChildren(...tarjetas);
     $("#explicacion").replaceChildren(...[
-      `Los precios son el total para los ${P.pasajeros} en USD, con impuestos.`,
-      `Si la fuente no confirma la valija despachada, se suman USD ${P.costo_valija} por valija y por tramo. Es una estimación.`,
-      `Se aceptan hasta ${P.max_escalas} escalas y ${P.max_horas} h por tramo desde Buenos Aires. Desde San Pablo no hay límite de horas, porque lo elegiste así.`,
-      `Las categorías: hasta ${usd(P.precios.ideal)} 🟢 ideal, hasta ${usd(P.precios.comprar)} ✅ comprar, hasta ${usd(P.precios.casi)} 👀 casi.`,
-      "Fuentes: Ignav y Google Flights (a través de SerpApi). Los precios cambian todo el tiempo: confirmá siempre antes de pagar.",
+      `Precios en USD, total para los ${P.pasajeros}, con impuestos.`,
+      `🧳 ? = la fuente no confirma la valija: se suman ~USD ${P.costo_valija} por valija y por tramo (estimado).`,
+      `Se buscan salidas de todo 2027; abril a junio se revisan más seguido.`,
+      `Hasta ${P.max_escalas} escalas y ${P.max_horas} h por tramo desde Buenos Aires; desde San Pablo sin límite de horas.`,
+      `🟢 ideal hasta ${usd(P.precios.ideal)} · ✅ comprar hasta ${usd(P.precios.comprar)} · 👀 casi hasta ${usd(P.precios.casi)}.`,
+      "Fuentes: Ignav y Google Flights (SerpApi). Los precios cambian: confirmá siempre antes de pagar.",
     ].map((t) => h("li", { text: t })));
   }
 
   // ---------------------------------------------------------------- arranque
-  document.querySelectorAll("#opciones .filtro").forEach((b) => b.addEventListener("click", () => { estado.filtro = b.dataset.filtro; guardar("vj-filtro", estado.filtro); dibujarLista(); }));
-  $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; guardar("vj-orden", estado.orden); dibujarLista(); });
-  $("#ver-comparacion").addEventListener("click", () => $("#comparar").scrollIntoView({ behavior: "smooth" }));
-  $("#limpiar-comparacion").addEventListener("click", () => { estado.comparar = []; guardar("vj-comparar", []); dibujarLista(); dibujarComparacion(); });
   let anchoPrevio = 0;
-  addEventListener("resize", () => { const a = $("#grafico-evolucion").clientWidth; if (Math.abs(a - anchoPrevio) > 20) { anchoPrevio = a; dibujarEvolucion(); } });
-
+  addEventListener("resize", () => { const a = $("#grafico-evolucion").clientWidth; if (estado.tab === "precio" && Math.abs(a - anchoPrevio) > 20) { anchoPrevio = a; dibujarEvolucion(); } });
+  const pedida = location.hash.slice(1);
+  mostrarTab(document.getElementById(pedida)?.getAttribute("role") === "tabpanel" ? pedida : estado.tab, false);
   dibujarActualizar();
   revisarNovedades();
-  dibujarHoy();
-  dibujarEvolucion();
+  dibujarResumen();
   dibujarLista();
   dibujarComparacion();
+  dibujarStopovers();
   dibujarFechas();
   dibujarBuscador();
-  dibujarPromos();
-  dibujarEstado();
+  dibujarMas();
 })();
 </script>
 </body>

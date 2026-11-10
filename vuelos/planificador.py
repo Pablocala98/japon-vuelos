@@ -8,8 +8,8 @@ from datetime import date, timedelta
 from itertools import product
 from pathlib import Path
 
-CADA_CUANTOS_PREFERIDOS = 3  # por cada 3 calendarios de mayo-junio, entra 1 de abril
-ANTIGUEDAD_MAXIMA_DIAS = 21  # un precio más viejo que esto no se usa para elegir fechas
+ANTIGUEDAD_MAXIMA_DIAS = 35  # un precio más viejo que esto no se usa (los meses no preferidos se revisan cada ~27 días)
+MARGEN_PARA_SALIR = 7         # no se buscan meses que terminan antes de una semana
 
 
 def rutas(cfg: dict) -> list[tuple[str, str]]:
@@ -30,40 +30,70 @@ def ventanas(cfg: dict) -> list[tuple[str, str]]:
     return resultado
 
 
+def es_preferida(cfg: dict, salida: str) -> bool:
+    fechas = cfg["fechas"]
+    return fechas["salida_preferida_desde"] <= salida[:10] <= fechas.get("salida_preferida_hasta", fechas["salida_hasta"])
+
+
+def _estadia_del_medio(cfg: dict) -> int:
+    estadias = sorted(cfg["fechas"]["estadia_dias"])
+    return estadias[len(estadias) // 2]
+
+
+def calendarios_preferidos(cfg: dict) -> list[dict]:
+    """Abril-junio: todas las rutas y estadías. San Pablo-Osaka, que suele salir más caro, solo con la estadía del medio."""
+    medio, alternativa = _estadia_del_medio(cfg), (cfg["viaje"]["origen_alternativo"], "OSA")
+    return [{"origen": o, "destino": d, "desde": v[0], "hasta": v[1], "estadia": e}
+            for v, e, (o, d) in product(ventanas(cfg), cfg["fechas"]["estadia_dias"], rutas(cfg))
+            if es_preferida(cfg, v[0]) and ((o, d) != alternativa or e == medio)]
+
+
+def calendarios_resto(cfg: dict) -> list[dict]:
+    """El resto del año: la estadía del medio y sin San Pablo-Osaka, para que la vuelta no tarde demasiado."""
+    medio, alternativa = _estadia_del_medio(cfg), (cfg["viaje"]["origen_alternativo"], "OSA")
+    # Se alternan los meses: así cada día cae en una parte distinta del año.
+    por_mes = [[{"origen": o, "destino": d, "desde": v[0], "hasta": v[1], "estadia": medio}
+                for (o, d) in rutas(cfg) if (o, d) != alternativa]
+               for v in ventanas(cfg) if not es_preferida(cfg, v[0])]
+    return [c for grupo in zip(*por_mes) for c in grupo] if por_mes else []
+
+
 def ciclo_calendarios(cfg: dict) -> list[dict]:
-    """Todas las combinaciones, con mayo-junio apareciendo antes y más seguido que abril."""
-    combinaciones = [
-        {"origen": o, "destino": d, "desde": v[0], "hasta": v[1], "estadia": e}
-        for e, v, (o, d) in product(cfg["fechas"]["estadia_dias"], ventanas(cfg), rutas(cfg))
-    ]
-    preferida = cfg["fechas"]["salida_preferida_desde"]
-    preferidas = [c for c in combinaciones if c["desde"] >= preferida]
-    otras = [c for c in combinaciones if c["desde"] < preferida]
-    ciclo = []
-    for i, combinacion in enumerate(preferidas):
-        ciclo.append(combinacion)
-        if otras and (i + 1) % CADA_CUANTOS_PREFERIDOS == 0:
-            ciclo.append(otras.pop(0))
-    return ciclo + otras
+    """Todas las combinaciones que se revisan, primero las de abril-junio."""
+    return calendarios_preferidos(cfg) + calendarios_resto(cfg)
+
+
+def _sin_pasados(calendarios: list[dict], dia: date) -> list[dict]:
+    limite = (dia + timedelta(days=MARGEN_PARA_SALIR)).isoformat()
+    return [c for c in calendarios if c["hasta"] >= limite]
 
 
 def calendarios_del_dia(cfg: dict, dia: date, cantidad: int) -> list[dict]:
-    ciclo = ciclo_calendarios(cfg)
-    inicio = dia.toordinal() * cantidad
-    return [ciclo[(inicio + i) % len(ciclo)] for i in range(min(cantidad, len(ciclo)))]
+    """Por día: todos menos uno de abril-junio, y uno del resto del año. La rotación sale de la fecha."""
+    preferidos = _sin_pasados(calendarios_preferidos(cfg), dia)
+    resto = _sin_pasados(calendarios_resto(cfg), dia)
+    de_preferidos = cantidad - 1 if resto and preferidos else cantidad
+    elegidos = []
+    if preferidos:
+        inicio = dia.toordinal() * de_preferidos
+        elegidos += [preferidos[(inicio + i) % len(preferidos)] for i in range(min(de_preferidos, len(preferidos)))]
+    if resto:
+        faltan = cantidad - len(elegidos)
+        inicio = dia.toordinal() * faltan
+        elegidos += [resto[(inicio + i) % len(resto)] for i in range(min(faltan, len(resto)))]
+    return elegidos
 
 
 def barrido_inicial(cfg: dict) -> list[dict]:
     """Una foto de toda la ventana: cada ruta y cada mes, con la estadía del medio."""
-    estadias = sorted(cfg["fechas"]["estadia_dias"])
-    estadia = estadias[len(estadias) // 2]
+    estadia = _estadia_del_medio(cfg)
     return [c for c in ciclo_calendarios(cfg) if c["estadia"] == estadia]
 
 
 def calendarios_exploracion(cfg: dict) -> list[dict]:
-    """Como el barrido, pero sin San Pablo-Osaka, que hasta ahora salió más caro que San Pablo-Tokio."""
+    """Como el barrido en abril-junio, pero sin San Pablo-Osaka, que hasta ahora salió más caro que San Pablo-Tokio."""
     excluida = (cfg["viaje"]["origen_alternativo"], "OSA")
-    return [c for c in barrido_inicial(cfg) if (c["origen"], c["destino"]) != excluida]
+    return [c for c in barrido_inicial(cfg) if (c["origen"], c["destino"]) != excluida and es_preferida(cfg, c["desde"])]
 
 
 class Memoria:

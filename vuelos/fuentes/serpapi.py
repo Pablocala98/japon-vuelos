@@ -51,8 +51,9 @@ class SerpApi:
             parametros["departure_token"] = token
         return self._buscar(parametros)
 
-    def multidestino(self, tramos: list[tuple[str, str, str]], token: str | None = None, max_escalas: int | None = None) -> dict:
-        """Open-jaw o stopover. Cada tramo es (origen, destino, fecha)."""
+    def multidestino(self, tramos: list[tuple[str, str, str]], token: str | None = None, max_escalas: int | None = None,
+                     aerolineas: str | None = None) -> dict:
+        """Open-jaw o stopover. Cada tramo es (origen, destino, fecha). `aerolineas`: códigos IATA separados por coma."""
         parametros = {"type": 3, "multi_city_json": json.dumps(
             [{"departure_id": o, "arrival_id": d, "date": f} for o, d, f in tramos]
         )}
@@ -60,6 +61,8 @@ class SerpApi:
             parametros["departure_token"] = token
         if max_escalas is not None:
             parametros["stops"] = PARAM_ESCALAS[max_escalas]
+        if aerolineas:
+            parametros["include_airlines"] = aerolineas
         return self._buscar(parametros)
 
 

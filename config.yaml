@@ -10,12 +10,13 @@ viaje:
   origen_alternativo: GRU       # San Pablo (se suma aparte el tramo desde Buenos Aires)
   destinos_tokio: [NRT, HND]
   destinos_osaka: [KIX, ITM]
-  stopover: MAD                 # una noche en Madrid; se prueba los domingos
 
 fechas:
-  salida_desde: "2027-04-01"
-  salida_hasta: "2027-06-30"
-  salida_preferida_desde: "2027-05-01"   # mayo y junio se buscan más seguido
+  salida_desde: "2027-01-01"
+  salida_hasta: "2027-12-31"
+  # Estos meses se revisan más seguido (cada ~15 días); el resto, cada ~27 días.
+  salida_preferida_desde: "2027-04-01"
+  salida_preferida_hasta: "2027-06-30"
   # Días entre la salida de Buenos Aires y la salida de Japón. El viaje de ida
   # se come unos 2 días: 22 acá son unos 20 en Japón.
   estadia_dias: [21, 22, 23]
@@ -49,15 +50,35 @@ precios:
 # Límites de consultas por fuente, para no pasarse del plan gratis.
 consultas:
   ignav:
-    por_dia: 9              # 2 calendarios + hasta 4 búsquedas exactas + hasta 3 links de compra
+    por_dia: 9              # 3 calendarios + hasta 3 búsquedas exactas + hasta 3 links de compra
     links_por_dia: 3        # links exactos para la mejor del día y las que lleguen a 👀 casi o mejor
     total_gratis: 1000      # es por única vez, no se renueva
   serpapi:
-    por_dia: 8
+    por_dia: 6              # la búsqueda diaria; el resto del mes queda para los stopovers
     por_mes: 250
+  stopover:                 # sale del mismo cupo de SerpApi, con su propio tope
+    por_mes: 60
+    por_busqueda: 6         # cada búsqueda pedida prueba 2 fechas, 3 consultas cada una: ~10 búsquedas por mes
 
 analisis:
   dias_vigencia: 3  # una opción encontrada se sigue mostrando 3 días, con la fecha en que se vio
+
+# Stopovers: se piden desde la página (botón "Pedir búsqueda"). Un solo pasaje con días en la ciudad de escala.
+stopovers:
+  madrid:
+    nombre: Madrid
+    aeropuerto: MAD
+    aerolineas: IB          # Iberia
+    aerolinea_nombre: Iberia
+    sitio: https://www.iberia.com/ar/
+  estambul:
+    nombre: Estambul
+    aeropuerto: IST
+    aerolineas: TK          # Turkish Airlines
+    aerolinea_nombre: Turkish Airlines
+    sitio: https://www.turkishairlines.com/es-ar/
+    aviso: "Turkish tiene un programa de stopover con hotel gratis según la tarifa y la duración de la escala: revisá las condiciones al comprar."
+  dias_vigencia: 14         # los resultados se muestran 14 días
 
 publicacion:
   repositorio: "Pablocala98/japon-vuelos"   # usuario/repositorio de GitHub
