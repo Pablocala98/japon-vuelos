@@ -1,0 +1,44 @@
+{
+ "fecha": "2026-11-10",
+ "actualizado": "2026-11-10T19:23:06-03:00",
+ "opciones": [],
+ "descartes": {},
+ "san_pablo": [],
+ "pedidos": [
+  {
+   "ciudad": "estambul",
+   "dias": 3,
+   "cuando": "ida",
+   "mes": "2027-05",
+   "pedido": "2026-11-10T19:22:58-03:00",
+   "salidas": [
+    "2027-05-16",
+    "2027-05-23"
+   ],
+   "opciones": 0,
+   "errores": []
+  }
+ ],
+ "consultas_hechas": [
+  "stopover estambul ida 3d 2027-05-16",
+  "stopover estambul ida 3d 2027-05-23"
+ ],
+ "errores": [],
+ "cupo": {
+  "ignav": {
+   "gastadas_hoy": 9,
+   "disponibles_hoy": 0,
+   "total": 45
+  },
+  "serpapi": {
+   "gastadas_hoy": 9,
+   "disponibles_hoy": 226,
+   "total": 24
+  },
+  "stopover": {
+   "gastadas_hoy": 2,
+   "disponibles_hoy": 4,
+   "total": 2
+  }
+ }
+}
