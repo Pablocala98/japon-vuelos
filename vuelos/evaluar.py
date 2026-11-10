@@ -31,9 +31,12 @@ def motivo_descarte(opcion: dict, restricciones: dict) -> str | None:
 
 
 def _max_horas(opcion: dict, restricciones: dict) -> float | None:
-    """La ruta desde San Pablo puede tener su propio límite de horas (o ninguno)."""
-    if opcion.get("tipo") in TIPOS_SAN_PABLO and "max_horas_por_tramo_san_pablo" in restricciones:
-        propio = restricciones["max_horas_por_tramo_san_pablo"]
+    """La ruta desde San Pablo y los stopovers pueden tener su propio límite de horas (o ninguno)."""
+    tipo = opcion.get("tipo") or ""
+    clave = ("max_horas_por_tramo_san_pablo" if tipo in TIPOS_SAN_PABLO
+             else "max_horas_por_tramo_stopover" if tipo.startswith("stopover_") else None)
+    if clave and clave in restricciones:
+        propio = restricciones[clave]
         general = restricciones["max_horas_por_tramo"]
         # En la exploración no hay límite general: el de San Pablo no puede volver a ponerlo.
         return None if general is None else propio

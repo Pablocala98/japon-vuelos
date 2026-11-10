@@ -29,15 +29,15 @@ def datos_del_tipo(tipo_opcion: str) -> tuple[str, str]:
 def tramos(salida: date, dias: int, cuando: str, dias_en_japon: int, origen: str, escala: str, japon: str) -> list[tuple[str, str, str]]:
     """Las 3 partes del viaje, con fechas que respetan los días en Japón.
 
-    A Japón se llega 2 días después de salir (1 si se sale de la ciudad del stopover). Desde Japón hacia
-    Madrid o Estambul se llega el mismo día.
+    A Japón se llega 2 días después de salir (1 si se sale de la ciudad del stopover). Iberia y Turkish salen
+    de Japón de noche y llegan a Madrid o Estambul al día siguiente.
     """
     if cuando == "ida":
         sale_escala = salida + timedelta(days=1 + dias)
         sale_japon = sale_escala + timedelta(days=1 + dias_en_japon)
         return [(origen, escala, salida.isoformat()), (escala, japon, sale_escala.isoformat()), (japon, origen, sale_japon.isoformat())]
     sale_japon = salida + timedelta(days=2 + dias_en_japon)
-    sale_escala = sale_japon + timedelta(days=dias)
+    sale_escala = sale_japon + timedelta(days=1 + dias)
     return [(origen, japon, salida.isoformat()), (japon, escala, sale_japon.isoformat()), (escala, origen, sale_escala.isoformat())]
 
 

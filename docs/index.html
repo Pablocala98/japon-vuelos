@@ -519,6 +519,7 @@
     if (o.equipaje === "incluida") lista.push(h("span", { class: "icono ok", title: "Valija despachada incluida", text: "🧳 incluida" }));
     else if (o.equipaje === "estimada") lista.push(h("span", { class: "icono", title: "La fuente estimó el costo de la valija y está sumado", text: "🧳 ~incluida" }));
     else lista.push(h("span", { class: "icono ojo", title: `Sin confirmar: sumamos ${usd(o.valijas_estimadas)} estimados`, text: "🧳 ?" }));
+    if (P.max_horas && maxHoras(o) > P.max_horas) lista.push(h("span", { class: "icono ojo", title: `Un tramo dura ${duracion(maxHoras(o))}: más que tu límite de ${P.max_horas} h`, text: `⏱️ +${P.max_horas} h` }));
     if (o.desde_san_pablo) lista.push(h("span", { class: "icono ojo", title: "Son 2 pasajes separados: cambiás de avión en San Pablo con tus valijas", text: "⚠️ 2 pasajes" }));
     const visas = [...new Set(o.tramos.flatMap((t) => (t.paradas || []).map((p) => TRANSITO[p.pais_codigo]).filter(Boolean)))];
     visas.forEach((v) => lista.push(h("span", { class: "icono mal", title: "Con pasaporte argentino necesitás este permiso aunque no salgas del aeropuerto", text: `🛂 ${v}` })));

@@ -30,6 +30,8 @@ restricciones:
   # Saliendo desde San Pablo, el tramo corto y la espera alargan el viaje.
   # null = sin límite de horas para esa ruta. Poné un número para volver a limitarla.
   max_horas_por_tramo_san_pablo: null
+  # Los stopovers (Turkish vuelve por Estambul y San Pablo) también pueden pasar las 36 h. null = sin límite.
+  max_horas_por_tramo_stopover: null
   conexion_minima_horas: 4      # margen entre los 2 pasajes separados si se sale desde San Pablo
 
 equipaje:

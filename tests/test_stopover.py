@@ -34,7 +34,7 @@ class Fechas(unittest.TestCase):
 
     def test_stopover_a_la_vuelta(self):
         partes = stopover.tramos(date(2027, 5, 10), 4, "vuelta", 20, "EZE,AEP", "MAD", "NRT,HND")
-        self.assertEqual(partes, [("EZE,AEP", "NRT,HND", "2027-05-10"), ("NRT,HND", "MAD", "2027-06-01"), ("MAD", "EZE,AEP", "2027-06-05")])
+        self.assertEqual(partes, [("EZE,AEP", "NRT,HND", "2027-05-10"), ("NRT,HND", "MAD", "2027-06-01"), ("MAD", "EZE,AEP", "2027-06-06")])
 
     def test_elige_2_salidas_baratas_separadas_del_mes_pedido(self):
         filas = [{"salida": "2027-05-10", "ruta": "BUE-TYO", "precio": 4000}, {"salida": "2027-05-11", "ruta": "BUE-TYO", "precio": 4010},
@@ -48,6 +48,12 @@ class Fechas(unittest.TestCase):
 
 
 class Detalle(unittest.TestCase):
+    def test_un_stopover_puede_pasar_las_36_horas(self):
+        o = opcion_estambul_ida()
+        o["tramos"][2]["horas"] = 41.0
+        self.assertIsNone(evaluar.motivo_descarte(o, CFG["restricciones"]))
+        self.assertIsNotNone(evaluar.motivo_descarte({**o, "tipo": "ida_y_vuelta"}, CFG["restricciones"]))
+
     def test_dias_en_cada_lugar(self):
         o = opcion_estambul_ida()
         self.assertIsNone(evaluar.motivo_descarte(o, CFG["restricciones"]))
