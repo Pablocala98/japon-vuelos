@@ -1,0 +1,14 @@
+# Claves: NUNCA se suben a GitHub
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Mac
+.DS_Store
+
+# Respuestas crudas de las pruebas
+data/pruebas/
+data/crudo/

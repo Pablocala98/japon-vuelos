@@ -1,0 +1,480 @@
+{
+ "fecha": "2026-11-09",
+ "actualizado": "2026-11-09T20:48:13-03:00",
+ "opciones": [
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 5950,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9
+    },
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "NRT",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:20",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 31.1
+    }
+   ],
+   "por_persona": 2975,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6270,
+   "por_persona_con_valijas": 3135,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5950
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 7133,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "LAX",
+      "KIX"
+     ],
+     "salida": "2027-05-16T22:20",
+     "llegada": "2027-05-18T18:45",
+     "escalas": 2,
+     "horas": 32.4
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-06-07T14:50",
+     "llegada": "2027-06-08T08:00",
+     "escalas": 2,
+     "horas": 29.2
+    }
+   ],
+   "por_persona": 3566,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7453,
+   "por_persona_con_valijas": 3726,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 7133
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 8855,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DOH",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:45",
+     "llegada": "2027-04-10T19:10",
+     "escalas": 2,
+     "horas": 33.4
+    },
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "NRT",
+      "DOH",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-05-01T17:25",
+     "llegada": "2027-05-02T14:00",
+     "escalas": 2,
+     "horas": 32.6
+    }
+   ],
+   "por_persona": 4428,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 9175,
+   "por_persona_con_valijas": 4588,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 8855
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 24789,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "LAX",
+      "KIX"
+     ],
+     "salida": "2027-05-16T22:20",
+     "llegada": "2027-05-18T18:45",
+     "escalas": 2,
+     "horas": 32.4
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "KIX",
+      "SFO",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-06-07T16:55",
+     "llegada": "2027-06-08T08:00",
+     "escalas": 2,
+     "horas": 27.1
+    }
+   ],
+   "por_persona": 12394,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 25109,
+   "por_persona_con_valijas": 12554,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 24789
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 28865,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "KIX",
+      "LAX",
+      "SCL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:45",
+     "llegada": "2027-05-02T11:30",
+     "escalas": 2,
+     "horas": 29.8
+    }
+   ],
+   "por_persona": 14432,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 29185,
+   "por_persona_con_valijas": 14592,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 28865
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 33694,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.6
+    }
+   ],
+   "por_persona": 16847,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 34014,
+   "por_persona_con_valijas": 17007,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 33694
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 34351,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:50",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.2
+    }
+   ],
+   "por_persona": 17176,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 34671,
+   "por_persona_con_valijas": 17336,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 34351
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 38959,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "KIX",
+      "SFO",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T16:55",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 27.1
+    }
+   ],
+   "por_persona": 19480,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 39279,
+   "por_persona_con_valijas": 19640,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 38959
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 49123,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9
+    },
+    {
+     "aerolineas": [
+      "American",
+      "United"
+     ],
+     "ruta": [
+      "NRT",
+      "DFW",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T18:30",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 25.5
+    }
+   ],
+   "por_persona": 24562,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 49443,
+   "por_persona_con_valijas": 24722,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 49123
+   }
+  }
+ ],
+ "descartes": {
+  "más de 36 h en un tramo": 8
+ },
+ "san_pablo": [],
+ "consultas_hechas": [
+  "serpapi BUE-TYO 2027-04-08 2027-05-01",
+  "serpapi open-jaw 2027-04-08 2027-05-01",
+  "serpapi BUE-OSA 2027-05-16 2027-06-07"
+ ],
+ "errores": [],
+ "cupo": {
+  "ignav": {
+   "gastadas_hoy": 15,
+   "disponibles_hoy": 0,
+   "total": 36
+  },
+  "serpapi": {
+   "gastadas_hoy": 7,
+   "disponibles_hoy": 1,
+   "total": 15
+  }
+ }
+}

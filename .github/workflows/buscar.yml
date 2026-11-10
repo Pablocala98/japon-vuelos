@@ -1,0 +1,68 @@
+# Busca vuelos a Japón todos los días, guarda los resultados en el repositorio y publica el dashboard.
+name: Buscar vuelos
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # 11:00 UTC = 8:00 de Buenos Aires (GitHub puede demorarla un rato)
+  workflow_dispatch:        # botón "Run workflow" para buscar a mano
+
+permissions:
+  contents: write   # guardar los resultados del día
+  pages: write      # publicar el dashboard
+  id-token: write
+
+# Nunca dos búsquedas a la vez: compartirían el contador de consultas.
+concurrency:
+  group: buscar-vuelos
+  cancel-in-progress: false
+
+jobs:
+  buscar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Pruebas (sin internet, no gastan consultas)
+        run: python -m unittest discover -b tests
+
+      - name: Buscar vuelos
+        env:
+          IGNAV_API_KEY: ${{ secrets.IGNAV_API_KEY }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: python -m vuelos.buscar
+
+      # Aunque la búsqueda falle a mitad de camino, se guarda el contador para no pasarse del cupo gratis.
+      - name: Guardar resultados
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs
+          if git diff --cached --quiet; then
+            echo "Sin cambios para guardar."
+            exit 0
+          fi
+          git commit -m "Vuelos del $(TZ=America/Argentina/Buenos_Aires date +%F)"
+          git pull --rebase
+          git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: publicar
+        uses: actions/deploy-pages@v4

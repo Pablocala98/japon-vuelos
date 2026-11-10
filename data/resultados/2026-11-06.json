@@ -1,0 +1,2986 @@
+{
+ "fecha": "2026-11-06",
+ "actualizado": "2026-11-06T23:05:18-03:00",
+ "opciones": [
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 4362.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "incluida",
+   "tramos": [
+    {
+     "aerolineas": [
+      "IB"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:40",
+     "llegada": "2027-04-10T18:35",
+     "escalas": 1,
+     "horas": 32.9
+    },
+    {
+     "aerolineas": [
+      "IB"
+     ],
+     "ruta": [
+      "NRT",
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-05-01T22:10",
+     "llegada": "2027-05-02T16:15",
+     "escalas": 1,
+     "horas": 30.1
+    }
+   ],
+   "por_persona": 2181,
+   "valijas_estimadas": 0,
+   "precio_con_valijas": 4362,
+   "por_persona_con_valijas": 2181,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 4362.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 4548.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "ET"
+     ],
+     "ruta": [
+      "EZE",
+      "ADD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:55",
+     "llegada": "2027-04-10T19:40",
+     "escalas": 1,
+     "horas": 33.8
+    },
+    {
+     "aerolineas": [
+      "ET"
+     ],
+     "ruta": [
+      "NRT",
+      "ADD",
+      "EZE"
+     ],
+     "salida": "2027-05-01T20:40",
+     "llegada": "2027-05-02T20:25",
+     "escalas": 1,
+     "horas": 35.8
+    }
+   ],
+   "por_persona": 2274,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 4868,
+   "por_persona_con_valijas": 2434,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 4548.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5010.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T13:40",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 31.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2505,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5330,
+   "por_persona_con_valijas": 2665,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5010.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5010.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T13:40",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 31.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "SCL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T11:30",
+     "escalas": 2,
+     "horas": 32.9
+    }
+   ],
+   "por_persona": 2505,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5330,
+   "por_persona_con_valijas": 2665,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5010.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5012.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:45",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 33.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2506,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5332,
+   "por_persona_con_valijas": 2666,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5012.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5012.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:30",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 34.0
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2506,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5332,
+   "por_persona_con_valijas": 2666,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5012.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5012.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:45",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 33.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "SCL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T11:30",
+     "escalas": 2,
+     "horas": 32.9
+    }
+   ],
+   "por_persona": 2506,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5332,
+   "por_persona_con_valijas": 2666,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5012.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5012.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:30",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 34.0
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "SCL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T11:30",
+     "escalas": 2,
+     "horas": 32.9
+    }
+   ],
+   "por_persona": 2506,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5332,
+   "por_persona_con_valijas": 2666,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5012.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5067.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T13:40",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 31.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 2534,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5387,
+   "por_persona_con_valijas": 2694,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5067.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5069.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:45",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 33.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 2534,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5389,
+   "por_persona_con_valijas": 2694,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5069.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5069.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:30",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 34.0
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 2534,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5389,
+   "por_persona_con_valijas": 2694,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5069.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5082.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T18:05",
+     "llegada": "2027-05-25T18:00",
+     "escalas": 1,
+     "horas": 35.9
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "NRT",
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-15T22:10",
+     "llegada": "2027-06-16T16:00",
+     "escalas": 1,
+     "horas": 29.8
+    }
+   ],
+   "por_persona": 2541,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5402,
+   "por_persona_con_valijas": 2701,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5082.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5137.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "AR",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T09:50",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 35.7
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2568,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5457,
+   "por_persona_con_valijas": 2728,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5137.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5239.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T13:10",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 32.3
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2620,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5559,
+   "por_persona_con_valijas": 2780,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5239.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5251.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T12:55",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 32.6
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2626,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5571,
+   "por_persona_con_valijas": 2786,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5251.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5590.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "incluida",
+   "tramos": [
+    {
+     "aerolineas": [
+      "IB"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:40",
+     "llegada": "2027-04-10T18:35",
+     "escalas": 1,
+     "horas": 32.9
+    },
+    {
+     "aerolineas": [
+      "IB"
+     ],
+     "ruta": [
+      "NRT",
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-05-01T22:10",
+     "llegada": "2027-05-02T19:55",
+     "escalas": 1,
+     "horas": 33.8
+    }
+   ],
+   "por_persona": 2795,
+   "valijas_estimadas": 0,
+   "precio_con_valijas": 5590,
+   "por_persona_con_valijas": 2795,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5590.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5290.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-05-23T21:40",
+     "llegada": "2027-05-25T18:00",
+     "escalas": 1,
+     "horas": 32.3
+    },
+    {
+     "aerolineas": [
+      "Iberia"
+     ],
+     "ruta": [
+      "NRT",
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-15T22:10",
+     "llegada": "2027-06-16T16:00",
+     "escalas": 1,
+     "horas": 29.8
+    }
+   ],
+   "por_persona": 2645,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5610,
+   "por_persona_con_valijas": 2805,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5290.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5295.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T13:10",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 32.3
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 2648,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5615,
+   "por_persona_con_valijas": 2808,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5295.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5329.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Emirates"
+     ],
+     "ruta": [
+      "EZE",
+      "GIG",
+      "DXB",
+      "HND"
+     ],
+     "salida": "2027-05-23T22:40",
+     "llegada": "2027-05-25T22:20",
+     "escalas": 2,
+     "horas": 35.7
+    },
+    {
+     "aerolineas": [
+      "Emirates"
+     ],
+     "ruta": [
+      "HND",
+      "DXB",
+      "GIG",
+      "EZE"
+     ],
+     "salida": "2027-06-15T00:05",
+     "llegada": "2027-06-15T20:50",
+     "escalas": 2,
+     "horas": 32.8
+    }
+   ],
+   "por_persona": 2664,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5649,
+   "por_persona_con_valijas": 2824,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5329.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 5422,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qantas"
+     ],
+     "ruta": [
+      "AEP",
+      "SCL",
+      "SYD",
+      "HND"
+     ],
+     "salida": "2027-05-23T22:30",
+     "llegada": "2027-05-25T20:10",
+     "escalas": 2,
+     "horas": 33.7
+    },
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qantas"
+     ],
+     "ruta": [
+      "HND",
+      "SYD",
+      "SCL",
+      "AEP"
+     ],
+     "salida": "2027-06-15T22:00",
+     "llegada": "2027-06-16T15:40",
+     "escalas": 2,
+     "horas": 29.7
+    }
+   ],
+   "por_persona": 2711,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5742,
+   "por_persona_con_valijas": 2871,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "serpapi": 5422
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5666.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "IB",
+      "LA"
+     ],
+     "ruta": [
+      "EZE",
+      "SCL",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T19:20",
+     "llegada": "2027-04-10T18:35",
+     "escalas": 2,
+     "horas": 35.2
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2833,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5986,
+   "por_persona_con_valijas": 2993,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5666.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5722.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "IB",
+      "LA"
+     ],
+     "ruta": [
+      "EZE",
+      "SCL",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T19:20",
+     "llegada": "2027-04-10T18:35",
+     "escalas": 2,
+     "horas": 35.2
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 2861,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6042,
+   "por_persona_con_valijas": 3021,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5722.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5728.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "AM",
+      "ZG"
+     ],
+     "ruta": [
+      "EZE",
+      "MEX",
+      "SFO",
+      "NRT"
+     ],
+     "salida": "2027-04-08T23:25",
+     "llegada": "2027-04-10T20:00",
+     "escalas": 2,
+     "horas": 32.6
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 2864,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6048,
+   "por_persona_con_valijas": 3024,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5728.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5785.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "AM",
+      "ZG"
+     ],
+     "ruta": [
+      "EZE",
+      "MEX",
+      "SFO",
+      "NRT"
+     ],
+     "salida": "2027-04-08T23:25",
+     "llegada": "2027-04-10T20:00",
+     "escalas": 2,
+     "horas": 32.6
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 2892,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6105,
+   "por_persona_con_valijas": 3052,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5785.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5792.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "KLM"
+     ],
+     "ruta": [
+      "EZE",
+      "AMS",
+      "NRT"
+     ],
+     "salida": "2027-05-23T15:05",
+     "llegada": "2027-05-25T10:30",
+     "escalas": 1,
+     "horas": 31.4
+    },
+    {
+     "aerolineas": [
+      "KLM"
+     ],
+     "ruta": [
+      "NRT",
+      "AMS",
+      "EZE"
+     ],
+     "salida": "2027-06-15T12:15",
+     "llegada": "2027-06-16T05:50",
+     "escalas": 1,
+     "horas": 29.6
+    }
+   ],
+   "por_persona": 2896,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6112,
+   "por_persona_con_valijas": 3056,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5792.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5932.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "SWISS"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "ZRH",
+      "NRT"
+     ],
+     "salida": "2027-05-23T12:55",
+     "llegada": "2027-05-25T09:10",
+     "escalas": 2,
+     "horas": 32.2
+    },
+    {
+     "aerolineas": [
+      "LATAM",
+      "SWISS"
+     ],
+     "ruta": [
+      "NRT",
+      "ZRH",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-06-15T11:00",
+     "llegada": "2027-06-16T09:40",
+     "escalas": 2,
+     "horas": 34.7
+    }
+   ],
+   "por_persona": 2966,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6252,
+   "por_persona_con_valijas": 3126,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5932.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5954.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Emirates"
+     ],
+     "ruta": [
+      "EZE",
+      "GIG",
+      "DXB",
+      "NRT"
+     ],
+     "salida": "2027-05-23T22:40",
+     "llegada": "2027-05-25T17:35",
+     "escalas": 2,
+     "horas": 30.9
+    },
+    {
+     "aerolineas": [
+      "Emirates"
+     ],
+     "ruta": [
+      "NRT",
+      "DXB",
+      "GIG",
+      "EZE"
+     ],
+     "salida": "2027-06-15T22:30",
+     "llegada": "2027-06-16T20:50",
+     "escalas": 2,
+     "horas": 34.3
+    }
+   ],
+   "por_persona": 2977,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6274,
+   "por_persona_con_valijas": 3137,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5954.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5994.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T13:40",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 31.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "SQ"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "SCL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T18:40",
+     "llegada": "2027-05-02T11:30",
+     "escalas": 2,
+     "horas": 28.8
+    }
+   ],
+   "por_persona": 2997,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6314,
+   "por_persona_con_valijas": 3157,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5994.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 5996.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "JA",
+      "LH"
+     ],
+     "ruta": [
+      "AEP",
+      "GIG",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T11:45",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 2,
+     "horas": 33.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "SQ"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "SCL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T18:40",
+     "llegada": "2027-05-02T11:30",
+     "escalas": 2,
+     "horas": 28.8
+    }
+   ],
+   "por_persona": 2998,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6316,
+   "por_persona_con_valijas": 3158,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 5996.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6083.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LA",
+      "SQ"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "LAX",
+      "NRT"
+     ],
+     "salida": "2027-04-08T18:10",
+     "llegada": "2027-04-10T17:50",
+     "escalas": 2,
+     "horas": 35.7
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 3042,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6403,
+   "por_persona_con_valijas": 3202,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6083.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 6111,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "KLM"
+     ],
+     "ruta": [
+      "EZE",
+      "AMS",
+      "NRT"
+     ],
+     "salida": "2027-05-16T15:05",
+     "llegada": "2027-05-18T10:30",
+     "escalas": 1,
+     "horas": 31.4
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "KLM"
+     ],
+     "ruta": [
+      "ITM",
+      "NRT",
+      "AMS",
+      "EZE"
+     ],
+     "salida": "2027-06-07T07:25",
+     "llegada": "2027-06-08T05:50",
+     "escalas": 2,
+     "horas": 34.4
+    }
+   ],
+   "por_persona": 3056,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6431,
+   "por_persona_con_valijas": 3216,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "serpapi": 6111
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 6111,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "KLM"
+     ],
+     "ruta": [
+      "EZE",
+      "AMS",
+      "NRT"
+     ],
+     "salida": "2027-05-16T15:05",
+     "llegada": "2027-05-18T10:30",
+     "escalas": 1,
+     "horas": 31.4
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "KLM"
+     ],
+     "ruta": [
+      "ITM",
+      "NRT",
+      "AMS",
+      "EZE"
+     ],
+     "salida": "2027-06-07T07:30",
+     "llegada": "2027-06-08T05:50",
+     "escalas": 2,
+     "horas": 34.3
+    }
+   ],
+   "por_persona": 3056,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6431,
+   "por_persona_con_valijas": 3216,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "serpapi": 6111
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6140.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "LHR",
+      "HND"
+     ],
+     "salida": "2027-05-23T15:10",
+     "llegada": "2027-05-25T10:55",
+     "escalas": 1,
+     "horas": 31.8
+    },
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "EZE"
+     ],
+     "salida": "2027-06-15T08:55",
+     "llegada": "2027-06-16T05:25",
+     "escalas": 1,
+     "horas": 32.5
+    }
+   ],
+   "por_persona": 3070,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6460,
+   "por_persona_con_valijas": 3230,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6140.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6140.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "G3",
+      "LA",
+      "SQ"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "LAX",
+      "NRT"
+     ],
+     "salida": "2027-04-08T18:10",
+     "llegada": "2027-04-10T17:50",
+     "escalas": 2,
+     "horas": 35.7
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 3070,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6460,
+   "por_persona_con_valijas": 3230,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6140.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6385.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "NH",
+      "UA"
+     ],
+     "ruta": [
+      "EZE",
+      "IAH",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:00",
+     "llegada": "2027-04-10T15:25",
+     "escalas": 1,
+     "horas": 30.4
+    },
+    {
+     "aerolineas": [
+      "NH",
+      "UA"
+     ],
+     "ruta": [
+      "HND",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T10:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 33.6
+    }
+   ],
+   "por_persona": 3192,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6705,
+   "por_persona_con_valijas": 3352,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6385.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6388.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "NH",
+      "UA"
+     ],
+     "ruta": [
+      "EZE",
+      "IAH",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:00",
+     "llegada": "2027-04-10T15:25",
+     "escalas": 1,
+     "horas": 30.4
+    },
+    {
+     "aerolineas": [
+      "UA",
+      "United Airlines"
+     ],
+     "ruta": [
+      "NRT",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 27.0
+    }
+   ],
+   "por_persona": 3194,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6708,
+   "por_persona_con_valijas": 3354,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6388.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 6447,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qantas"
+     ],
+     "ruta": [
+      "AEP",
+      "SCL",
+      "SYD",
+      "HND"
+     ],
+     "salida": "2027-05-23T22:30",
+     "llegada": "2027-05-25T20:10",
+     "escalas": 2,
+     "horas": 33.7
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "SYD",
+      "SCL",
+      "AEP"
+     ],
+     "salida": "2027-06-15T19:40",
+     "llegada": "2027-06-16T15:40",
+     "escalas": 2,
+     "horas": 32.0
+    }
+   ],
+   "por_persona": 3224,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6767,
+   "por_persona_con_valijas": 3384,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "serpapi": 6447
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6483.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "IB"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:40",
+     "llegada": "2027-04-10T18:35",
+     "escalas": 1,
+     "horas": 32.9
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 3242,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6803,
+   "por_persona_con_valijas": 3402,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6483.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6696.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-05-23T21:10",
+     "llegada": "2027-05-25T13:55",
+     "escalas": 1,
+     "horas": 28.8
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-06-15T17:45",
+     "llegada": "2027-06-16T08:00",
+     "escalas": 1,
+     "horas": 26.2
+    }
+   ],
+   "por_persona": 3348,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7016,
+   "por_persona_con_valijas": 3508,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6696.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6696.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-05-23T21:10",
+     "llegada": "2027-05-25T13:55",
+     "escalas": 1,
+     "horas": 28.8
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "MIA",
+      "EZE"
+     ],
+     "salida": "2027-06-15T11:55",
+     "llegada": "2027-06-16T07:15",
+     "escalas": 2,
+     "horas": 31.3
+    }
+   ],
+   "por_persona": 3348,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7016,
+   "por_persona_con_valijas": 3508,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6696.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6696.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-05-23T21:10",
+     "llegada": "2027-05-25T13:55",
+     "escalas": 1,
+     "horas": 28.8
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-06-15T11:05",
+     "llegada": "2027-06-16T08:00",
+     "escalas": 1,
+     "horas": 32.9
+    }
+   ],
+   "por_persona": 3348,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7016,
+   "por_persona_con_valijas": 3508,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6696.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6697.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "MU",
+      "NZ"
+     ],
+     "ruta": [
+      "EZE",
+      "AKL",
+      "NRT"
+     ],
+     "salida": "2027-04-08T02:15",
+     "llegada": "2027-04-09T18:15",
+     "escalas": 1,
+     "horas": 28.0
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 3348,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7017,
+   "por_persona_con_valijas": 3508,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6697.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6982.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "AZ"
+     ],
+     "ruta": [
+      "EZE",
+      "FCO",
+      "HND"
+     ],
+     "salida": "2027-04-08T12:55",
+     "llegada": "2027-04-10T10:25",
+     "escalas": 1,
+     "horas": 33.5
+    },
+    {
+     "aerolineas": [
+      "AZ"
+     ],
+     "ruta": [
+      "HND",
+      "FCO",
+      "EZE"
+     ],
+     "salida": "2027-05-01T12:45",
+     "llegada": "2027-05-02T07:30",
+     "escalas": 1,
+     "horas": 30.8
+    }
+   ],
+   "por_persona": 3491,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7302,
+   "por_persona_con_valijas": 3651,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6982.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 6991.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "LHR",
+      "HND"
+     ],
+     "salida": "2027-05-23T15:10",
+     "llegada": "2027-05-25T10:55",
+     "escalas": 1,
+     "horas": 31.8
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-06-15T08:55",
+     "llegada": "2027-06-16T07:35",
+     "escalas": 2,
+     "horas": 34.7
+    }
+   ],
+   "por_persona": 3496,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7311,
+   "por_persona_con_valijas": 3656,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 6991.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 7103.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "SWISS"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "ZRH",
+      "NRT"
+     ],
+     "salida": "2027-05-23T12:55",
+     "llegada": "2027-05-25T09:10",
+     "escalas": 2,
+     "horas": 32.2
+    },
+    {
+     "aerolineas": [
+      "LATAM",
+      "Lufthansa"
+     ],
+     "ruta": [
+      "NRT",
+      "FRA",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-06-15T11:20",
+     "llegada": "2027-06-16T09:40",
+     "escalas": 2,
+     "horas": 34.3
+    }
+   ],
+   "por_persona": 3552,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7423,
+   "por_persona_con_valijas": 3712,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7103.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7512.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "incluida",
+   "tramos": [
+    {
+     "aerolineas": [
+      "TK"
+     ],
+     "ruta": [
+      "EZE",
+      "GRU",
+      "IST",
+      "NRT"
+     ],
+     "salida": "2027-05-23T23:55",
+     "llegada": "2027-05-25T19:10",
+     "escalas": 2,
+     "horas": 31.2
+    },
+    {
+     "aerolineas": [
+      "EK"
+     ],
+     "ruta": [
+      "KIX",
+      "DXB",
+      "GIG",
+      "EZE"
+     ],
+     "salida": "2027-06-15T23:45",
+     "llegada": "2027-06-16T20:50",
+     "escalas": 2,
+     "horas": 33.1
+    }
+   ],
+   "por_persona": 3756,
+   "valijas_estimadas": 0,
+   "precio_con_valijas": 7512,
+   "por_persona_con_valijas": 3756,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7512.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7291.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.6
+    }
+   ],
+   "por_persona": 3646,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7611,
+   "por_persona_con_valijas": 3806,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7291.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7291.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "ORD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T22:20",
+     "llegada": "2027-04-10T15:30",
+     "escalas": 2,
+     "horas": 29.2
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.6
+    }
+   ],
+   "por_persona": 3646,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7611,
+   "por_persona_con_valijas": 3806,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7291.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7291.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 1,
+     "horas": 31.5
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.6
+    }
+   ],
+   "por_persona": 3646,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7611,
+   "por_persona_con_valijas": 3806,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7291.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7294.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:50",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.2
+    }
+   ],
+   "por_persona": 3647,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7614,
+   "por_persona_con_valijas": 3807,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7294.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7294.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "ORD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T22:20",
+     "llegada": "2027-04-10T15:30",
+     "escalas": 2,
+     "horas": 29.2
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:50",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.2
+    }
+   ],
+   "por_persona": 3647,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7614,
+   "por_persona_con_valijas": 3807,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7294.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7294.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 1,
+     "horas": 31.5
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:50",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.2
+    }
+   ],
+   "por_persona": 3647,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7614,
+   "por_persona_con_valijas": 3807,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7294.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 7444.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Air Europa",
+      "TK",
+      "UX"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "IST",
+      "NRT"
+     ],
+     "salida": "2027-04-08T12:10",
+     "llegada": "2027-04-10T08:55",
+     "escalas": 2,
+     "horas": 32.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T06:20",
+     "escalas": 2,
+     "horas": 27.8
+    }
+   ],
+   "por_persona": 3722,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7764,
+   "por_persona_con_valijas": 3882,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7444.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7483.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "American"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 30.0
+    }
+   ],
+   "por_persona": 3742,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7803,
+   "por_persona_con_valijas": 3902,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7483.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7483.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "ORD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T22:20",
+     "llegada": "2027-04-10T15:30",
+     "escalas": 2,
+     "horas": 29.2
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "American"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 30.0
+    }
+   ],
+   "por_persona": 3742,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7803,
+   "por_persona_con_valijas": 3902,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7483.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7483.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 1,
+     "horas": 31.5
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "American"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 30.0
+    }
+   ],
+   "por_persona": 3742,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7803,
+   "por_persona_con_valijas": 3902,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7483.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 7500.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Air Europa",
+      "TK",
+      "UX"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "IST",
+      "NRT"
+     ],
+     "salida": "2027-04-08T12:10",
+     "llegada": "2027-04-10T08:55",
+     "escalas": 2,
+     "horas": 32.8
+    },
+    {
+     "aerolineas": [
+      "LA",
+      "ZG"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "LIM",
+      "AEP"
+     ],
+     "salida": "2027-05-01T14:35",
+     "llegada": "2027-05-02T07:40",
+     "escalas": 2,
+     "horas": 29.1
+    }
+   ],
+   "por_persona": 3750,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7820,
+   "por_persona_con_valijas": 3910,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7500.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 7858.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "incluida",
+   "tramos": [
+    {
+     "aerolineas": [
+      "IB"
+     ],
+     "ruta": [
+      "EZE",
+      "MAD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:40",
+     "llegada": "2027-04-10T18:35",
+     "escalas": 1,
+     "horas": 32.9
+    },
+    {
+     "aerolineas": [
+      "LH"
+     ],
+     "ruta": [
+      "HND",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:45",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 30.7
+    }
+   ],
+   "por_persona": 3929,
+   "valijas_estimadas": 0,
+   "precio_con_valijas": 7858,
+   "por_persona_con_valijas": 3929,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7858.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "precio_total": 7571.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM ",
+      "LX"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "ZRH",
+      "NRT"
+     ],
+     "salida": "2027-04-08T12:55",
+     "llegada": "2027-04-10T09:10",
+     "escalas": 2,
+     "horas": 32.2
+    },
+    {
+     "aerolineas": [
+      "LATAM ",
+      "QR"
+     ],
+     "ruta": [
+      "NRT",
+      "DOH",
+      "GRU",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:25",
+     "llegada": "2027-05-02T16:00",
+     "escalas": 2,
+     "horas": 34.6
+    }
+   ],
+   "por_persona": 3786,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7891,
+   "por_persona_con_valijas": 3946,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7571.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "ignav",
+   "precio_total": 7908.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "incluida",
+   "tramos": [
+    {
+     "aerolineas": [
+      "AZ"
+     ],
+     "ruta": [
+      "EZE",
+      "FCO",
+      "HND"
+     ],
+     "salida": "2027-05-23T12:55",
+     "llegada": "2027-05-25T10:25",
+     "escalas": 1,
+     "horas": 33.5
+    },
+    {
+     "aerolineas": [
+      "EK"
+     ],
+     "ruta": [
+      "KIX",
+      "DXB",
+      "GIG",
+      "EZE"
+     ],
+     "salida": "2027-06-15T23:45",
+     "llegada": "2027-06-16T20:50",
+     "escalas": 2,
+     "horas": 33.1
+    }
+   ],
+   "por_persona": 3954,
+   "valijas_estimadas": 0,
+   "precio_con_valijas": 7908,
+   "por_persona_con_valijas": 3954,
+   "categoria": "🔴 todavía caro",
+   "precios_por_fuente": {
+    "ignav": 7908.0
+   }
+  }
+ ],
+ "descartes": {
+  "más de 36 h en un tramo": 2187
+ },
+ "san_pablo": [
+  {
+   "salida": "2027-06-06",
+   "regreso": "2027-06-29",
+   "destino": "TYO",
+   "mejor_desde_san_pablo": 3262.0,
+   "mejor_desde_buenos_aires": 4362.0,
+   "tramo_corto": 610.0,
+   "total": null,
+   "validas": 0,
+   "mejor_descartada": {
+    "precio_total": 3873.0,
+    "motivo": "más de 36 h en un tramo",
+    "tramos": null
+   }
+  }
+ ],
+ "consultas_hechas": [
+  "calendario BUE-TYO 2027-05 23d",
+  "exacta BUE-TYO 2027-05-23 2027-06-15",
+  "open-jaw BUE-TYO/OSA-BUE 2027-05-23 2027-06-15",
+  "calendario BUE-TYO 2027-05 22d",
+  "calendario BUE-OSA 2027-05 22d",
+  "serpapi BUE-TYO 2027-05-23 2027-06-15",
+  "serpapi open-jaw 2027-05-16 2027-06-07",
+  "calendario BUE-OSA 2027-05 23d",
+  "calendario GRU-TYO 2027-05 23d",
+  "calendario GRU-OSA 2027-05 23d",
+  "calendario BUE-TYO 2027-06 23d",
+  "calendario BUE-OSA 2027-06 23d",
+  "calendario GRU-TYO 2027-06 23d",
+  "calendario BUE-TYO 2027-04 23d",
+  "calendario GRU-OSA 2027-06 23d",
+  "calendario BUE-OSA 2027-04 23d",
+  "calendario GRU-TYO 2027-04 23d",
+  "calendario GRU-OSA 2027-04 23d",
+  "exacta BUE-TYO 2027-04-08 2027-05-01",
+  "open-jaw BUE-TYO/OSA-BUE 2027-04-08 2027-05-01",
+  "exacta GRU-TYO 2027-06-06 2027-06-29"
+ ],
+ "errores": [],
+ "cupo": {
+  "ignav": {
+   "gastadas_hoy": 21,
+   "disponibles_hoy": 979,
+   "total": 21
+  },
+  "serpapi": {
+   "gastadas_hoy": 8,
+   "disponibles_hoy": 0,
+   "total": 8
+  }
+ }
+}

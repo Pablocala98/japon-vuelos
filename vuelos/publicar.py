@@ -1,0 +1,141 @@
+"""Arma docs/datos.js, que lee el dashboard. No gasta consultas.
+
+Uso: .venv/bin/python -m vuelos.publicar
+
+Es un .js y no un .json para que docs/index.html también se pueda abrir con doble clic.
+"""
+import hashlib
+import json
+from collections import Counter
+from datetime import date
+from statistics import median
+
+from . import aeropuertos, analisis, enlaces, evaluar, ventajas
+from .config import RAIZ, cargar_config
+from .fechas import ahora, hoy
+
+DOCS = RAIZ / "docs"
+DATOS = RAIZ / "data"
+OPCIONES_EN_PAGINA = 40
+NOMBRES_TIPO = {"ida_y_vuelta": "Ida y vuelta", "open_jaw": "Llega a una ciudad y vuelve de otra",
+                "san_pablo": "Desde San Pablo (2 pasajes)", "stopover_madrid_ida": "Noche en Madrid a la ida",
+                "stopover_madrid_vuelta": "Noche en Madrid a la vuelta"}
+
+
+def _id(opcion: dict) -> str:
+    return hashlib.sha1(json.dumps(evaluar.clave_vuelo(opcion)).encode()).hexdigest()[:10]
+
+
+def _parada_para_pagina(parada: dict) -> dict:
+    con_lugar = aeropuertos.con_lugares(parada)
+    lugar, salida = con_lugar["lugar"], con_lugar["lugar_salida"]
+    return {
+        "codigo": lugar["codigo"], "aeropuerto": lugar["nombre"], "ciudad": lugar["ciudad"], "pais": lugar["pais"],
+        "sale_de": salida and {"codigo": salida["codigo"], "aeropuerto": salida["nombre"]},
+        "minutos": parada["minutos"], "duracion": aeropuertos.duracion(parada["minutos"]),
+        "noche": parada["noche"], "cambio_pasaje": parada["cambio_pasaje"],
+    }
+
+
+def para_pagina(opcion: dict, mas_barata: float, precio_anterior: float | None, cfg: dict) -> dict:
+    ida, vuelta = opcion["tramos"][0], opcion["tramos"][-1]
+    return {
+        "id": _id(opcion),
+        "tipo": NOMBRES_TIPO.get(opcion["tipo"], opcion["tipo"]),
+        "desde_san_pablo": opcion["tipo"] == "san_pablo",
+        "aerolineas": sorted({a for t in opcion["tramos"] for a in t["aerolineas"]}),
+        "tramos": [{**{k: t[k] for k in ("ruta", "salida", "llegada", "escalas", "horas", "aerolineas")},
+                    "paradas": [_parada_para_pagina(p) for p in aeropuertos.paradas_de(t)]} for t in opcion["tramos"]],
+        "sale": ida["salida"], "vuelve": vuelta["salida"], "dias_en_japon": opcion.get("dias_en_japon"),
+        "precio_total": round(opcion["precio_total"]), "precio_con_valijas": opcion["precio_con_valijas"],
+        "por_persona_con_valijas": opcion["por_persona_con_valijas"], "valijas_estimadas": opcion["valijas_estimadas"],
+        "equipaje": opcion["equipaje"], "precio_verificado": bool(opcion.get("precio_verificado")),
+        "categoria": opcion["categoria"], "precios_por_fuente": opcion.get("precios_por_fuente", {}),
+        "desglose": opcion.get("desglose"),
+        "visto": opcion.get("visto"), "precio_confirmado": opcion.get("precio_confirmado"),
+        "cambio_vs_anterior": round(opcion["precio_total"] - precio_anterior) if precio_anterior is not None else None,
+        "nueva": precio_anterior is None,
+        **ventajas.evaluar_opcion(opcion, mas_barata, cfg),
+        "links_google": enlaces.google_flights(opcion, cfg["viaje"]["pasajeros"]),
+        "links_compra": opcion.get("links_compra") or [],
+    }
+
+
+def duraciones(opciones: list[dict]) -> dict:
+    """Cuánto tardan de verdad los vuelos encontrados, por origen. El buscador lo usa para estimar llegadas."""
+    resultado = {}
+    for clave, grupo in (("bue", [o for o in opciones if o["tipo"] != "san_pablo"]), ("gru", [o for o in opciones if o["tipo"] == "san_pablo"])):
+        if not grupo:
+            continue
+        ida = [o["tramos"][0] for o in grupo]
+        vuelta = [o["tramos"][-1] for o in grupo]
+
+        def dias(tramos):
+            return Counter((date.fromisoformat(t["llegada"][:10]) - date.fromisoformat(t["salida"][:10])).days for t in tramos)
+
+        resultado[clave] = {
+            "ida_horas": round(median(t["horas"] for t in ida), 1),
+            "vuelta_horas": round(median(t["horas"] for t in vuelta), 1),
+            "ida_dias": dias(ida).most_common(1)[0][0],
+            "vuelta_dias": dias(vuelta).most_common(1)[0][0],
+            "ida_dias_rango": [min(dias(ida)), max(dias(ida))],
+            "vuelta_dias_rango": [min(dias(vuelta)), max(dias(vuelta))],
+            "opciones": len(grupo),
+        }
+    return resultado
+
+
+def armar(cfg: dict, dia: date) -> dict:
+    dias = analisis.cargar_dias(DATOS)
+    fechas_con_datos = [f for f in dias if f <= dia.isoformat()]
+    fecha = fechas_con_datos[-1] if fechas_con_datos else None
+    resumen = analisis.generar(cfg, date.fromisoformat(fecha)) if fecha else None
+    opciones = analisis.vigentes(dias, fecha, cfg) if fecha else []
+    anteriores = [f for f in dias if fecha and f < fecha]
+    previas = analisis.vigentes(dias, anteriores[-1], cfg) if anteriores else []
+    precio_anterior = {evaluar.clave_vuelo(o): o["precio_total"] for o in previas}
+    mas_barata = opciones[0]["precio_con_valijas"] if opciones else 0
+
+    archivo_promos = DATOS / "promociones" / f"{dia.isoformat()}.json"
+    promos = json.loads(archivo_promos.read_text(encoding="utf-8")) if archivo_promos.exists() else None
+    archivo_resultados = DATOS / "resultados" / f"{fecha}.json"
+    del_dia = json.loads(archivo_resultados.read_text(encoding="utf-8")) if fecha and archivo_resultados.exists() else {}
+    return {
+        "generado": ahora(),
+        "fecha_datos": fecha,
+        "preferencias": {
+            "pasajeros": cfg["viaje"]["pasajeros"], "dias_en_japon": cfg["restricciones"]["dias_en_japon"],
+            "max_escalas": cfg["restricciones"]["max_escalas"], "max_horas": cfg["restricciones"]["max_horas_por_tramo"],
+            "precios": {k: cfg["precios"][k] for k in ("ideal", "comprar", "casi")},
+            "tolerancia_dias": cfg["restricciones"]["tolerancia_dias"],
+            "costo_valija": cfg["equipaje"]["costo_estimado_valija_por_tramo"],
+        },
+        "resumen": resumen and {k: resumen[k] for k in ("comparado_con", "comparacion", "mejores_hoy")},
+        "evolucion": resumen["evolucion"] if resumen else [],
+        "fechas": resumen["fechas"] if resumen else None,
+        "duraciones": duraciones(opciones),
+        "ventana": {"desde": cfg["fechas"]["salida_desde"], "hasta": cfg["fechas"]["salida_hasta"]},
+        "opciones": [para_pagina(o, mas_barata, precio_anterior.get(evaluar.clave_vuelo(o)), cfg) for o in opciones[:OPCIONES_EN_PAGINA]],
+        "promociones": promos,
+        "actualizar": {"repositorio": (cfg.get("publicacion") or {}).get("repositorio") or None, "flujo": "buscar.yml",
+                       "limites": {f: cfg["consultas"][f].get("por_dia") for f in ("ignav", "serpapi")}},
+        "estado": {"cupo": del_dia.get("cupo"), "errores": del_dia.get("errores", []) + ((promos or {}).get("errores") or []),
+                   "promos_fuente": "promociones-aereas.com.ar"},
+    }
+
+
+def publicar(cfg: dict, dia: date) -> dict:
+    datos = armar(cfg, dia)
+    DOCS.mkdir(exist_ok=True)
+    texto = json.dumps(datos, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    (DOCS / "datos.js").write_text(f"window.DATOS = {texto};\n", encoding="utf-8")
+    return datos
+
+
+def main() -> None:
+    datos = publicar(cargar_config(), hoy())
+    print(f"docs/datos.js listo: {len(datos['opciones'])} opciones del {datos['fecha_datos']}")
+
+
+if __name__ == "__main__":
+    main()

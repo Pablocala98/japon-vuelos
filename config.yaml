@@ -1,0 +1,72 @@
+# ==========================================================
+#  TUS PREFERENCIAS: este es el único archivo que necesitás tocar.
+#  Cambiá los valores, guardá y la próxima corrida los usa.
+# ==========================================================
+
+viaje:
+  pasajeros: 2
+  pasaporte: AR                 # para avisar qué escalas piden visa de tránsito
+  origenes: [EZE, AEP]          # Buenos Aires
+  origen_alternativo: GRU       # San Pablo (se suma aparte el tramo desde Buenos Aires)
+  destinos_tokio: [NRT, HND]
+  destinos_osaka: [KIX, ITM]
+  stopover: MAD                 # una noche en Madrid; se prueba los domingos
+
+fechas:
+  salida_desde: "2027-04-01"
+  salida_hasta: "2027-06-30"
+  salida_preferida_desde: "2027-05-01"   # mayo y junio se buscan más seguido
+  # Días entre la salida de Buenos Aires y la salida de Japón. El viaje de ida
+  # se come unos 2 días: 22 acá son unos 20 en Japón.
+  estadia_dias: [21, 22, 23]
+
+restricciones:
+  dias_en_japon: 20             # desde el día que llegás hasta el día que te vas
+  tolerancia_dias: 1            # acepta de 19 a 21
+  max_escalas: 2
+  escalas_ideal: 1
+  max_horas_por_tramo: 36
+  # Saliendo desde San Pablo, el tramo corto y la espera alargan el viaje.
+  # null = sin límite de horas para esa ruta. Poné un número para volver a limitarla.
+  max_horas_por_tramo_san_pablo: null
+  conexion_minima_horas: 4      # margen entre los 2 pasajes separados si se sale desde San Pablo
+
+equipaje:
+  # Por persona. La app los multiplica por la cantidad de pasajeros.
+  carry_on: 1
+  despachadas: 1
+  # USD por valija y por tramo, cuando la fuente no confirma si está incluida.
+  # Es una estimación, no un dato real: ajustala si ves el costo de tu aerolínea.
+  costo_estimado_valija_por_tramo: 80
+
+# Precios en USD, TOTAL PARA LOS 2 (por persona = la mitad).
+precios:
+  ideal: 3500       # 1750 c/u  -> 🟢 ideal
+  comprar: 3800     # 1900 c/u  -> ✅ comprar
+  casi: 4000        # 2000 c/u  -> 👀 casi. Más caro: 🔴 todavía caro.
+  margen_igual: 25  # una diferencia de hasta USD 25 con el día anterior cuenta como "igual"
+
+# Límites de consultas por fuente, para no pasarse del plan gratis.
+consultas:
+  ignav:
+    por_dia: 9              # 2 calendarios + hasta 4 búsquedas exactas + hasta 3 links de compra
+    links_por_dia: 3        # links exactos para la mejor del día y las que lleguen a 👀 casi o mejor
+    total_gratis: 1000      # es por única vez, no se renueva
+  serpapi:
+    por_dia: 8
+    por_mes: 250
+
+analisis:
+  dias_vigencia: 3  # una opción encontrada se sigue mostrando 3 días, con la fecha en que se vio
+
+publicacion:
+  repositorio: "Pablocala98/japon-vuelos"   # usuario/repositorio de GitHub
+
+promociones:
+  horas: 48         # muestra lo publicado en las últimas 48 horas
+
+# Medios de pago, para filtrar promociones. Nunca pongas números de tarjeta.
+medios_de_pago:
+  - banco: Galicia
+    tarjetas: [Visa, Mastercard]
+    excluir: [Eminent]      # no tenés Éminent: sus promos no se muestran
