@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-10",
- "actualizado": "2026-11-10T18:45:23-03:00",
+ "actualizado": "2026-11-10T19:33:40-03:00",
  "opciones": [
   {
    "tipo": "san_pablo",
@@ -3454,6 +3454,7 @@
    "mejor_descartada": null
   }
  ],
+ "pedidos": [],
  "consultas_hechas": [
   "calendario GRU-TYO 2027-06 21d",
   "calendario GRU-OSA 2027-06 21d",
@@ -3472,9 +3473,14 @@
    "total": 45
   },
   "serpapi": {
-   "gastadas_hoy": 7,
-   "disponibles_hoy": 1,
-   "total": 22
+   "gastadas_hoy": 32,
+   "disponibles_hoy": 0,
+   "total": 47
+  },
+  "stopover": {
+   "gastadas_hoy": 25,
+   "disponibles_hoy": 35,
+   "total": 25
   }
  }
 }
