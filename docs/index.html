@@ -764,8 +764,11 @@
       && (s.mes === "cualquiera" || o.stopover.sale_buenos_aires.startsWith(s.mes)));
     delPedido.sort((a, b) => Math.abs(a.stopover.dias_en_escala - s.dias) - Math.abs(b.stopover.dias_en_escala - s.dias) || a.precio_con_valijas - b.precio_con_valijas);
     const exactas = delPedido.filter((o) => o.stopover.dias_en_escala === s.dias);
+    const otros = delPedido.length ? [] : [...SO.opciones].sort((a, b) => a.precio_con_valijas - b.precio_con_valijas);
     $("#lista-so").replaceChildren(...(delPedido.length ? delPedido.map((o) => tarjetaStopover(o, o.stopover.dias_en_escala === s.dias))
-      : [h("p", { class: "tarjeta vacio", text: `Todavía no hay resultados para ${ciudad.nombre || ""} a la ${s.cuando}${s.mes !== "cualquiera" ? " en ese mes" : ""}. Pedí la búsqueda abajo 👇` })]));
+      : [h("p", { class: "tarjeta vacio", text: `Todavía no hay resultados para ${ciudad.nombre || ""} a la ${s.cuando}${s.mes !== "cualquiera" ? " en ese mes" : ""}. Pedí la búsqueda abajo 👇` }),
+        otros.length ? h("h3", { text: "Otros stopovers ya encontrados" }) : null,
+        ...otros.map((o) => tarjetaStopover(o, true))].filter(Boolean)));
 
     // Pedir la búsqueda en GitHub, con los valores exactos a elegir.
     const A = D.actualizar || {};
