@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-10",
- "actualizado": "2026-11-10T19:23:56-03:00",
+ "actualizado": "2026-11-10T19:28:05-03:00",
  "opciones": [
   {
    "tipo": "stopover_madrid_vuelta",
@@ -231,11 +231,26 @@
    ],
    "opciones": 3,
    "errores": []
+  },
+  {
+   "ciudad": "estambul",
+   "dias": 3,
+   "cuando": "ida",
+   "mes": "2027-05",
+   "pedido": "2026-11-10T19:27:51-03:00",
+   "salidas": [
+    "2027-05-16",
+    "2027-05-23"
+   ],
+   "opciones": 0,
+   "errores": []
   }
  ],
  "consultas_hechas": [
   "stopover madrid vuelta 3d 2027-05-16",
-  "stopover madrid vuelta 3d 2027-05-23"
+  "stopover madrid vuelta 3d 2027-05-23",
+  "stopover estambul ida 3d 2027-05-16",
+  "stopover estambul ida 3d 2027-05-23"
  ],
  "errores": [],
  "cupo": {
@@ -245,14 +260,14 @@
    "total": 45
   },
   "serpapi": {
-   "gastadas_hoy": 13,
-   "disponibles_hoy": 222,
-   "total": 28
+   "gastadas_hoy": 16,
+   "disponibles_hoy": 219,
+   "total": 31
   },
   "stopover": {
-   "gastadas_hoy": 6,
-   "disponibles_hoy": 2,
-   "total": 6
+   "gastadas_hoy": 9,
+   "disponibles_hoy": 4,
+   "total": 9
   }
  }
 }
