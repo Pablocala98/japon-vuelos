@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-10",
- "actualizado": "2026-11-10T19:28:05-03:00",
+ "actualizado": "2026-11-10T19:30:51-03:00",
  "opciones": [
   {
    "tipo": "stopover_madrid_vuelta",
@@ -216,7 +216,9 @@
    }
   }
  ],
- "descartes": {},
+ "descartes": {
+  "más de 36 h en un tramo": 1
+ },
  "san_pablo": [],
  "pedidos": [
   {
@@ -244,13 +246,34 @@
    ],
    "opciones": 0,
    "errores": []
+  },
+  {
+   "ciudad": "estambul",
+   "dias": 3,
+   "cuando": "ida",
+   "mes": "2027-05",
+   "pedido": "2026-11-10T19:29:54-03:00",
+   "salidas": [
+    "2027-05-16",
+    "2027-05-17",
+    "2027-05-15",
+    "2027-05-23",
+    "2027-05-24"
+   ],
+   "opciones": 0,
+   "errores": [
+    "Se terminó el cupo: serpapi: no alcanza para completar el precio real"
+   ]
   }
  ],
  "consultas_hechas": [
   "stopover madrid vuelta 3d 2027-05-16",
   "stopover madrid vuelta 3d 2027-05-23",
   "stopover estambul ida 3d 2027-05-16",
-  "stopover estambul ida 3d 2027-05-23"
+  "stopover estambul ida 3d 2027-05-23",
+  "stopover estambul ida 3d 2027-05-17",
+  "stopover estambul ida 3d 2027-05-15",
+  "stopover estambul ida 3d 2027-05-24"
  ],
  "errores": [],
  "cupo": {
@@ -260,14 +283,14 @@
    "total": 45
   },
   "serpapi": {
-   "gastadas_hoy": 16,
-   "disponibles_hoy": 219,
-   "total": 31
+   "gastadas_hoy": 24,
+   "disponibles_hoy": 211,
+   "total": 39
   },
   "stopover": {
-   "gastadas_hoy": 9,
-   "disponibles_hoy": 4,
-   "total": 9
+   "gastadas_hoy": 17,
+   "disponibles_hoy": 1,
+   "total": 17
   }
  }
 }
