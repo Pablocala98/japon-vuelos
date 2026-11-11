@@ -1,0 +1,3587 @@
+{
+ "fecha": "2026-11-11",
+ "actualizado": "2026-11-11T15:26:38-03:00",
+ "opciones": [
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 3348.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "desde_san_pablo": 2532.0,
+    "buenos_aires_san_pablo": 816.0
+   },
+   "ignav_ids": [
+    "5da8791a417142a5a52986aa94511198",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T22:50",
+     "regreso": "2027-10-01T17:25"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T16:40",
+     "escalas": 2,
+     "horas": 39.8,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 430,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 335,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Gol",
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T17:25",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 35.7,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 150,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 510,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 1674,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 3988,
+   "por_persona_con_valijas": 1994,
+   "categoria": "👀 casi",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 3348.0
+   },
+   "links_compra": [
+    {
+     "proveedor": "JAL",
+     "aerolinea": true,
+     "exacto": false,
+     "precio": 2532.0,
+     "alcance": "ida y vuelta",
+     "url": "https://www.jal.co.jp/cgi-bin/jal/dispatcher/GoogleFlight/dispatch.cgi?gclid=AAcRjHJ2hkpq4xs6JNTwsRdmiR0epNgAHGnGRCIvwwe8fVaON_-w4XO7PooJdw3HJb5BKnxd1QjJYxZfsBItHp1PMduok8FEverNLlM0uNACn6xKg6K9&gclsrc=gf",
+     "pasaje": "Desde San Pablo"
+    },
+    {
+     "proveedor": "LATAM",
+     "aerolinea": true,
+     "exacto": false,
+     "precio": 3351.0,
+     "alcance": "ida y vuelta",
+     "url": "https://www.latamairlines.com/us/en/flight-offers?dataFlight=%7B%22tripTypeSelected%22:%7B%22value%22:%22RT%22%7D,%22cabinSelected%22:%7B%22label%22:%22Economy%22,%22value%22:%22Economy%22%7D,%22passengerSelected%22:%7B%22adultQuantity%22:2,%22childrenQuantity%22:0,%22infantQuantity%22:0%7D,%22originSelected%22:%7B%22id%22:%22GRU_BR_AIRPORT%22,%22iata%22:%22GRU%22,%22type%22:%22AIRPORT%22,%22airportIataCode%22:%22GRU%22%7D,%22destinationSelected%22:%7B%22id%22:%22HND_JP_AIRPORT%22,%22iata%22:%22HND%22,%22type%22:%22AIRPORT%22,%22airportIataCode%22:%22HND%22%7D,%22dateGoSelected%22:%222027-09-09%22,%22dateReturnSelected%22:%222027-10-01%22%7D&sort=PRICE,asc&utm_medium=metasearch&utm_source=gfs&utm_campaign=us_latam_gfs_metasearch_perf_aon&utm_content=us_latam_perf_gfs_aon_nn_GRU_HND_longhaul_conversion_core_desktop&gclid=AAcRjHLQzTdz-Zfokkx-sPRVGfi2aWKMlYIunUKWuAKnY-sPjk0qzls8WT_HNu0k-jTvkoFzoa9KWqiWX4Glci_V2YUu0-9PAryP9fd7DaGyHwklCgY&gclsrc=gf",
+     "pasaje": "Desde San Pablo"
+    },
+    {
+     "proveedor": "LATAM",
+     "aerolinea": true,
+     "exacto": false,
+     "precio": 3363.0,
+     "alcance": "ida y vuelta",
+     "url": "https://www.latamairlines.com/br/pt/oferta-voos?dataFlight=%7B%22tripTypeSelected%22:%7B%22value%22:%22RT%22%7D,%22cabinSelected%22:%7B%22label%22:%22Economy%22,%22value%22:%22Economy%22%7D,%22passengerSelected%22:%7B%22adultQuantity%22:2,%22childrenQuantity%22:0,%22infantQuantity%22:0%7D,%22originSelected%22:%7B%22id%22:%22GRU_BR_AIRPORT%22,%22iata%22:%22GRU%22,%22type%22:%22AIRPORT%22,%22airportIataCode%22:%22GRU%22%7D,%22destinationSelected%22:%7B%22id%22:%22HND_JP_AIRPORT%22,%22iata%22:%22HND%22,%22type%22:%22AIRPORT%22,%22airportIataCode%22:%22HND%22%7D,%22dateGoSelected%22:%222027-09-09%22,%22dateReturnSelected%22:%222027-10-01%22%7D&sort=PRICE,asc&utm_medium=metasearch&utm_source=gfs&utm_campaign=us_latam_gfs_metasearch_perf_aon&utm_content=us_latam_perf_gfs_aon_nn_GRU_HND_longhaul_conversion_core_desktop&gclid=AAcRjHL9yCifdPgQtLun5keYxjIxf547kJbvVO5RkGFYvDG-UPVWB-QOLDd3Wq3MBK3Qc0qH21J-pqPnQQPS26G9mv08K1q7ASkkItUfYr4O0i58nOU&gclsrc=gf",
+     "pasaje": "Desde San Pablo"
+    },
+    {
+     "proveedor": "Gol",
+     "aerolinea": true,
+     "exacto": false,
+     "precio": 278.0,
+     "alcance": "vuelta",
+     "url": "https://b2c.voegol.com.br/compra/busca-parceiros?pv=BR&tipo=DF&de=GRU&para=AEP&ida=02-10-2027&ADT=2&CHD=0&INF=0&tarifaSelecionada=&vooSelecionado1=G37642%7C154438BRL&utm_source=google&utm_medium=google-flightsearch&utm_campaign=national&gclid=AAcRjHIkfqSjEaYDo6q2WUtSTGlD2NB66gH86sarFHRPJMqaDaJJyWd2MU0Q6BfnFgFRHmhxpH6qT6Yw3F1FX9sjJV8Aie-okOqTOg7JGz_mcWxVVBs&gclsrc=gf",
+     "pasaje": "Buenos Aires–San Pablo"
+    },
+    {
+     "proveedor": "LATAM",
+     "aerolinea": true,
+     "exacto": false,
+     "precio": 538.0,
+     "alcance": "ida",
+     "url": "https://www.latamairlines.com/us/en/flight-offers?dataFlight=%7B%22tripTypeSelected%22:%7B%22value%22:%22OW%22%7D,%22cabinSelected%22:%7B%22label%22:%22Economy%22,%22value%22:%22Economy%22%7D,%22passengerSelected%22:%7B%22adultQuantity%22:2,%22childrenQuantity%22:0,%22infantQuantity%22:0%7D,%22originSelected%22:%7B%22id%22:%22AEP_AR_AIRPORT%22,%22iata%22:%22AEP%22,%22type%22:%22AIRPORT%22,%22airportIataCode%22:%22AEP%22%7D,%22destinationSelected%22:%7B%22id%22:%22GRU_BR_AIRPORT%22,%22iata%22:%22GRU%22,%22type%22:%22AIRPORT%22,%22airportIataCode%22:%22GRU%22%7D,%22dateGoSelected%22:%222027-09-09%22,%22dateReturnSelected%22:null%7D&sort=PRICE,asc&utm_medium=metasearch&utm_source=gfs&utm_campaign=us_latam_gfs_metasearch_perf_aon&utm_content=us_latam_perf_gfs_aon_nn_AEP_GRU_regional_conversion_core_desktop&gclid=AAcRjHLBUddMEI_h0C7Cv-TEgZr44nE05LkFNkB6fqrgnBPJUeT-eUHXNarB5j0rtEKNQ0w5i-noBUj61ogDlQO2HDqIQ4Je5sF0WFt6sMCNQaJm41I&gclsrc=gf",
+     "pasaje": "Buenos Aires–San Pablo"
+    }
+   ],
+   "precio_confirmado": {
+    "total": 3348.0,
+    "fecha": "2026-11-11"
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 3978.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3043.0
+   },
+   "ignav_ids": [
+    "41fd0a40c76440f4b39a17b8a0cf2471",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T22:50",
+     "regreso": "2027-10-01T17:25"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T13:55",
+     "escalas": 2,
+     "horas": 37.1,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 430,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 165,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Gol",
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T17:25",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 35.7,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 150,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 510,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 1989,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 4618,
+   "por_persona_con_valijas": 2309,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 3978.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 3978.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3043.0
+   },
+   "ignav_ids": [
+    "12768d0bd8b74d2f84c38443e8ffa768",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T23:15",
+     "regreso": "2027-10-01T17:25"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DFW",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T14:20",
+     "escalas": 2,
+     "horas": 37.5,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 455,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "DFW",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Gol",
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T17:25",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 35.7,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 150,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 510,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 1989,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 4618,
+   "por_persona_con_valijas": 2309,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 3978.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 3978.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3043.0
+   },
+   "ignav_ids": [
+    "da5e2b55adcd4c2798bcd336f59e6ab4",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T22:50",
+     "regreso": "2027-10-01T17:45"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T16:40",
+     "escalas": 2,
+     "horas": 39.8,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 430,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 335,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "Gol"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T17:45",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 35.4,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 145,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 425,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 1989,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 4618,
+   "por_persona_con_valijas": 2309,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 3978.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 3978.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3043.0
+   },
+   "ignav_ids": [
+    "658fee8a1ac84ddcacadccff4a387b22",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T22:50",
+     "regreso": "2027-10-01T11:55"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T16:40",
+     "escalas": 2,
+     "horas": 39.8,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 430,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 335,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "Gol",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T11:55",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 41.2,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 475,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 510,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 1989,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 4618,
+   "por_persona_con_valijas": 2309,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 3978.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 4356.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3421.0
+   },
+   "ignav_ids": [
+    "7a04de4ccd254bf38b0297ec839ad54d",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T23:15",
+     "regreso": "2027-10-01T17:45"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DFW",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T14:20",
+     "escalas": 2,
+     "horas": 37.5,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 455,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "DFW",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "Gol"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T17:45",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 35.4,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 145,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 425,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 2178,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 4996,
+   "por_persona_con_valijas": 2498,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 4356.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 4356.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3421.0
+   },
+   "ignav_ids": [
+    "6241cdc01dc44d08847032800207becd",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T22:30",
+     "regreso": "2027-10-01T17:45"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T13:55",
+     "escalas": 2,
+     "horas": 37.0,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 410,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 200,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "Gol"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T17:45",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 35.4,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 145,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 425,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 2178,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 4996,
+   "por_persona_con_valijas": 2498,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 4476.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 4476.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3541.0
+   },
+   "ignav_ids": [
+    "d503dea7526346a1801ffffdc346fe19",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T22:50",
+     "regreso": "2027-10-01T11:55"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T13:55",
+     "escalas": 2,
+     "horas": 37.1,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 430,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 165,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "Gol",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T11:55",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 41.2,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 475,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 510,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 2238,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 5116,
+   "por_persona_con_valijas": 2558,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 4476.0
+   }
+  },
+  {
+   "tipo": "san_pablo",
+   "fuente": "ignav",
+   "precio_total": 4476.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos_valija_sin_confirmar": 4,
+   "desglose": {
+    "buenos_aires_san_pablo": 935.0,
+    "desde_san_pablo": 3541.0
+   },
+   "ignav_ids": [
+    "f4953f779f274ed69db8ca50730e5087",
+    "ae5c197898c44388afb0a024f61bba86"
+   ],
+   "partes": {
+    "largo": {
+     "origen": "GRU",
+     "destino": "HND",
+     "salida": "2027-09-09T23:15",
+     "regreso": "2027-10-01T11:55"
+    },
+    "corto": {
+     "origen": "AEP",
+     "destino": "GRU",
+     "salida": "2027-09-09T12:55",
+     "regreso": "2027-10-02T14:00"
+    }
+   },
+   "avisos": [
+    "Son 2 pasajes separados: si perdés la conexión, la aerolínea no tiene por qué protegerte."
+   ],
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "LATAM"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DFW",
+      "HND"
+     ],
+     "salida": "2027-09-09T12:55",
+     "llegada": "2027-09-11T14:20",
+     "escalas": 2,
+     "horas": 37.5,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 455,
+       "noche": false,
+       "cambio_pasaje": true
+      },
+      {
+       "aeropuerto": "DFW",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "Gol",
+      "LATAM"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-10-01T11:55",
+     "llegada": "2027-10-02T17:05",
+     "escalas": 2,
+     "horas": 41.2,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 475,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 510,
+       "noche": false,
+       "cambio_pasaje": true
+      }
+     ]
+    }
+   ],
+   "por_persona": 2238,
+   "valijas_estimadas": 640,
+   "precio_con_valijas": 5116,
+   "por_persona_con_valijas": 2558,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 4476.0
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 5677,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.6,
+     "paradas": [
+      {
+       "aeropuerto": "HND",
+       "sale_de": null,
+       "minutos": 130,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 2838,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5997,
+   "por_persona_con_valijas": 2998,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5677
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 5679,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:50",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 29.2,
+     "paradas": [
+      {
+       "aeropuerto": "HND",
+       "sale_de": null,
+       "minutos": 95,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 2840,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 5999,
+   "por_persona_con_valijas": 3000,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5679
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 5824,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "American"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T14:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 30.0,
+     "paradas": [
+      {
+       "aeropuerto": "HND",
+       "sale_de": null,
+       "minutos": 150,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 2912,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6144,
+   "por_persona_con_valijas": 3072,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5824
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "60a9709122074e5887a75a1592a2bc6d",
+   "precio_total": 5857.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "NRT",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:20",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 31.1,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 180,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 2928,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6177,
+   "por_persona_con_valijas": 3088,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 5857.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 5859,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "LAX",
+      "KIX"
+     ],
+     "salida": "2027-05-16T22:20",
+     "llegada": "2027-05-18T18:45",
+     "escalas": 2,
+     "horas": 32.4,
+     "paradas": [
+      {
+       "aeropuerto": "MIA",
+       "sale_de": null,
+       "minutos": 130,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 165,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "KIX",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-06-07T14:50",
+     "llegada": "2027-06-08T08:00",
+     "escalas": 2,
+     "horas": 29.2,
+     "paradas": [
+      {
+       "aeropuerto": "HND",
+       "sale_de": null,
+       "minutos": 95,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 2930,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6179,
+   "por_persona_con_valijas": 3090,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 5859
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 6199,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "ITM",
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T08:30",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 35.5,
+     "paradas": [
+      {
+       "aeropuerto": "HND",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 550,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3100,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 6519,
+   "por_persona_con_valijas": 3260,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 6199
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "c2e6c0e5a8a540d8b27a817517c55652",
+   "precio_total": 6701.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "EZE",
+      "IAH",
+      "ORD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:00",
+     "llegada": "2027-04-10T14:25",
+     "escalas": 2,
+     "horas": 29.4,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 95,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "ORD",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "United"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 27.0,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 130,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3350,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7021,
+   "por_persona_con_valijas": 3510,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6701.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "0319c85bf6534d9fb4b06a57370c3bba",
+   "precio_total": 6701.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "EZE",
+      "IAH",
+      "ORD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:00",
+     "llegada": "2027-04-10T14:25",
+     "escalas": 2,
+     "horas": 29.4,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 95,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "ORD",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T16:45",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 27.2,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 145,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3350,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7021,
+   "por_persona_con_valijas": 3510,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6701.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "2025d4fe95a0402f923c390618c3ff19",
+   "precio_total": 6737.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:45",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 26.2,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3368,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7057,
+   "por_persona_con_valijas": 3528,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6737.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "520cec3090844b80bc0c25cad278d8be",
+   "precio_total": 6737.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T22:20",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 2,
+     "horas": 30.3,
+     "paradas": [
+      {
+       "aeropuerto": "MIA",
+       "sale_de": null,
+       "minutos": 99,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 111,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:45",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 26.2,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3368,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7057,
+   "por_persona_con_valijas": 3528,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6737.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "d656f17d3e4d467da042cb7f78e40fad",
+   "precio_total": 6737.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 1,
+     "horas": 31.5,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 380,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "JFK",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:45",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 26.2,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 140,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3368,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7057,
+   "por_persona_con_valijas": 3528,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6737.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "0d855adda496462188643460b28fcb22",
+   "precio_total": 6839.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DOH",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:45",
+     "llegada": "2027-04-10T19:10",
+     "escalas": 2,
+     "horas": 33.4,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 90,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 305,
+       "noche": true,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qantas"
+     ],
+     "ruta": [
+      "NRT",
+      "MEL",
+      "SCL",
+      "AEP"
+     ],
+     "salida": "2027-05-01T20:25",
+     "llegada": "2027-05-02T15:40",
+     "escalas": 2,
+     "horas": 31.2,
+     "paradas": [
+      {
+       "aeropuerto": "MEL",
+       "sale_de": null,
+       "minutos": 260,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "SCL",
+       "sale_de": null,
+       "minutos": 113,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3420,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7159,
+   "por_persona_con_valijas": 3580,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6839.0,
+    "serpapi": 6839
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "31fb77343ca04b0d8c4857fe977a66bf",
+   "precio_total": 6897.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "ANA",
+      "ITA"
+     ],
+     "ruta": [
+      "EZE",
+      "FCO",
+      "MUC",
+      "HND"
+     ],
+     "salida": "2027-04-08T12:55",
+     "llegada": "2027-04-10T06:55",
+     "escalas": 2,
+     "horas": 30.0,
+     "paradas": [
+      {
+       "aeropuerto": "FCO",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "MUC",
+       "sale_de": null,
+       "minutos": 65,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "HND",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:45",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 30.7,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 160,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3448,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7217,
+   "por_persona_con_valijas": 3608,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 6897.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "779b146cde924e4e866b3ff72b41737f",
+   "precio_total": 7056.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "LHR",
+      "HND"
+     ],
+     "salida": "2027-04-08T15:10",
+     "llegada": "2027-04-10T10:55",
+     "escalas": 1,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 275,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "EZE"
+     ],
+     "salida": "2027-05-01T08:55",
+     "llegada": "2027-05-02T05:25",
+     "escalas": 1,
+     "horas": 32.5,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 220,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3528,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7376,
+   "por_persona_con_valijas": 3688,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7056.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "5d54025aa6cc43bfb01df7133c16bb2e",
+   "precio_total": 7450.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "EZE",
+      "IAH",
+      "ORD",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:00",
+     "llegada": "2027-04-10T14:25",
+     "escalas": 2,
+     "horas": 29.4,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 95,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "ORD",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "NRT",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 27.0,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 330,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3725,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7770,
+   "por_persona_con_valijas": 3885,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7450.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "115253e527b543aca0e3a73ffa10a7f8",
+   "precio_total": 7531.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "MIA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:55",
+     "llegada": "2027-05-02T07:15",
+     "escalas": 2,
+     "horas": 31.3,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 303,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "MIA",
+       "sale_de": null,
+       "minutos": 119,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3766,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7851,
+   "por_persona_con_valijas": 3926,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7531.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "e128a97e31c846b582e9b8b6298df19d",
+   "precio_total": 7531.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 1,
+     "horas": 31.5,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 380,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "HND",
+      "LAX",
+      "MIA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:55",
+     "llegada": "2027-05-02T07:15",
+     "escalas": 2,
+     "horas": 31.3,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 303,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "MIA",
+       "sale_de": null,
+       "minutos": 119,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3766,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7851,
+   "por_persona_con_valijas": 3926,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7531.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "1c285f56320d44ec8a20ee5632baa03c",
+   "precio_total": 7563.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "KLM"
+     ],
+     "ruta": [
+      "EZE",
+      "AMS",
+      "NRT"
+     ],
+     "salida": "2027-04-08T15:05",
+     "llegada": "2027-04-10T10:30",
+     "escalas": 1,
+     "horas": 31.4,
+     "paradas": [
+      {
+       "aeropuerto": "AMS",
+       "sale_de": null,
+       "minutos": 275,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "KLM"
+     ],
+     "ruta": [
+      "NRT",
+      "AMS",
+      "EZE"
+     ],
+     "salida": "2027-05-01T12:15",
+     "llegada": "2027-05-02T05:50",
+     "escalas": 1,
+     "horas": 29.6,
+     "paradas": [
+      {
+       "aeropuerto": "AMS",
+       "sale_de": null,
+       "minutos": 120,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3782,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 7883,
+   "por_persona_con_valijas": 3942,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7563.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "310507707ac14fbca7ed2c17c1ff79d9",
+   "precio_total": 7765.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "LHR",
+      "HND"
+     ],
+     "salida": "2027-04-08T15:10",
+     "llegada": "2027-04-10T10:55",
+     "escalas": 1,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 275,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "Iberia"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "MAD",
+      "EZE"
+     ],
+     "salida": "2027-05-01T08:55",
+     "llegada": "2027-05-02T07:35",
+     "escalas": 2,
+     "horas": 34.7,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 85,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "MAD",
+       "sale_de": null,
+       "minutos": 199,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3882,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 8085,
+   "por_persona_con_valijas": 4042,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7765.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "9fb92231ee374c52947a758147ff337b",
+   "precio_total": 7942.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DOH",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:45",
+     "llegada": "2027-04-10T19:10",
+     "escalas": 2,
+     "horas": 33.4,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 90,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 305,
+       "noche": true,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-05-01T17:20",
+     "llegada": "2027-05-02T10:30",
+     "escalas": 2,
+     "horas": 29.2,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 125,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 3971,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 8262,
+   "por_persona_con_valijas": 4131,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 7942.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 8232,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DOH",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:45",
+     "llegada": "2027-04-10T19:10",
+     "escalas": 2,
+     "horas": 33.4,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 90,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 305,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "NRT",
+      "LAX",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-05-01T17:20",
+     "llegada": "2027-05-02T09:40",
+     "escalas": 2,
+     "horas": 28.3,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 75,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 4116,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 8552,
+   "por_persona_con_valijas": 4276,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 8232
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "4b65dc2ab3a44aaead3fa268c99098f4",
+   "precio_total": 8877.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "ANA",
+      "ITA"
+     ],
+     "ruta": [
+      "EZE",
+      "FCO",
+      "MUC",
+      "HND"
+     ],
+     "salida": "2027-04-08T12:55",
+     "llegada": "2027-04-10T06:55",
+     "escalas": 2,
+     "horas": 30.0,
+     "paradas": [
+      {
+       "aeropuerto": "FCO",
+       "sale_de": null,
+       "minutos": 115,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "MUC",
+       "sale_de": null,
+       "minutos": 65,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "Lufthansa"
+     ],
+     "ruta": [
+      "HND",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T09:40",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 32.8,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 255,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 4438,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 9197,
+   "por_persona_con_valijas": 4598,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 8877.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "98e43d89fc32444b8f83ff8f8e31e233",
+   "precio_total": 8892.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "AEP",
+      "GRU",
+      "DOH",
+      "NRT"
+     ],
+     "salida": "2027-04-08T21:45",
+     "llegada": "2027-04-10T19:10",
+     "escalas": 2,
+     "horas": 33.4,
+     "paradas": [
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 90,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 305,
+       "noche": true,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "LATAM",
+      "Qatar Airways"
+     ],
+     "ruta": [
+      "NRT",
+      "DOH",
+      "GRU",
+      "AEP"
+     ],
+     "salida": "2027-05-01T17:25",
+     "llegada": "2027-05-02T14:00",
+     "escalas": 2,
+     "horas": 32.6,
+     "paradas": [
+      {
+       "aeropuerto": "DOH",
+       "sale_de": null,
+       "minutos": 120,
+       "noche": true,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "GRU",
+       "sale_de": null,
+       "minutos": 125,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 4446,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 9212,
+   "por_persona_con_valijas": 4606,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 8892.0,
+    "serpapi": 8892
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 9176,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "LATAM"
+     ],
+     "ruta": [
+      "KIX",
+      "LAX",
+      "SCL",
+      "AEP"
+     ],
+     "salida": "2027-05-01T17:45",
+     "llegada": "2027-05-02T15:40",
+     "escalas": 2,
+     "horas": 33.9,
+     "paradas": [
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 230,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "SCL",
+       "sale_de": null,
+       "minutos": 413,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 4588,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 9496,
+   "por_persona_con_valijas": 4748,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 9176
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "221a736741024087a3488706d3b6ba1b",
+   "precio_total": 9835.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "EZE",
+      "IAH",
+      "SFO",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:00",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 2,
+     "horas": 28.9,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 130,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "SFO",
+       "sale_de": null,
+       "minutos": 50,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "HND",
+      "IAD",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T15:45",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 28.2,
+     "paradas": [
+      {
+       "aeropuerto": "IAD",
+       "sale_de": null,
+       "minutos": 95,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 47,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 4918,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 10155,
+   "por_persona_con_valijas": 5078,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 9835.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "86e24d6148c54fae9b8a8e0f3abf66f1",
+   "precio_total": 10383.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Delta"
+     ],
+     "ruta": [
+      "EZE",
+      "ATL",
+      "MSP",
+      "HND"
+     ],
+     "salida": "2027-04-08T20:10",
+     "llegada": "2027-04-10T13:05",
+     "escalas": 2,
+     "horas": 28.9,
+     "paradas": [
+      {
+       "aeropuerto": "ATL",
+       "sale_de": null,
+       "minutos": 120,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "MSP",
+       "sale_de": null,
+       "minutos": 90,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Delta"
+     ],
+     "ruta": [
+      "HND",
+      "ATL",
+      "EZE"
+     ],
+     "salida": "2027-05-01T15:15",
+     "llegada": "2027-05-02T09:45",
+     "escalas": 1,
+     "horas": 30.5,
+     "paradas": [
+      {
+       "aeropuerto": "ATL",
+       "sale_de": null,
+       "minutos": 470,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 5192,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 10703,
+   "por_persona_con_valijas": 5352,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 10383.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "bec6ef72483d4de99b2931fca94d394a",
+   "precio_total": 14772.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "British Airways"
+     ],
+     "ruta": [
+      "EZE",
+      "LHR",
+      "HND"
+     ],
+     "salida": "2027-04-08T15:10",
+     "llegada": "2027-04-10T10:55",
+     "escalas": 1,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 275,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "British Airways",
+      "JAL"
+     ],
+     "ruta": [
+      "HND",
+      "LHR",
+      "EZE"
+     ],
+     "salida": "2027-05-01T09:45",
+     "llegada": "2027-05-02T05:25",
+     "escalas": 1,
+     "horas": 31.7,
+     "paradas": [
+      {
+       "aeropuerto": "LHR",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 7386,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 15092,
+   "por_persona_con_valijas": 7546,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 14772.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "serpapi",
+   "precio_total": 19692,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "MIA",
+      "LAX",
+      "KIX"
+     ],
+     "salida": "2027-05-16T22:20",
+     "llegada": "2027-05-18T18:45",
+     "escalas": 2,
+     "horas": 32.4,
+     "paradas": [
+      {
+       "aeropuerto": "MIA",
+       "sale_de": null,
+       "minutos": 130,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "LAX",
+       "sale_de": null,
+       "minutos": 165,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "KIX",
+      "SFO",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-06-07T16:55",
+     "llegada": "2027-06-08T08:00",
+     "escalas": 2,
+     "horas": 27.1,
+     "paradas": [
+      {
+       "aeropuerto": "SFO",
+       "sale_de": null,
+       "minutos": 88,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 102,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 9846,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 20012,
+   "por_persona_con_valijas": 10006,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 20,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 19692
+   }
+  },
+  {
+   "tipo": "open_jaw",
+   "fuente": "serpapi",
+   "precio_total": 19925,
+   "moneda": "USD",
+   "precio_verificado": false,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "KIX",
+      "SFO",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T16:55",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 2,
+     "horas": 27.1,
+     "paradas": [
+      {
+       "aeropuerto": "SFO",
+       "sale_de": null,
+       "minutos": 83,
+       "noche": false,
+       "cambio_pasaje": false
+      },
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 102,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 9962,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 20245,
+   "por_persona_con_valijas": 10122,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "serpapi": 19925
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "0fcc1dc8cdb24955b786bb165833c011",
+   "precio_total": 29289.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American",
+      "JAL"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T16:40",
+     "escalas": 1,
+     "horas": 31.5,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 380,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "ANA",
+      "United"
+     ],
+     "ruta": [
+      "HND",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T10:25",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 33.6,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 695,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 14644,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 29609,
+   "por_persona_con_valijas": 14804,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 29289.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "1ebd3759721e46b6a7f45f315eeebe8d",
+   "precio_total": 36556.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "American"
+     ],
+     "ruta": [
+      "EZE",
+      "JFK",
+      "HND"
+     ],
+     "salida": "2027-04-08T21:10",
+     "llegada": "2027-04-10T13:55",
+     "escalas": 1,
+     "horas": 28.8,
+     "paradas": [
+      {
+       "aeropuerto": "JFK",
+       "sale_de": null,
+       "minutos": 210,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "HND",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T11:45",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 30.7,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 160,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 18278,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 36876,
+   "por_persona_con_valijas": 18438,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 36556.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "06002603592a4ed6b070b8b060550a17",
+   "precio_total": 38982.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "United"
+     ],
+     "ruta": [
+      "NRT",
+      "IAH",
+      "EZE"
+     ],
+     "salida": "2027-05-01T17:00",
+     "llegada": "2027-05-02T08:00",
+     "escalas": 1,
+     "horas": 27.0,
+     "paradas": [
+      {
+       "aeropuerto": "IAH",
+       "sale_de": null,
+       "minutos": 330,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 19491,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 39302,
+   "por_persona_con_valijas": 19651,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 38982.0
+   }
+  },
+  {
+   "tipo": "ida_y_vuelta",
+   "fuente": "ignav",
+   "ignav_id": "05c95b7d1a044ffd8f2204a13eaef6a7",
+   "precio_total": 42685.0,
+   "moneda": "USD",
+   "precio_verificado": true,
+   "equipaje": "sin_confirmar",
+   "tramos": [
+    {
+     "aerolineas": [
+      "Lufthansa"
+     ],
+     "ruta": [
+      "EZE",
+      "FRA",
+      "NRT"
+     ],
+     "salida": "2027-04-08T16:35",
+     "llegada": "2027-04-10T09:30",
+     "escalas": 1,
+     "horas": 28.9,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 170,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    },
+    {
+     "aerolineas": [
+      "JAL",
+      "Lufthansa"
+     ],
+     "ruta": [
+      "NRT",
+      "FRA",
+      "EZE"
+     ],
+     "salida": "2027-05-01T10:35",
+     "llegada": "2027-05-02T06:25",
+     "escalas": 1,
+     "horas": 31.8,
+     "paradas": [
+      {
+       "aeropuerto": "FRA",
+       "sale_de": null,
+       "minutos": 235,
+       "noche": false,
+       "cambio_pasaje": false
+      }
+     ]
+    }
+   ],
+   "por_persona": 21342,
+   "valijas_estimadas": 320,
+   "precio_con_valijas": 43005,
+   "por_persona_con_valijas": 21502,
+   "categoria": "🔴 todavía caro",
+   "dias_en_japon": 21,
+   "excede_limites": null,
+   "precios_por_fuente": {
+    "ignav": 42685.0
+   }
+  }
+ ],
+ "descartes": {
+  "más de 36 h en un tramo": 15
+ },
+ "san_pablo": [
+  {
+   "salida": "2027-09-09",
+   "regreso": "2027-10-01",
+   "destino": "TYO",
+   "mejor_desde_san_pablo": 2543.0,
+   "mejor_desde_buenos_aires": 5857.0,
+   "tramo_corto": 935.0,
+   "total": 3478.0,
+   "validas": 12,
+   "mejor_descartada": null
+  }
+ ],
+ "pedidos": [],
+ "consultas_hechas": [
+  "calendario GRU-TYO 2027-06 21d",
+  "calendario BUE-TYO 2027-06 22d",
+  "calendario GRU-TYO 2027-09 22d",
+  "exacta BUE-TYO 2027-04-08 2027-05-01",
+  "exacta GRU-TYO 2027-09-09 2027-10-01",
+  "link 5da8791a417142a5a52986aa94511198+ae5c197898c44388afb0a024f61bba86",
+  "serpapi BUE-TYO 2027-04-08 2027-05-01",
+  "serpapi open-jaw 2027-04-08 2027-05-01",
+  "serpapi BUE-OSA 2027-05-16 2027-06-07"
+ ],
+ "errores": [],
+ "cupo": {
+  "ignav": {
+   "gastadas_hoy": 8,
+   "disponibles_hoy": 1,
+   "total": 53
+  },
+  "serpapi": {
+   "gastadas_hoy": 6,
+   "disponibles_hoy": 0,
+   "total": 61
+  },
+  "stopover": {
+   "gastadas_hoy": 0,
+   "disponibles_hoy": 27,
+   "total": 33
+  }
+ }
+}
