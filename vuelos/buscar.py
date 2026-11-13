@@ -54,7 +54,8 @@ class Corrida:
         except SinCupo:
             raise
         except FuenteError as error:
-            self.errores.append(f"{nombre}: {error}")
+            if f"{nombre}: {error}" not in self.errores:  # al reintentar el mismo día no se repite
+                self.errores.append(f"{nombre}: {error}")
         else:
             self.hechas.append(nombre)
             self.guardar()
