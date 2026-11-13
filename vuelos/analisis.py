@@ -35,9 +35,10 @@ def cargar_dias(datos: Path) -> dict[str, dict]:
     for carpeta in CARPETAS_DEL_DIA:
         for archivo in sorted((datos / carpeta).glob("????-??-??.json")):
             contenido = json.loads(archivo.read_text(encoding="utf-8"))
-            dia = dias.setdefault(archivo.stem, {"opciones": [], "san_pablo": []})
+            dia = dias.setdefault(archivo.stem, {"opciones": [], "san_pablo": [], "errores": []})
             dia["opciones"] += contenido.get("opciones", [])
             dia["san_pablo"] += contenido.get("san_pablo", [])
+            dia["errores"] += contenido.get("errores", [])
     return dict(sorted(dias.items()))
 
 
@@ -56,13 +57,31 @@ def vigentes(dias: dict[str, dict], hasta: str, cfg: dict) -> list[dict]:
     por_vuelo = {}
     for fecha, datos in dias.items():  # vienen ordenados de más viejo a más nuevo
         if desde <= fecha <= hasta:
+            fallidos = links_fallidos(datos)
             for opcion in reevaluar(datos, cfg):
-                por_vuelo[evaluar.clave_vuelo(opcion)] = {**opcion, "visto": fecha}
+                clave = evaluar.clave_vuelo(opcion)
+                previas = (por_vuelo.get(clave) or {}).get("links_fallidos", [])
+                ids = set(opcion.get("ignav_ids") or [opcion.get("ignav_id")])
+                fallo_hoy = [fecha] if ids & fallidos else []
+                nueva = {**opcion, "visto": fecha}
+                if not opcion.get("links_compra") and (previas or fallo_hoy):
+                    nueva["links_fallidos"] = sorted(set(previas + fallo_hoy))
+                por_vuelo[clave] = nueva
     return sorted(por_vuelo.values(), key=lambda o: o["precio_con_valijas"])
 
 
+def links_fallidos(datos_del_dia: dict) -> set[str]:
+    """Números de Ignav cuyo pedido de links de compra falló ese día (la fuente no pudo dar dónde comprarlo)."""
+    ids = set()
+    for error in datos_del_dia.get("errores", []):
+        if error.startswith("link ") and ":" in error:
+            ids |= set(error[5:].split(":", 1)[0].split("+"))
+    return ids
+
+
 def mejor(opciones: list[dict], grupo: str = "total") -> dict | None:
-    return next((o for o in opciones if GRUPOS[grupo](o)), None)
+    """La más barata con un precio que alguien respalda: las "sin confirmar" no cuentan como la mejor."""
+    return next((o for o in opciones if GRUPOS[grupo](o) and o.get("confiable", True)), None)
 
 
 def resumen_opcion(opcion: dict | None) -> dict | None:
@@ -129,7 +148,8 @@ def evolucion(dias: dict[str, dict], cfg: dict) -> list[dict]:
         for grupo in GRUPOS:
             opcion = mejor(opciones, grupo)
             fila[grupo] = opcion["precio_con_valijas"] if opcion else None
-        fila["categoria"] = opciones[0]["categoria"] if opciones else None
+        la_mejor = mejor(opciones)
+        fila["categoria"] = la_mejor["categoria"] if la_mejor else None
         filas.append(fila)
     return filas
 

@@ -36,6 +36,7 @@ def _tramo_para_pagina(t: dict) -> dict:
     minutos = [p["minutos"] for p in paradas]
     return {
         **{k: t[k] for k in ("ruta", "salida", "llegada", "escalas", "horas", "aerolineas")},
+        "minutos": t.get("minutos"),
         "paradas": paradas,
         "horas_escalas": round(sum(minutos) / 60, 1) if paradas and None not in minutos else None,
         # Días que pasan entre la salida y la llegada, en hora local (+1, +2).
@@ -75,6 +76,8 @@ def para_pagina(opcion: dict, mas_barata: float, precio_anterior: float | None, 
         "categoria": opcion["categoria"], "precios_por_fuente": opcion.get("precios_por_fuente", {}),
         "desglose": opcion.get("desglose"),
         "visto": opcion.get("visto"), "precio_confirmado": opcion.get("precio_confirmado"),
+        "confianza": opcion.get("confianza") or evaluar.confianza(opcion),
+        "confiable": opcion.get("confiable", True), "links_fallidos": opcion.get("links_fallidos") or [],
         "cambio_vs_anterior": round(opcion["precio_total"] - precio_anterior) if precio_anterior is not None else None,
         "nueva": precio_anterior is None,
         **ventajas.evaluar_opcion(opcion, mas_barata, cfg),
@@ -116,7 +119,7 @@ def armar(cfg: dict, dia: date) -> dict:
     anteriores = [f for f in dias if fecha and f < fecha]
     previas = analisis.vigentes(dias, anteriores[-1], cfg) if anteriores else []
     precio_anterior = {evaluar.clave_vuelo(o): o["precio_total"] for o in previas}
-    mas_barata = opciones[0]["precio_con_valijas"] if opciones else 0
+    mas_barata = next((o["precio_con_valijas"] for o in opciones if o.get("confiable", True)), 0)
 
     archivo_promos = DATOS / "promociones" / f"{dia.isoformat()}.json"
     promos = json.loads(archivo_promos.read_text(encoding="utf-8")) if archivo_promos.exists() else None
@@ -162,7 +165,7 @@ def stopovers(cfg: dict, dia: date) -> dict:
             por_vuelo[evaluar.clave_vuelo(opcion)] = {**evaluar.completar(opcion, cfg), "visto": archivo.stem}
         pedidos += datos.get("pedidos", [])
     opciones = sorted(por_vuelo.values(), key=lambda o: o["precio_con_valijas"])
-    mas_barata = opciones[0]["precio_con_valijas"] if opciones else 0
+    mas_barata = next((o["precio_con_valijas"] for o in opciones if o.get("confiable", True)), 0)
     contador = Contador(DATOS / "consultas.json", cfg["consultas"], dia)
     limites = cfg["consultas"]
     quedan = min(limites["stopover"]["por_mes"] - contador.gastadas_del_mes("stopover"),

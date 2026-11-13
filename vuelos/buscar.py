@@ -112,8 +112,9 @@ def correr_ignav(c: Corrida, barrido: bool) -> None:
 
 
 def candidatas_para_links(opciones: list[dict]) -> list[dict]:
-    """La mejor del día y todas las que llegan a 👀 casi o mejor, de más barata a más cara."""
-    ordenadas = sorted(opciones, key=lambda o: o["precio_con_valijas"])
+    """La mejor del día y todas las que llegan a 👀 casi o mejor: primero las de precio respaldado, de más barata a más cara."""
+    # Primero las de precio respaldado: un precio sin confirmar suele fallar y gastaría el lugar de otra.
+    ordenadas = sorted(opciones, key=lambda o: (not o.get("confiable", True), o["precio_con_valijas"]))
     elegidas = ordenadas[:1] + [o for o in ordenadas[1:] if o["categoria"] != evaluar.CARO]
     return [o for o in elegidas if o.get("ignav_ids") or o.get("ignav_id")]
 

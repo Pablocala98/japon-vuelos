@@ -386,8 +386,10 @@
   const diaSemana = (t) => DIAS[new Date(Date.UTC(+t.slice(0, 4), +t.slice(5, 7) - 1, +t.slice(8, 10))).getUTCDay()];
   const largo = (t) => `${diaSemana(t)} ${fecha(t)}`;
   const hora = (t) => (t ? t.slice(11, 16) : "");
-  const duracion = (horas) => { if (horas == null) return "—"; const m = Math.round(horas * 60); return `${Math.floor(m / 60)} h${m % 60 ? ` ${String(m % 60).padStart(2, "0")}` : ""}`; };
-  const minutosATexto = (m) => (m == null ? "" : duracion(m / 60));
+  const deMinutos = (m) => (m == null ? "—" : `${Math.floor(m / 60)} h${m % 60 ? ` ${String(m % 60).padStart(2, "0")}` : ""}`);
+  const duracion = (horas) => (horas == null ? "—" : deMinutos(Math.round(horas * 60)));
+  const minutosATexto = (m) => (m == null ? "" : deMinutos(Math.round(m)));
+  const duracionTramo = (t) => (t.minutos != null ? deMinutos(t.minutos) : duracion(t.horas));
   const bandera = (cc) => (cc && cc.length === 2 ? String.fromCodePoint(...[...cc.toUpperCase()].map((c) => 127397 + c.charCodeAt(0))) : "📍");
   const claseCategoria = (c) => (c || "").includes("ideal") ? "ideal" : (c || "").includes("comprar") ? "comprar" : (c || "").includes("casi") ? "casi" : "caro";
   const TRANSITO = { US: "Visa EE.UU.", CA: "eTA Canadá" };
@@ -414,15 +416,32 @@
   const opciones = D.opciones || [];
   const SO = D.stopovers || { opciones: [], pedidos: [], ciudades: {}, cupo: {} };
   const porId = new Map([...opciones, ...SO.opciones].map((o) => [o.id, o]));
+  const confiable = (o) => o.confiable !== false;
+  const confiables = opciones.filter(confiable);
+  const masBarata = () => [...confiables].sort((a, b) => a.precio_con_valijas - b.precio_con_valijas)[0];
   const origenDe = (o) => (o.desde_san_pablo ? "GRU" : "BUE");
   const maxHoras = (o) => Math.max(...o.tramos.map((t) => t.horas || 0));
   const maxEscalas = (o) => Math.max(...o.tramos.map((t) => t.escalas));
   const hayRepetidas = opciones.some((o) => !o.nueva);
 
+  // Lo guardado en el navegador puede ser de una versión vieja de la página: se valida antes de usarlo.
+  function filtrosValidos(g) {
+    const base = { origen: ["BUE", "GRU"], destino: ["TYO", "OSA"], escalas: "todas", valija: false, mes: "todos", orden: "precio" };
+    if (!g || typeof g !== "object") return base;
+    const lista = (v, permitidos) => (Array.isArray(v) && v.filter((x) => permitidos.includes(x)).length ? v.filter((x) => permitidos.includes(x)) : null);
+    return {
+      origen: lista(g.origen, base.origen) || base.origen,
+      destino: lista(g.destino, base.destino) || base.destino,
+      escalas: ["todas", "1", "2"].includes(g.escalas) ? g.escalas : base.escalas,
+      valija: g.valija === true,
+      mes: typeof g.mes === "string" ? g.mes : base.mes,
+      orden: ["precio", "escalas", "horas", "salida"].includes(g.orden) ? g.orden : base.orden,
+    };
+  }
   const estado = {
     tab: guardado("vj-tab", "vuelos"),
     abierta: null,
-    f: Object.assign({ origen: ["BUE", "GRU"], destino: ["TYO", "OSA"], escalas: "todas", valija: false, mes: "todos", orden: "precio" }, guardado("vj-filtros2", {})),
+    f: filtrosValidos(guardado("vj-filtros2", {})),
     comparar: guardado("vj-comparar", []).filter((id) => porId.has(id)),
     so: Object.assign({ ciudad: Object.keys(SO.ciudades)[0] || "madrid", dias: 3, cuando: "ida", mes: "cualquiera" }, guardado("vj-stopover", {})),
     ruta: null, dia: null,
@@ -435,7 +454,7 @@
   if (horasDesde > 36) { $("#viejo").textContent = `⚠️ Datos de hace ${Math.round(horasDesde / 24)} días: puede que la búsqueda automática no haya corrido.`; $("#viejo").hidden = false; }
 
   function dibujarResumen() {
-    const mejor = [...opciones].sort((a, b) => a.precio_con_valijas - b.precio_con_valijas)[0];
+    const mejor = masBarata();
     const comp = D.resumen?.comparacion || {};
     const cambio = comp.estado === "mejoró" ? h("small", { class: "baja", text: `▼ ${numero.format(Math.abs(comp.diferencia))} vs ayer` })
       : comp.estado === "empeoró" ? h("small", { class: "sube", text: `▲ ${numero.format(Math.abs(comp.diferencia))} vs ayer` })
@@ -470,10 +489,11 @@
   $("#boton-actualizar").addEventListener("click", (e) => { const p = $("#panel-actualizar"); p.hidden = !p.hidden; e.currentTarget.setAttribute("aria-expanded", String(!p.hidden)); });
 
   function revisarNovedades() {
-    const mejor = [...opciones].sort((a, b) => a.precio_con_valijas - b.precio_con_valijas)[0];
+    const mejor = masBarata();
     if (!mejor) return;
-    const anterior = guardado("vj-ultima-visita", null);
-    guardar("vj-ultima-visita", { precio: mejor.precio_con_valijas, generado: D.generado });
+    // v2: desde que solo cuentan los precios respaldados (lo guardado antes podía ser un precio sin confirmar).
+    const anterior = guardado("vj-ultima-visita-v2", null);
+    guardar("vj-ultima-visita-v2", { precio: mejor.precio_con_valijas, generado: D.generado });
     if (!anterior || anterior.generado === D.generado) return;
     const dif = mejor.precio_con_valijas - anterior.precio;
     const caja = $("#novedad");
@@ -508,14 +528,16 @@
         }, `${bandera(p.pais_codigo)} `, h("b", { text: p.codigo }), p.minutos != null ? ` ${minutosATexto(p.minutos)}` : "",
           p.noche ? " 🌙" : "", p.sale_de || p.cambio_pasaje ? " ⚠️" : ""))) : null),
       h("div", { class: "punta der" }, h("b", {}, hora(t.llegada), t.dias_mas ? h("sup", { text: `+${t.dias_mas}` }) : null), h("span", { text: t.ruta.at(-1) })),
-      h("div", { class: "duracion" }, h("b", { text: `⏱️ ${duracion(t.horas)}` }),
+      h("div", { class: "duracion" }, h("b", { text: `⏱️ ${duracionTramo(t)}` }),
         h("span", { text: t.escalas ? `🔁 ${t.escalas}${t.horas_escalas != null ? ` · ${duracion(t.horas_escalas)} esp.` : ""}` : "sin escalas" })));
   }
 
   function iconos(o) {
     const lista = [];
     if (o.dias_en_japon != null) lista.push(h("span", { class: `icono${Math.abs(o.dias_en_japon - P.dias_en_japon) > (P.tolerancia_dias ?? 1) ? " ojo" : ""}`, title: "Días en Japón", text: `🗾 ${o.dias_en_japon} días` }));
-    lista.push(h("span", { class: "icono", title: "Equipaje de mano incluido en el precio buscado", text: "🎒 ✓" }));
+    if (!confiable(o)) lista.push(h("span", { class: "icono mal", title: "Ignav no verificó este precio y Google Flights no lo muestra: puede no existir", text: "⚠️ precio sin confirmar" }));
+    if (o.links_fallidos?.length) lista.push(h("span", { class: "icono mal", title: `La fuente no pudo dar dónde comprarlo (${o.links_fallidos.map(fecha).join(", ")})`, text: "🚫 sin link de compra" }));
+    lista.push(h("span", { class: "icono", title: "El precio se buscó con 1 equipaje de mano por persona. Confirmalo al comprar.", text: "🎒 1 pedido" }));
     if (o.equipaje === "incluida") lista.push(h("span", { class: "icono ok", title: "Valija despachada incluida", text: "🧳 incluida" }));
     else if (o.equipaje === "estimada") lista.push(h("span", { class: "icono", title: "La fuente estimó el costo de la valija y está sumado", text: "🧳 ~incluida" }));
     else lista.push(h("span", { class: "icono ojo", title: `Sin confirmar: sumamos ${usd(o.valijas_estimadas)} estimados`, text: "🧳 ?" }));
@@ -523,8 +545,10 @@
     if (o.desde_san_pablo) lista.push(h("span", { class: "icono ojo", title: "Son 2 pasajes separados: cambiás de avión en San Pablo con tus valijas", text: "⚠️ 2 pasajes" }));
     const visas = [...new Set(o.tramos.flatMap((t) => (t.paradas || []).map((p) => TRANSITO[p.pais_codigo]).filter(Boolean)))];
     visas.forEach((v) => lista.push(h("span", { class: "icono mal", title: "Con pasaporte argentino necesitás este permiso aunque no salgas del aeropuerto", text: `🛂 ${v}` })));
-    if (o.precio_confirmado) lista.push(h("span", { class: "icono ok", title: "Precio confirmado al pedir los links de compra", text: `✓ ${fecha(o.precio_confirmado.fecha)}` }));
-    else if (o.visto && o.visto !== D.fecha_datos) lista.push(h("span", { class: "icono", title: "Visto ese día: el precio puede haber cambiado", text: `👁️ ${fecha(o.visto)}` }));
+    if (o.precio_confirmado) lista.push(h("span", { class: "icono ok", title: "Precio confirmado al pedir los links de compra", text: `✅ confirmado ${fecha(o.precio_confirmado.fecha)}` }));
+    else if (o.confianza === "verificado") lista.push(h("span", { class: "icono ok", title: "La fuente (Ignav) verificó este precio", text: "✓ verificado" }));
+    else if (o.confianza === "google") lista.push(h("span", { class: "icono", title: "Precio visto en Google Flights", text: "🔎 Google" }));
+    if (!o.precio_confirmado && o.visto && o.visto !== D.fecha_datos) lista.push(h("span", { class: "icono", title: "Visto ese día: el precio puede haber cambiado", text: `👁️ ${fecha(o.visto)}` }));
     if (o.cambio_vs_anterior < 0) lista.push(h("span", { class: "icono ok", text: `▼ ${numero.format(-o.cambio_vs_anterior)}` }));
     if (o.cambio_vs_anterior > 0) lista.push(h("span", { class: "icono mal", text: `▲ ${numero.format(o.cambio_vs_anterior)}` }));
     if (o.nueva && hayRepetidas && !o.stopover) lista.push(h("span", { class: "icono ok", text: "🆕" }));
@@ -534,8 +558,8 @@
   function linkPrincipal(o) {
     if (o.desde_san_pablo) return null;  // son 2 pasajes: se compran desde el detalle
     const exacto = o.links_compra.find((l) => l.exacto) || o.links_compra[0];
-    if (exacto) return { url: exacto.url, texto: `Comprar en ${exacto.proveedor}` };
-    if (o.links_google[0]) return { url: o.links_google[0].url, texto: "Buscar en Google Flights" };
+    if (exacto) return { url: exacto.url, texto: `Comprar en ${exacto.proveedor}`, boton: "Comprar ↗" };
+    if (o.links_google[0]) return { url: o.links_google[0].url, texto: "Abre una búsqueda en Google Flights: el vuelo exacto puede no aparecer", boton: "Buscar ↗" };
     return null;
   }
 
@@ -545,11 +569,11 @@
     const lleno = !marcada && estado.comparar.length >= 3;
     return h("div", { class: "lado-precio" },
       h("div", {},
-        h("div", { class: `cat ${claseCategoria(o.categoria)}`, text: o.categoria }),
+        confiable(o) ? h("div", { class: `cat ${claseCategoria(o.categoria)}`, text: o.categoria }) : h("div", { class: "cat casi", text: "⚠️ sin confirmar" }),
         h("div", { class: "precio-grande" }, h("small", { text: "USD" }), numero.format(o.precio_con_valijas)),
         h("div", { class: "desglose", text: o.valijas_estimadas ? `✈️ ${numero.format(o.precio_total)} + 🧳 ~${numero.format(o.valijas_estimadas)}` : "valijas incluidas" }),
         h("div", { class: "desglose", text: `${usd(o.por_persona_con_valijas)} c/u` })),
-      principal ? h("a", { class: "boton lleno chico", href: principal.url, target: "_blank", rel: "noopener", title: principal.texto, text: "Comprar ↗" })
+      principal ? h("a", { class: "boton lleno chico", href: principal.url, target: "_blank", rel: "noopener", title: principal.texto, text: principal.boton })
         : h("button", { class: "boton lleno chico", type: "button", onclick: () => abrir(o.id), text: "Comprar (2 pasajes)" }),
       h("div", { class: "acciones", style: "justify-content:flex-end" },
         o.stopover ? null : h("label", { class: "comparar", title: lleno ? "Ya elegiste 3" : "Comparar" },
@@ -636,10 +660,15 @@
 
   function dibujarLista() {
     dibujarFiltros();
-    const visibles = opciones.filter((o) => pasaFiltros(o)).sort(ORDENES[estado.f.orden] || ORDENES.precio);
-    $("#conteo").textContent = `${visibles.length} de ${opciones.length} vuelos`;
+    const todas = opciones.filter((o) => pasaFiltros(o)).sort(ORDENES[estado.f.orden] || ORDENES.precio);
+    const visibles = todas.filter(confiable), dudosas = todas.filter((o) => !confiable(o));
+    $("#conteo").textContent = `${visibles.length} de ${confiables.length} vuelos`;
+    const abiertaDudosa = dudosas.some((o) => o.id === estado.abierta);
     $("#lista").replaceChildren(...(visibles.length ? visibles.map(tarjetaVuelo)
-      : [h("p", { class: "tarjeta vacio", text: "Ningún vuelo cumple estos filtros. Probá sacando alguno." })]));
+      : [h("p", { class: "tarjeta vacio", text: "Ningún vuelo cumple estos filtros. Probá sacando alguno." })]),
+      dudosas.length ? h("details", { class: "pie", open: abiertaDudosa },
+        h("summary", { class: "chica", text: `⚠️ Precios sin confirmar (${dudosas.length}): probablemente ya no existen` }),
+        h("div", { class: "vuelos", style: "margin-top:10px" }, dudosas.map(tarjetaVuelo))) : null);
   }
 
   document.querySelectorAll("#vuelos .op").forEach((b) => b.addEventListener("click", () => {
@@ -689,11 +718,12 @@
       ["Desde", (o) => (o.desde_san_pablo ? "🇧🇷 San Pablo (2 pasajes)" : "🇦🇷 Buenos Aires")],
       ["📅 Fechas", (o) => `${largo(o.sale)} → ${largo(o.vuelve)}`],
       ["🗾 Días en Japón", (o) => String(o.dias_en_japon ?? "—"), (o) => Math.abs((o.dias_en_japon ?? 99) - P.dias_en_japon)],
-      ["⏱️ Ida", (o) => duracion(o.tramos[0].horas), (o) => o.tramos[0].horas],
-      ["⏱️ Vuelta", (o) => duracion(o.tramos.at(-1).horas), (o) => o.tramos.at(-1).horas],
+      ["⏱️ Ida", (o) => duracionTramo(o.tramos[0]), (o) => o.tramos[0].horas],
+      ["⏱️ Vuelta", (o) => duracionTramo(o.tramos.at(-1)), (o) => o.tramos.at(-1).horas],
       ["🔁 Escalas ida", (o) => escalasDe(o.tramos[0]), (o) => o.tramos[0].escalas],
       ["🔁 Escalas vuelta", (o) => escalasDe(o.tramos.at(-1)), (o) => o.tramos.at(-1).escalas],
       ["🧳 Valija", (o) => ({ incluida: "incluida", estimada: "~incluida", sin_confirmar: "sin confirmar" })[o.equipaje] || o.equipaje],
+      ["✓ Precio", (o) => ({ confirmado: "confirmado", verificado: "verificado", google: "Google Flights", sin_confirmar: "⚠️ sin confirmar" })[o.confianza] || "—"],
       ["✈️ Aerolíneas", (o) => o.aerolineas.join(", ")],
     ];
     $("#tabla-comparar").replaceChildren(h("table", {},
@@ -858,7 +888,7 @@
     return [{ texto: "Google Flights", url: googleUrl("Buenos Aires", PARA_GOOGLE[destino], salida, regreso) }];
   }
   function opcionesPara(origen, destino, salida, regreso, margen = 0) {
-    return opciones.filter((o) => {
+    return confiables.filter((o) => {
       if (o.destino !== destino || o.desde_san_pablo !== (origen === "GRU")) return false;
       const corrimiento = diasEntre(salida, o.sale.slice(0, 10));
       const saleBien = Math.abs(corrimiento) <= margen || (origen === "GRU" && corrimiento === -1);
@@ -871,7 +901,7 @@
     const lista = [];
     if (o) lista.push(h("button", { class: "boton lleno chico", type: "button", onclick: () => abrir(o.id, true),
       title: exacta ? "Vuelo encontrado para estas fechas" : `Vuelo parecido: ${fecha(o.sale)} → ${fecha(o.vuelve)}`,
-      text: compacto ? `✈️ ${usd(o.precio_con_valijas)}${exacta ? "" : " ≈"}` : `✈️ Ver vuelo${exacta ? "" : ` (${fecha(o.sale)}→${fecha(o.vuelve)})`} · ${usd(o.precio_con_valijas)}` }));
+      text: compacto ? `✈️ ${usd(o.precio_total)}${exacta ? "" : " ≈"}` : `✈️ Ver vuelo${exacta ? "" : ` (${fecha(o.sale)}→${fecha(o.vuelve)})`} · ${usd(o.precio_total)} sin valijas` }));
     if (compacto) {
       const g = linksGoogle(origen, destino, salida, regreso)[0];
       lista.push(h("a", { class: "boton chico", href: g.url, target: "_blank", rel: "noopener", title: g.texto, text: "Google ↗" }));
@@ -926,7 +956,7 @@
       : [h("p", { class: "apagado chica", text: "👆 Tocá un día para ver el vuelo y cómo comprarlo." })]));
 
     $("#ranking-fechas").replaceChildren(h("table", {},
-      h("thead", {}, h("tr", {}, ["Ruta", "🛫 Salida", "🛬 Vuelta", "🗾 días", "💲 Para 2", "Ver"].map((t) => h("th", { scope: "col", text: t })))),
+      h("thead", {}, h("tr", {}, ["Ruta", "🛫 Salida", "🛬 Vuelta", "🗾 días", "💲 Para 2, sin valijas", "Vuelo encontrado"].map((t) => h("th", { scope: "col", text: t })))),
       h("tbody", {}, F.ranking.map((c) => {
         const [ro, rd] = c.ruta.split("-");
         return h("tr", {}, h("td", { text: NOMBRE[c.ruta] || c.ruta }), h("td", { text: largo(c.salida) }), h("td", { text: fecha(c.regreso) }),

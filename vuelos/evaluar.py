@@ -76,9 +76,28 @@ def completar(opcion: dict, cfg: dict) -> dict:
         "por_persona_con_valijas": round(con_valijas / pasajeros),
         "categoria": categoria(con_valijas, cfg["precios"]),
         "dias_en_japon": dias_en_japon(opcion),
+        "confianza": confianza(opcion),
+        "confiable": confianza(opcion) != SIN_CONFIRMAR,
         # Solo en la exploración sin límites: avisa si no cumple los límites normales.
         "excede_limites": motivo_descarte(opcion, cfg.get("restricciones_originales") or cfg["restricciones"]),
     }
+
+
+SIN_CONFIRMAR = "sin_confirmar"
+
+
+def confianza(opcion: dict) -> str:
+    """Qué respalda el precio: el link de compra, la fuente, Google Flights, o nada.
+
+    Un precio de Ignav "unverified" que nadie más vio puede ser una tarifa vieja que ya no existe.
+    """
+    if opcion.get("precio_confirmado"):
+        return "confirmado"
+    if opcion.get("precio_verificado"):
+        return "verificado"
+    if "serpapi" in (opcion.get("precios_por_fuente") or {}) or opcion.get("fuente") == "serpapi":
+        return "google"
+    return SIN_CONFIRMAR
 
 
 def categoria(precio: float, precios: dict) -> str:
@@ -168,6 +187,7 @@ def _unir(primero: dict, segundo: dict, espera: float) -> dict:
         "llegada": segundo["llegada"],
         "escalas": primero["escalas"] + segundo["escalas"] + 1,
         "horas": round(primero["horas"] + espera + segundo["horas"], 1) if primero["horas"] and segundo["horas"] else None,
+        "minutos": (primero["minutos"] + round(espera * 60) + segundo["minutos"]) if primero.get("minutos") and segundo.get("minutos") else None,
         # El cambio entre los 2 pasajes también es una escala: hay que retirar y volver a despachar las valijas.
         "paradas": primero.get("paradas", []) + [{
             "aeropuerto": primero["ruta"][-1], "sale_de": None, "minutos": round(espera * 60),
@@ -200,5 +220,6 @@ def juntar(opciones: list[dict]) -> list[dict]:
             extras = {k: previa.get(k) or opcion.get(k) for k in ("ignav_id", "links_compra") if previa.get(k) or opcion.get(k)}
             if previa["precio_con_valijas"] <= opcion["precio_con_valijas"]:
                 opcion = previa
-        unicas[clave] = {**opcion, **extras, "precios_por_fuente": precios}
+        unida = {**opcion, **extras, "precios_por_fuente": precios}
+        unicas[clave] = {**unida, "confianza": confianza(unida), "confiable": confianza(unida) != SIN_CONFIRMAR}
     return sorted(unicas.values(), key=lambda o: o["precio_con_valijas"])

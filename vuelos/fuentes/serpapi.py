@@ -80,6 +80,7 @@ def tramo(opcion: dict) -> dict:
         "llegada": vuelos[-1]["arrival_airport"].get("time", "").replace(" ", "T") if vuelos else None,
         "escalas": max(len(vuelos) - 1, 0),
         "horas": round(opcion["total_duration"] / 60, 1) if opcion.get("total_duration") else None,
+        "minutos": opcion.get("total_duration"),
         "paradas": _paradas(vuelos, opcion.get("layovers") or []),
     }
 

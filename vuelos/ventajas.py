@@ -56,11 +56,22 @@ def evaluar_opcion(opcion: dict, mas_barata: float, cfg: dict) -> dict:
     tramos = opcion["tramos"]
     ida, vuelta = tramos[0], tramos[-1]
 
-    if precio <= mas_barata:
+    confiable = opcion.get("confiable", True)
+    if not confiable:
+        desventajas.append("Precio sin confirmar: Ignav no lo verificó y Google Flights no lo muestra. Puede ser una tarifa que ya no existe.")
+    fallidos = opcion.get("links_fallidos") or []
+    if fallidos:
+        veces = "1 vez" if len(fallidos) == 1 else f"{len(fallidos)} veces"
+        desventajas.append(f"La fuente no pudo dar dónde comprarlo ({veces}).")
+    if not confiable:
+        pass  # sin precio respaldado no se compara con el presupuesto ni con la más barata
+    elif precio <= mas_barata:
         ventajas.append("Es la más barata disponible.")
     else:
         desventajas.append(f"Cuesta {usd(precio - mas_barata)} más que la más barata disponible.")
-    if precio <= precios["comprar"]:
+    if not confiable:
+        pass
+    elif precio <= precios["comprar"]:
         ventajas.append(f"Entra en tu presupuesto: {opcion['categoria']}.")
     else:
         if opcion["precio_total"] <= precios["comprar"]:
@@ -77,8 +88,12 @@ def evaluar_opcion(opcion: dict, mas_barata: float, cfg: dict) -> dict:
         ventajas.append("El precio ya incluye un costo estimado de la valija.")
     else:
         desventajas.append(f"La valija no está confirmada: sumamos {usd(opcion['valijas_estimadas'])} estimados.")
-    if not opcion.get("precio_verificado"):
-        desventajas.append("Precio sin confirmar: revisalo antes de comprar.")
+    if opcion.get("confianza") == "confirmado":
+        ventajas.append("Precio confirmado al pedir los links de compra.")
+    elif opcion.get("confianza") == "verificado":
+        ventajas.append("Precio verificado por la fuente.")
+    elif opcion.get("confianza") == "google":
+        desventajas.append("Precio visto en Google Flights: confirmalo al comprar.")
 
     max_escalas = max(t["escalas"] for t in tramos)
     if max_escalas <= 1:

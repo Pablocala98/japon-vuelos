@@ -29,6 +29,22 @@ Arriba, 3 números: lo más barato, tu tope y cuánto falta. Debajo, pestañas:
 
 > Los precios son **para los 2**. "Sin valijas" es lo que muestra la aerolínea al principio. "Con valijas" suma una **estimación** de USD 80 por valija y por tramo cuando no está confirmado que estén incluidas.
 
+## ¿Se puede confiar en el precio?
+
+Cada vuelo dice qué respalda su precio:
+
+- **✅ confirmado**: la app pidió el link de compra y la fuente dio ese precio.
+- **✓ verificado**: Ignav lo verificó.
+- **🔎 Google**: apareció en Google Flights.
+- **⚠️ sin confirmar**: nadie lo respalda. Suele ser una tarifa vieja que ya no existe. Estos vuelos van aparte, al final de la lista, y nunca cuentan como "lo más barato".
+
+Si la fuente no pudo dar dónde comprarlo, la tarjeta muestra **🚫 sin link de compra**.
+
+**Controles automáticos:**
+- Las pruebas (`tests/test_confiabilidad.py`) revisan que cada dato de la página salga tal cual de la fuente.
+- Todos los días, GitHub audita lo publicado (`tests/auditoria_datos.py`).
+- En la Mac, `herramientas/verificar_pagina.py` compara lo que se ve en pantalla con los datos.
+
 ## Buscar vuelos ahora
 
 1. En la página, tocá **🔄 Buscar vuelos nuevos** › **Buscar ahora en GitHub**.

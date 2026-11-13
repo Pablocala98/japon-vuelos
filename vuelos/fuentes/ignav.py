@@ -136,6 +136,7 @@ def _tramo(tramo: dict) -> dict:
         "llegada": (segmentos[-1].get("arrival_time_local") or "")[:16] if segmentos else None,
         "escalas": max(len(segmentos) - 1, 0),
         "horas": round(tramo["duration_minutes"] / 60, 1) if tramo.get("duration_minutes") else None,
+        "minutos": tramo.get("duration_minutes"),
         "paradas": [_parada(llega, sale) for llega, sale in zip(segmentos, segmentos[1:])],
     }
 

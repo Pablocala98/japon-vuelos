@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-13",
- "generado": "2026-11-13T17:31:48-03:00",
+ "generado": "2026-11-13T17:48:10-03:00",
  "comparado_con": "2026-11-12",
  "comparacion": {
   "estado": "igual",
@@ -8,38 +8,46 @@
   "cruzo_umbral": null,
   "aviso": null,
   "mejor_hoy": {
-   "precio_con_valijas": 3015,
-   "precio_total": 2695,
-   "por_persona_con_valijas": 1508,
-   "categoria": "🟢 ideal",
-   "tipo": "ida_y_vuelta",
+   "precio_con_valijas": 3898,
+   "precio_total": 3258,
+   "por_persona_con_valijas": 1949,
+   "categoria": "👀 casi",
+   "tipo": "san_pablo",
    "aerolineas": [
-    "Gol",
-    "LATAM",
-    "Lufthansa"
+    "Aerolineas Argentinas",
+    "Iberia",
+    "JAL",
+    "LATAM"
    ],
-   "sale": "2027-04-08T13:40",
-   "vuelve": "2027-05-01T11:20",
-   "dias_en_japon": 21,
-   "visto": "2026-11-13",
-   "precio_confirmado": null
+   "sale": "2027-06-06T11:55",
+   "vuelve": "2027-06-28T10:35",
+   "dias_en_japon": 20,
+   "visto": "2026-11-12",
+   "precio_confirmado": {
+    "total": 3258.0,
+    "fecha": "2026-11-12"
+   }
   },
   "mejor_anterior": {
-   "precio_con_valijas": 3015,
-   "precio_total": 2695,
-   "por_persona_con_valijas": 1508,
-   "categoria": "🟢 ideal",
-   "tipo": "ida_y_vuelta",
+   "precio_con_valijas": 3898,
+   "precio_total": 3258,
+   "por_persona_con_valijas": 1949,
+   "categoria": "👀 casi",
+   "tipo": "san_pablo",
    "aerolineas": [
-    "Gol",
-    "LATAM",
-    "Lufthansa"
+    "Aerolineas Argentinas",
+    "Iberia",
+    "JAL",
+    "LATAM"
    ],
-   "sale": "2027-04-08T13:40",
-   "vuelve": "2027-05-01T11:20",
-   "dias_en_japon": 21,
+   "sale": "2027-06-06T11:55",
+   "vuelve": "2027-06-28T10:35",
+   "dias_en_japon": 20,
    "visto": "2026-11-12",
-   "precio_confirmado": null
+   "precio_confirmado": {
+    "total": 3258.0,
+    "fecha": "2026-11-12"
+   }
   },
   "mismos_vuelos": {
    "comparados": 29,
@@ -51,37 +59,40 @@
  },
  "mejores_hoy": {
   "total": {
-   "precio_con_valijas": 3015,
-   "precio_total": 2695,
-   "por_persona_con_valijas": 1508,
-   "categoria": "🟢 ideal",
-   "tipo": "ida_y_vuelta",
+   "precio_con_valijas": 3898,
+   "precio_total": 3258,
+   "por_persona_con_valijas": 1949,
+   "categoria": "👀 casi",
+   "tipo": "san_pablo",
    "aerolineas": [
-    "Gol",
-    "LATAM",
-    "Lufthansa"
+    "Aerolineas Argentinas",
+    "Iberia",
+    "JAL",
+    "LATAM"
    ],
-   "sale": "2027-04-08T13:40",
-   "vuelve": "2027-05-01T11:20",
-   "dias_en_japon": 21,
-   "visto": "2026-11-13",
-   "precio_confirmado": null
+   "sale": "2027-06-06T11:55",
+   "vuelve": "2027-06-28T10:35",
+   "dias_en_japon": 20,
+   "visto": "2026-11-12",
+   "precio_confirmado": {
+    "total": 3258.0,
+    "fecha": "2026-11-12"
+   }
   },
   "buenos_aires": {
-   "precio_con_valijas": 3015,
-   "precio_total": 2695,
-   "por_persona_con_valijas": 1508,
-   "categoria": "🟢 ideal",
-   "tipo": "ida_y_vuelta",
+   "precio_con_valijas": 5997,
+   "precio_total": 5677,
+   "por_persona_con_valijas": 2998,
+   "categoria": "🔴 todavía caro",
+   "tipo": "open_jaw",
    "aerolineas": [
-    "Gol",
-    "LATAM",
-    "Lufthansa"
+    "American",
+    "JAL"
    ],
-   "sale": "2027-04-08T13:40",
-   "vuelve": "2027-05-01T11:20",
+   "sale": "2027-04-08T21:10",
+   "vuelve": "2027-05-01T14:25",
    "dias_en_japon": 21,
-   "visto": "2026-11-13",
+   "visto": "2026-11-11",
    "precio_confirmado": null
   },
   "san_pablo": {
@@ -137,17 +148,17 @@
   },
   {
    "fecha": "2026-11-12",
-   "total": 3015,
-   "buenos_aires": 3015,
+   "total": 3898,
+   "buenos_aires": 5350,
    "san_pablo": 3898,
-   "categoria": "🟢 ideal"
+   "categoria": "👀 casi"
   },
   {
    "fecha": "2026-11-13",
-   "total": 3015,
-   "buenos_aires": 3015,
+   "total": 3898,
+   "buenos_aires": 5997,
    "san_pablo": 3898,
-   "categoria": "🟢 ideal"
+   "categoria": "👀 casi"
   }
  ],
  "fechas": {
