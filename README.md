@@ -6,7 +6,7 @@ App personal y gratuita que busca todos los días vuelos baratos de **Buenos Air
 
 ## Qué hace
 
-- **Todos los días a las 8:00 (hora de Buenos Aires)**, GitHub busca vuelos solo, sin que tengas la compu prendida.
+- **Todos los días a la madrugada** (hay 3 intentos programados: 3:07, 6:07 y 8:37 de Buenos Aires, porque GitHub suele demorarlos), GitHub busca vuelos solo, sin que tengas la compu prendida.
 - Busca **desde Buenos Aires** (EZE/AEP) y **desde San Pablo** (GRU, sumando un pasaje aparte Buenos Aires–San Pablo), a **Tokio** (NRT/HND) y **Osaka** (KIX/ITM), también entrando por una ciudad y saliendo por la otra.
 - **Stopovers** en Madrid (Iberia) o Estambul (Turkish): elegís cuántos días, si a la ida o a la vuelta y el mes, y la app busca el pasaje.
 - Le pone a cada opción una categoría según el precio **para los 2, con valijas**:

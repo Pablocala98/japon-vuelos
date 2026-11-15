@@ -3,7 +3,12 @@ name: Buscar vuelos
 
 on:
   schedule:
-    - cron: "0 11 * * *"   # 11:00 UTC = 8:00 de Buenos Aires (GitHub puede demorarla un rato)
+    # GitHub demora las búsquedas programadas (a veces varias horas), sobre todo en horas en punto.
+    # Por eso hay 3 intentos: el primero que corre hace la búsqueda del día; los demás solo completan
+    # lo que haya faltado y no gastan cupo de más.
+    - cron: "7 6 * * *"    # 03:07 de Buenos Aires
+    - cron: "7 9 * * *"    # 06:07
+    - cron: "37 11 * * *"  # 08:37
   workflow_dispatch:        # botón "Run workflow" para buscar a mano (y pedir un stopover)
     inputs:
       stopover:
