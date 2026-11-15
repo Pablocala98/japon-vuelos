@@ -37,6 +37,8 @@ def _tramo_para_pagina(t: dict) -> dict:
     return {
         **{k: t[k] for k in ("ruta", "salida", "llegada", "escalas", "horas", "aerolineas")},
         "minutos": t.get("minutos"),
+        # Los datos guardados antes del arreglo pueden traer horas con redondeo acumulado: mandan los minutos.
+        **({"horas": round(t["minutos"] / 60, 1)} if t.get("minutos") else {}),
         "paradas": paradas,
         "horas_escalas": round(sum(minutos) / 60, 1) if paradas and None not in minutos else None,
         # Días que pasan entre la salida y la llegada, en hora local (+1, +2).

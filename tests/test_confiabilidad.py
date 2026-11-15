@@ -95,6 +95,17 @@ class LoQueMuestraLaPagina(unittest.TestCase):
         self.assertEqual(consulta, "Flights from EZE to NRT on 2027-05-10 through 2027-05-31 for 2 adults")
 
 
+class DuracionDeSanPablo(unittest.TestCase):
+    def test_las_horas_salen_de_los_minutos_exactos(self):
+        corto = {"aerolineas": ["AR"], "ruta": ["AEP", "GRU"], "salida": "2027-06-06T11:55", "llegada": "2027-06-06T14:50",
+                 "escalas": 0, "horas": 2.9, "minutos": 175, "paradas": []}
+        largo = {"aerolineas": ["IB"], "ruta": ["GRU", "MAD", "NRT"], "salida": "2027-06-06T19:20", "llegada": "2027-06-08T18:35",
+                 "escalas": 1, "horas": 33.3, "minutos": 1995, "paradas": []}
+        unido = evaluar._unir(corto, largo, 4.5)  # 4 h 30 de espera en GRU
+        self.assertEqual(unido["minutos"], 175 + 270 + 1995)
+        self.assertEqual(unido["horas"], round(2440 / 60, 1))
+
+
 class Confianza(unittest.TestCase):
     def test_niveles(self):
         self.assertEqual(opcion_de_ignav()["confianza"], "verificado")

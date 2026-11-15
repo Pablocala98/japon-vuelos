@@ -180,14 +180,16 @@ def _orden_san_pablo(opcion: dict) -> tuple:
 
 
 def _unir(primero: dict, segundo: dict, espera: float) -> dict:
+    minutos = (primero["minutos"] + round(espera * 60) + segundo["minutos"]) if primero.get("minutos") and segundo.get("minutos") else None
     return {
         "aerolineas": sorted(set(primero["aerolineas"]) | set(segundo["aerolineas"])),
         "ruta": primero["ruta"] + segundo["ruta"][1:],
         "salida": primero["salida"],
         "llegada": segundo["llegada"],
         "escalas": primero["escalas"] + segundo["escalas"] + 1,
-        "horas": round(primero["horas"] + espera + segundo["horas"], 1) if primero["horas"] and segundo["horas"] else None,
-        "minutos": (primero["minutos"] + round(espera * 60) + segundo["minutos"]) if primero.get("minutos") and segundo.get("minutos") else None,
+        "minutos": minutos,
+        # Con los minutos exactos, para no acumular el redondeo de cada parte.
+        "horas": round(minutos / 60, 1) if minutos else (round(primero["horas"] + espera + segundo["horas"], 1) if primero["horas"] and segundo["horas"] else None),
         # El cambio entre los 2 pasajes también es una escala: hay que retirar y volver a despachar las valijas.
         "paradas": primero.get("paradas", []) + [{
             "aeropuerto": primero["ruta"][-1], "sale_de": None, "minutos": round(espera * 60),
