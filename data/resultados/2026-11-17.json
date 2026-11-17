@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-17",
- "actualizado": "2026-11-17T12:57:07-03:00",
+ "actualizado": "2026-11-17T15:31:01-03:00",
  "opciones": [
   {
    "tipo": "san_pablo",
@@ -4565,16 +4565,17 @@
   "link 13e8390334914d30a6e6503d55bac60f+5c339a5ef05f4e3d8895fbbe606d0a49",
   "serpapi BUE-TYO 2027-04-08 2027-05-01",
   "serpapi open-jaw 2027-04-08 2027-05-01",
-  "serpapi BUE-OSA 2027-04-05 2027-04-26"
+  "serpapi BUE-OSA 2027-04-05 2027-04-26",
+  "calendario BUE-OSA 2027-04 22d"
  ],
  "errores": [
   "calendario BUE-OSA 2027-04 22d: Ignav: falla temporal (HTTP 424)"
  ],
  "cupo": {
   "ignav": {
-   "gastadas_hoy": 7,
-   "disponibles_hoy": 2,
-   "total": 93
+   "gastadas_hoy": 8,
+   "disponibles_hoy": 1,
+   "total": 94
   },
   "serpapi": {
    "gastadas_hoy": 6,

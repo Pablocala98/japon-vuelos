@@ -1,7 +1,12 @@
 {
- "actualizado": "2026-11-17T12:57:25-03:00",
+ "actualizado": "2026-11-17T15:31:17-03:00",
  "horas": 48,
  "promociones": [],
- "errores": [],
- "leidas": 59
+ "errores": [
+  "Últimas publicaciones: no se pudo leer (HTTP 521)",
+  "Últimas publicaciones (página 2): no se pudo leer (HTTP 521)",
+  "Vuelos a Asia: no se pudo leer (HTTP 521)",
+  "Búsqueda Galicia: no se pudo leer (HTTP 521)"
+ ],
+ "leidas": 0
 }
