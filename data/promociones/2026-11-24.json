@@ -1,7 +1,27 @@
 {
- "actualizado": "2026-11-24T17:07:18-03:00",
+ "actualizado": "2026-11-24T18:28:44-03:00",
  "horas": 48,
  "promociones": [
+  {
+   "titulo": "Black Friday: Hasta U$D 100 de Descuento en Vuelos a Chile y Perú desde Buenos Aires",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-a-chile-y-peru-desde-buenos-aires-latam-rt-p.html",
+   "publicada": "2026-11-24T17:30-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
+  {
+   "titulo": "Black Friday: Vuelos a Maceió a partir de U$D 530 desde Buenos Aires",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-vuelos-a-maceio-desde-buenos-aires-latam-rt-p-rt-p.html",
+   "publicada": "2026-11-24T17:15-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
   {
    "titulo": "Black Friday: Vuelos a Orlando ✈️ a partir de U$D 721 con Carry On 🔥🔥 desde Buenos Aires 🎢 ¡ Muy buenas Fechas y Cuotas!",
    "link": "https://promociones-aereas.com.ar/2026/11/black-friday-vuelos-a-orlando-desde-buenos-aires-con-carry-on-copa-airlines-rt-p.html",
@@ -54,5 +74,5 @@
   }
  ],
  "errores": [],
- "leidas": 56
+ "leidas": 57
 }
