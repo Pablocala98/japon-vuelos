@@ -1,7 +1,37 @@
 {
- "actualizado": "2026-11-25T16:10:31-03:00",
+ "actualizado": "2026-11-25T17:37:55-03:00",
  "horas": 48,
  "promociones": [
+  {
+   "titulo": "Black Friday: ¡Hermoso! ✈️ Vuelos a Madrid desde Córdoba a partir de U$D 920 con Carry On 🥘 y financiamiento en Cuotas",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-hermoso-vuelos-a-madrid-desde-cordoba-con-carry-on-cuotas-latam-rt-p.html",
+   "publicada": "2026-11-25T16:40-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
+  {
+   "titulo": "Black Friday: Hasta 10 % de Descuento en Vuelos al Nordeste de Brasil 🍹👙",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-al-nordeste-de-brasil-latam-rt-p-2.html",
+   "publicada": "2026-11-25T16:30-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
+  {
+   "titulo": "Black Friday: Vuelos a Curaçao 🏝️ a partir de U$D 684 con Conexión o U$D 813 Directo (ambos con Carry On) desde Bs. As.",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-vuelos-a-curacao-con-conexion-directo-ambos-con-carry-on-desde-bs-as-avianca-copa-airlines-aerolineas-argentinas-rt-p.html",
+   "publicada": "2026-11-25T16:20-03:00",
+   "motivos": [
+    "Promo de Copa, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
   {
    "titulo": "Black Friday: ¡YAA! 🚨 Miami desde Córdoba a partir de U$D 639🔥🔥 con Carry On incluido y opciones en Cuotas",
    "link": "https://promociones-aereas.com.ar/2026/11/black-friday-para-emitir-vuelos-a-miami-desde-cordoba-con-opciones-en-cuotas-latam-rt-p.html",
@@ -41,28 +71,8 @@
    ],
    "aviso": null,
    "japon": false
-  },
-  {
-   "titulo": "Black Friday:  Paquetes Bomba 💣 a Maragogi a partir de U$D 388 🔥🔥 Hotel con Desayuno + Vuelos Directos desde Bs. As. (por persona en base doble)",
-   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-paquetes-bomba-a-maragogi-hotel-con-desayuno-vuelos-directos-desde-bs-as-latam-pa-p.html",
-   "publicada": "2026-11-25T12:50-03:00",
-   "motivos": [
-    "Promo de Latam, que vuela a Japón"
-   ],
-   "aviso": null,
-   "japon": false
-  },
-  {
-   "titulo": "Black Friday: 📢 Vuelos a Málaga a partir de U$D 950 desde Buenos Aires, con Carry On incluido 🤩 en Verano de allá",
-   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-vuelos-a-malaga-desde-buenos-aires-con-carry-on-incluido-en-verano-air-france-klm-rt-p.html",
-   "publicada": "2026-11-25T11:30-03:00",
-   "motivos": [
-    "Promo de Klm, que vuela a Japón"
-   ],
-   "aviso": null,
-   "japon": false
   }
  ],
  "errores": [],
- "leidas": 58
+ "leidas": 59
 }
