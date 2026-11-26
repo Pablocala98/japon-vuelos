@@ -1,7 +1,39 @@
 {
- "actualizado": "2026-11-26T15:58:18-03:00",
+ "actualizado": "2026-11-26T17:29:43-03:00",
  "horas": 48,
  "promociones": [
+  {
+   "titulo": "Black Friday: Tokio a partir de U$D 1.642 desde Buenos Aires 🍣🏯 con una sola escala y carry on",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-tokio-desde-buenos-aires-con-una-sola-escala-y-carry-on-iberia-rt-p.html",
+   "publicada": "2026-11-26T16:00-03:00",
+   "motivos": [
+    "Menciona tokio",
+    "Vuelos a Asia",
+    "Promo de Iberia, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": true
+  },
+  {
+   "titulo": "Black Friday: ¡Tremendo! 🔥🔥 Auckland a partir de U$D 946 desde Buenos Aires",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-tremendo-auckland-desde-buenos-aires-latam-rt-p.html",
+   "publicada": "2026-11-26T17:15-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
+  {
+   "titulo": "Black Friday: ¡Muy Bueno! Vuelos a Orlando ✈️ a partir de U$D 692 con Carry On 🔥🎢 ¡ Opciones en Cuotas!",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-muy-bueno-vuelos-a-orlando-con-carry-on-opciones-en-cuotas-delta-rt-p.html",
+   "publicada": "2026-11-26T15:45-03:00",
+   "motivos": [
+    "Promo de Delta, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
   {
    "titulo": "Black Friday: ¡Tulum 🌊 te Espera! Paquetes a partir de U$D 848 🔥 Vuelos con Carry on y Hotel cerca de la Playa -por persona en base doble- Desde Buenos Aires.",
    "link": "https://promociones-aereas.com.ar/2026/11/black-friday-tulum-te-espera-paquetes-vuelos-con-carry-on-y-hotel-cerca-de-la-playa-desde-buenos-aires-copa-airlines-pa-p.html",
@@ -54,5 +86,5 @@
   }
  ],
  "errores": [],
- "leidas": 59
+ "leidas": 58
 }
