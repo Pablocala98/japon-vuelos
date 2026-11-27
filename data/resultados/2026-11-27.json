@@ -1,12 +1,12 @@
 {
  "fecha": "2026-11-27",
- "actualizado": "2026-11-27T13:33:04-03:00",
+ "actualizado": "2026-11-27T15:53:51-03:00",
  "opciones": [
   {
    "tipo": "ida_y_vuelta",
    "fuente": "ignav",
    "ignav_id": "05ede34e110c4319a79258b810793365",
-   "precio_total": 5226.0,
+   "precio_total": 5351.0,
    "moneda": "USD",
    "precio_verificado": true,
    "equipaje": "sin_confirmar",
@@ -76,17 +76,31 @@
      ]
     }
    ],
-   "por_persona": 2613,
+   "por_persona": 2676,
    "valijas_estimadas": 320,
-   "precio_con_valijas": 5546,
-   "por_persona_con_valijas": 2773,
+   "precio_con_valijas": 5671,
+   "por_persona_con_valijas": 2836,
    "categoria": "🔴 todavía caro",
    "dias_en_japon": 21,
-   "confianza": "verificado",
+   "confianza": "confirmado",
    "confiable": true,
    "excede_limites": null,
    "precios_por_fuente": {
-    "ignav": 5226.0
+    "ignav": 5351.0
+   },
+   "links_compra": [
+    {
+     "proveedor": "Emirates",
+     "aerolinea": true,
+     "exacto": false,
+     "precio": 5351.0,
+     "alcance": "ida y vuelta",
+     "url": "https://www.emirates.com/booking/search-results/?selddate1=29-May-27&seldcity1=EZE&selacity1=NRT&seladults=2&selchildren=0&selinfants=0&seladate1=21-Jun-27&pub=/ar/english&TID=SB&Itinerary=rbReturn&selcabinclass=0&totalfare=8569978.6&currency=ARS&flight1=EZE_DXB_DXB_NRT_EK248_EK318&farebrand1=&farebasis1=QLEEPAR4&flight2=NRT_DXB_DXB_EZE_EK319_EK247&farebrand2=&farebasis2=QLEEPAR4&cid=Google-AffiliatesID&utm_source=google_flight_search&utm_medium=affiliate&utm_campaign=gfs&gclid=AAcRjHJMvNzB2UOO3mODq0l53Wp9_Y3844VCOL8am958Rr5HMIiPQwZ885l-WSgWuyCWyyaDOAHkEFxhmBag7jo-BWiqOUW5uc4t3WPBRTBOWaNHU_E&gclsrc=gf"
+    }
+   ],
+   "precio_confirmado": {
+    "total": 5351.0,
+    "fecha": "2026-11-27"
    }
   },
   {
@@ -2807,14 +2821,15 @@
   "link 0d1c8d9fc7794b51a92040a2bcf34a56",
   "serpapi BUE-TYO 2027-05-29 2027-06-21",
   "serpapi open-jaw 2027-05-29 2027-06-21",
-  "serpapi BUE-OSA 2027-05-05 2027-05-28"
+  "serpapi BUE-OSA 2027-05-05 2027-05-28",
+  "link 05ede34e110c4319a79258b810793365"
  ],
  "errores": [],
  "cupo": {
   "ignav": {
-   "gastadas_hoy": 7,
-   "disponibles_hoy": 2,
-   "total": 166
+   "gastadas_hoy": 8,
+   "disponibles_hoy": 1,
+   "total": 167
   },
   "serpapi": {
    "gastadas_hoy": 6,

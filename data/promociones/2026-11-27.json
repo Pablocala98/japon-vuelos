@@ -1,7 +1,37 @@
 {
- "actualizado": "2026-11-27T13:33:24-03:00",
+ "actualizado": "2026-11-27T15:54:09-03:00",
  "horas": 48,
  "promociones": [
+  {
+   "titulo": "Black Friday: Jericoacoara 🌅 a partir de U$D 720 desde Bs. As. por persona en base doble, triple y cuádruple",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-jericoacoara-desde-bs-as-por-persona-en-base-doble-triple-y-cuadruple-latam-gol.html",
+   "publicada": "2026-11-27T14:39-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
+  {
+   "titulo": "Black Friday: Vuelos a Barcelona 😎 en Verano a partir de 🔥 U$D 980 con Carry On🔥 ¡Hasta en 6 Cuotas!",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-vuelos-a-barcelona-en-verano-con-carry-on-hasta-en-seis-cuotas-rt-p.html",
+   "publicada": "2026-11-27T14:35-03:00",
+   "motivos": [
+    "Promo de Air France, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
+  {
+   "titulo": "Black Friday: Morro de San Pablo a partir de U$D 548 🔥🔥🔥 desde Bs. As. por persona en base doble, triple y cuádruple",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-morro-de-san-pablo-desde-bs-as-por-persona-en-base-doble-triple-y-cuadruple-latam-gol.html",
+   "publicada": "2026-11-27T14:16-03:00",
+   "motivos": [
+    "Promo de Latam, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
   {
    "titulo": "Black Friday: Vuelos a París 🥐 con hasta U$D 120 de Descuento ✈️🌍 en Verano de allá desde Buenos Aires",
    "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-a-paris-desde-buenos-aires-iberia-rt-p.html",
@@ -21,28 +51,8 @@
    ],
    "aviso": null,
    "japon": false
-  },
-  {
-   "titulo": "Black Friday: hasta U$D 120 de descuento en Vuelos a Europa",
-   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-a-europa-rt-p.html",
-   "publicada": "2026-11-27T10:32-03:00",
-   "motivos": [
-    "Promo de Iberia, que vuela a Japón"
-   ],
-   "aviso": null,
-   "japon": false
-  },
-  {
-   "titulo": "Black Friday: Hasta U$D 120 de Descuento en ✈️ Vuelos a Europa 🏰🌍 desde Buenos Aires",
-   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-a-europa-desde-buenos-aires-iberia-rt-p.html",
-   "publicada": "2026-11-27T09:45-03:00",
-   "motivos": [
-    "Promo de Iberia, que vuela a Japón"
-   ],
-   "aviso": null,
-   "japon": false
   }
  ],
  "errores": [],
- "leidas": 56
+ "leidas": 58
 }

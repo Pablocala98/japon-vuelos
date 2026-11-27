@@ -1,6 +1,6 @@
 {
  "fecha": "2026-11-27",
- "generado": "2026-11-27T13:33:24-03:00",
+ "generado": "2026-11-27T15:54:09-03:00",
  "comparado_con": "2026-11-26",
  "comparacion": {
   "estado": "empeoró",
@@ -48,9 +48,9 @@
   "mismos_vuelos": {
    "comparados": 31,
    "bajaron": 1,
-   "subieron": 1,
-   "iguales": 29,
-   "cambio_promedio": 12
+   "subieron": 2,
+   "iguales": 28,
+   "cambio_promedio": 16
   }
  },
  "mejores_hoy": {
