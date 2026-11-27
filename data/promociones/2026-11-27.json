@@ -1,7 +1,17 @@
 {
- "actualizado": "2026-11-27T15:54:09-03:00",
+ "actualizado": "2026-11-27T17:15:45-03:00",
  "horas": 48,
  "promociones": [
+  {
+   "titulo": "Black Friday: Cozumel 🏝️ REGALADO con Paquetes All Inclusive a partir de U$D 1.394 🔥🔥 desde Bs. As. con Carry On por persona en base doble, triple y cuádruple",
+   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-cozumel-regalado-paquetes-all-inclusive-desde-bs-as-con-carry-on-por-persona-en-base-doble-triple-y-cuadruple-copa-airlines-latam-pa-p.html",
+   "publicada": "2026-11-27T17:05-03:00",
+   "motivos": [
+    "Promo de Latam, Copa, que vuela a Japón"
+   ],
+   "aviso": null,
+   "japon": false
+  },
   {
    "titulo": "Black Friday: Jericoacoara 🌅 a partir de U$D 720 desde Bs. As. por persona en base doble, triple y cuádruple",
    "link": "https://promociones-aereas.com.ar/2026/11/black-friday-jericoacoara-desde-bs-as-por-persona-en-base-doble-triple-y-cuadruple-latam-gol.html",
@@ -31,28 +41,8 @@
    ],
    "aviso": null,
    "japon": false
-  },
-  {
-   "titulo": "Black Friday: Vuelos a París 🥐 con hasta U$D 120 de Descuento ✈️🌍 en Verano de allá desde Buenos Aires",
-   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-a-paris-desde-buenos-aires-iberia-rt-p.html",
-   "publicada": "2026-11-27T13:00-03:00",
-   "motivos": [
-    "Promo de Iberia, que vuela a Japón"
-   ],
-   "aviso": null,
-   "japon": false
-  },
-  {
-   "titulo": "Black Friday:  Vuelos a MADRID desde Mendoza 🍷 a partir de U$D 955 con Carry On en Primavera de allá 🌸",
-   "link": "https://promociones-aereas.com.ar/2026/11/black-friday-descuento-en-vuelos-directos-a-madrid-desde-mendoza-latam-rt-p.html",
-   "publicada": "2026-11-27T12:10-03:00",
-   "motivos": [
-    "Promo de Latam, que vuela a Japón"
-   ],
-   "aviso": null,
-   "japon": false
   }
  ],
  "errores": [],
- "leidas": 58
+ "leidas": 59
 }
